@@ -1,0 +1,14 @@
+<?php
+
+namespace App;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+
+class WithdrawGateway extends Model
+{
+    use HasFactory;
+
+    protected $table = 'withdraw_gateways';
+    protected $fillable = ['name', 'status', 'field'];
+}

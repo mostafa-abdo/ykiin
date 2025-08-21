@@ -1,0 +1,38 @@
+# Laravel & PHP
+@core/vendor/
+@core/node_modules/
+@core/public/storage
+@core/storage/*.key
+@core/.env
+@core/.rnd
+@core/public/sitemap.xml
+# Laravel caches
+
+@core/storage/framework/
+@core/storage/logs/
+@core/storage/app/public/
+@core/storage/app/
+@core/public/uploads
+@core/public/storage
+
+# IDEs and editors
+@core/.idea/
+@core/.vscode/
+@core/*.sublime-project
+@core/*.sublime-workspace
+
+# System files
+@core/.DS_Store
+@core/Thumbs.db
+
+# Composer & NPM
+@core/composer.lock
+@core/package-lock.json
+@core/yarn.lock
+
+# Tests & CI
+@core/.phpunit.result.cache
+@core/.php-cs-fixer.cache
+
+# Logs
+@core/*.log
