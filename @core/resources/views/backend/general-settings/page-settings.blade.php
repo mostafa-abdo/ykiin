@@ -57,7 +57,7 @@
                                                         <div class="card">
                                                             <div class="card-header" >
                                                                 <h5 class="mb-0">
-                                                                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#{{$slug_field.'_content'}}" aria-expanded="false" >
+                                                                    <button class="btn btn-link collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#{{$slug_field.'_content'}}" aria-expanded="false" >
                                                                         <span class="page-title">{{get_static_option($slug_field.'_name') ?? ucfirst(str_replace(['_','-page'],[' ',''],$slug_field))}}</span>
                                                                     </button>
                                                                 </h5>

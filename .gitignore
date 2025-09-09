@@ -36,3 +36,7 @@
 
 # Logs
 @core/*.log
+
+
+#Uploads
+assets/uploads

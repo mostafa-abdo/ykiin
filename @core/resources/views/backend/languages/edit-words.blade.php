@@ -18,7 +18,7 @@
                                 
                                 <a class="btn btn-secondary btn-sm margin-bottom-30 mr-1" href="{{ route('admin.languages')}}">  <i class="fa fa-backward" aria-hidden="true"></i> {{__('All Languages')}}</a>
                                 <a href="#" id="regenerate_source_text_btn" class="btn btn-warning margin-bottom-30 btn-sm">{{__('Regenerate Source Texts')}}</a>
-                                <button class="btn btn-info btn-sm margin-bottom-30 add_new_string_btn"  data-toggle="modal" data-target="#add_new_string_modal"> <i class="fas fa-plus mr-1"></i> {{__('Add New String')}}</button>
+                                <button class="btn btn-info btn-sm margin-bottom-30 add_new_string_btn"  data-bs-toggle="modal" data-bs-target="#add_new_string_modal"> <i class="fas fa-plus mr-1"></i> {{__('Add New String')}}</button>
                             </div>
                         </div>
                         <p class="text-info margin-bottom-20">{{__('select any source text to translate it, then enter your translated text in textarea hit update')}}</p>
@@ -83,7 +83,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title">{{__('Add New Translate String')}}</h5>
-                    <button type="button" class="close" data-dismiss="modal"><span>×</span></button>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <form action="{{route('admin.languages.add.string')}}" id="add_new_string_modal_form"  method="post">
                     <div class="modal-body">
@@ -100,7 +100,7 @@
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">{{__('Close')}}</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">{{__('Close')}}</button>
                         <button type="submit" class="btn btn-primary">{{__('Submit')}}</button>
                     </div>
                 </form>

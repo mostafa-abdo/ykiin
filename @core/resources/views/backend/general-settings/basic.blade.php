@@ -54,7 +54,7 @@
                                         @endif
                                     </div>
                                     <input type="hidden" id="og_meta_image_for_site" name="og_meta_image_for_site" value="{{get_static_option('og_meta_image_for_site')}}">
-                                    <button type="button" class="btn btn-info media_upload_form_btn" data-btntitle="Select Image" data-modaltitle="Upload Image" data-toggle="modal" data-target="#media_upload_modal">
+                                    <button type="button" class="btn btn-info media_upload_form_btn" data-btntitle="Select Image" data-modaltitle="Upload Image" data-bs-toggle="modal" data-bs-target="#media_upload_modal">
                                         {{__($blog_image_btn_label)}}
                                     </button>
                                 </div>

@@ -25,6 +25,7 @@ class AboutUsPageController extends Controller
                 'about_page_about_section_title' => 'nullable|string',
                 'about_page_about_section_subtitle' => 'nullable|string',
                 'about_page_about_section_description' => 'nullable|string',
+                'about_page_about_section_left_image_image' => 'nullable|string'
             ]);
 
             $fields = [
@@ -38,7 +39,7 @@ class AboutUsPageController extends Controller
                 }
             }
 
-
+        update_static_option('about_page_about_section_left_image_image',$request->about_page_about_section_left_image_image);
         return redirect()->back()->with([
             'msg' => __('Settings Updated ...'),
             'type' => 'success'
@@ -91,6 +92,87 @@ class AboutUsPageController extends Controller
             'type' => 'success'
         ]);
     }
+
+    public function about_page_our_vision_section(){
+        return view($this->base_path.'our-vision-section');
+    }
+
+    public function about_page_update_our_vision_section(Request $request){
+
+       
+
+        $this->validate($request ,[
+            'about_page_our_vision_list_section_title' => 'required|array',
+            'about_page_our_vision_list_section_title.*' => 'nullable|string',
+            'about_page_our_vision_list_section_description' => 'required|array',
+            'about_page_our_vision_list_section_description.*' => 'nullable|string',
+            'about_page_our_vision_list_section_icon' => 'required|array',
+            'about_page_our_vision_list_section_icon.*' => 'required|string',
+        ]);
+
+        $all_fields = [
+            'about_page_our_vision_list_section_title',
+            'about_page_our_vision_list_section_description',
+            'about_page_our_vision_list_section_icon',
+        ];
+
+        foreach ($all_fields as $field){
+            $value = $request->$field ?? [];
+            update_static_option($field,serialize($value));
+        }
+
+        return redirect()->back()->with([
+            'msg' => __('Settings Updated ...'),
+            'type' => 'success'
+        ]);
+    }
+
+
+    public function about_page_our_values_section(){
+        return view($this->base_path.'our-values-section');
+    }
+
+    public function about_page_update_our_values_section(Request $request){
+
+        $this->validate($request,[
+            'about_page_our_values_section_background_image' => 'nullable|string'
+        ]);
+
+            $this->validate($request ,[
+                'about_page_our_values_title' => 'nullable|string',
+                'about_page_our_values_list_section_title' => 'required|array',
+                'about_page_our_values_list_section_title.*' => 'nullable|string',
+                'about_page_our_values_list_section_icon' => 'required|array',
+                'about_page_our_values_list_section_icon.*' => 'required|string',
+            ]);
+
+            $all_fields = [
+                'about_page_our_values_title',
+            ];
+
+            foreach ($all_fields as $field){
+                if ($request->has($field)){
+                    update_static_option($field,$request->$field);
+                }
+            }
+            $all_fields = [
+                'about_page_our_values_list_section_title',
+                'about_page_our_values_list_section_icon',
+            ];
+
+            foreach ($all_fields as $field){
+                $value = $request->$field ?? [];
+                update_static_option($field,serialize($value));
+            }
+
+        update_static_option('about_page_our_values_section_background_image',$request->about_page_our_values_section_background_image);
+
+        return redirect()->back()->with([
+            'msg' => __('Settings Updated ...'),
+            'type' => 'success'
+        ]);
+    }
+
     public function about_page_counterup_section(){
         return view($this->base_path.'counterup-section');
     }
@@ -174,9 +256,17 @@ class AboutUsPageController extends Controller
 
     public function about_page_update_section_manage(Request $request){
 
-        $section_list = [
-            'about_us','our_mission','counterup','what_we_do','testimonial','team_member'
-        ];
+        if(get_static_option('home_page_variant') != '00'){
+            
+            $section_list = [
+                'about_us','our_mission','counterup','what_we_do','testimonial','team_member'
+            ];
+        }else {
+            $section_list = [
+                'about_us','our_vision','our_values','testimonial' 
+            ];
+        }
+
 
         foreach ($section_list as $section){
             $this->validate($request,[

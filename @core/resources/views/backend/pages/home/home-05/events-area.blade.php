@@ -59,7 +59,7 @@
                                             @endif
                                         </div>
                                         <input type="hidden" id="home_page_05_events_area_left_image" name="home_page_05_events_area_left_image" value="{{get_static_option('home_page_05_events_area_left_image')}}">
-                                        <button type="button" class="btn btn-info media_upload_form_btn" data-btntitle="{{__('Select Site Logo Image')}}" data-modaltitle="{{__('Upload Site Logo Image')}}" data-toggle="modal" data-target="#media_upload_modal">
+                                        <button type="button" class="btn btn-info media_upload_form_btn" data-btntitle="{{__('Select Site Logo Image')}}" data-modaltitle="{{__('Upload Site Logo Image')}}" data-bs-toggle="modal" data-bs-target="#media_upload_modal">
                                             {{__($blog_image_btn_label)}}
                                         </button>
                                     </div>

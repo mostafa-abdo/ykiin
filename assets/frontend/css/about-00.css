@@ -1,0 +1,48 @@
+.ourvalues-section {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    padding-block: 80px;
+}
+
+.ourvalues-section * {
+    z-index: 2;
+}
+
+.ourvalues-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #0f0f0ff0;
+    
+}
+
+.ourvalues-section .values .value-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 30px;
+    padding-block: 40px;
+    border: 1px solid #ffffff6b;
+    background-color: #ffffff21;
+    color: #ffffff;
+
+    width: 100%;
+    max-width: 300px;
+    border-radius: 10px;
+    font-size: 20px;
+    font-weight: 600;
+    position: relative;
+    overflow: hidden;
+}
+
+.ourvalues-section .values .value-item::before {
+    display: none;
+    background-image: unset;
+}
+

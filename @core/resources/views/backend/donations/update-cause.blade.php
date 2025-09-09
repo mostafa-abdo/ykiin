@@ -19,7 +19,7 @@
                     <div class="card-body">
 
                         <h4 class="header-title">{{__('All Update Causes')}}
-                          <a class="btn btn-primary pull-right btn-sm mx-2" href="{{route('admin.donations.all')}}" data-toggle="modal" data-target="#cause_update_add_modal">
+                          <a class="btn btn-primary pull-right btn-sm mx-2" href="{{route('admin.donations.all')}}" data-bs-toggle="modal" data-bs-target="#cause_update_add_modal">
                             {{__('Add new Cause Update')}}</a>
                           <a class="btn btn-success pull-right btn-sm" href="{{route('admin.donations.all')}}">{{__('Go Back')}}</a>
                         </h4>
@@ -53,8 +53,8 @@
                                             <x-delete-popover
                                                     :url="route('admin.donations.update.cause.delete',$data->id)"/>
                                             <a href="#"
-                                               data-toggle="modal"
-                                               data-target="#category_edit_modal"
+                                               data-bs-toggle="modal"
+                                               data-bs-target="#category_edit_modal"
                                                class="btn btn-primary btn-xs mb-3 mr-1 category_edit_btn"
                                                data-id="{{$data->id}}"
                                                data-title="{{$data->title}}"
@@ -82,7 +82,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title">{{__('Add New Update Cause')}}</h5>
-                    <button type="button" class="close" data-dismiss="modal"><span>×</span></button>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <form action="{{route('add.new.update.cause.page',$cause_id)}}" method="post" id="addCauseUpdateForm">
                     <div class="modal-body">
@@ -107,7 +107,7 @@
                                 <input type="hidden" name="image">
                                 <button type="button" class="btn btn-info media_upload_form_btn"
                                         data-btntitle="{{__('Select Image')}}" data-modaltitle="{{__('Upload Image')}}"
-                                        data-toggle="modal" data-target="#media_upload_modal">
+                                        data-bs-toggle="modal" data-bs-target="#media_upload_modal">
                                     {{__('Upload Image')}}
                                 </button>
                             </div>
@@ -128,7 +128,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title">{{__('Update Cause Update')}}</h5>
-                    <button type="button" class="close" data-dismiss="modal"><span>×</span></button>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <form action="{{route('admin.donations.update.cause.update')}}" method="post">
                     <div class="modal-body">
@@ -151,7 +151,7 @@
                                 <input type="hidden" name="image">
                                 <button type="button" class="btn btn-info media_upload_form_btn"
                                         data-btntitle="{{__('Select Image')}}" data-modaltitle="{{__('Upload Image')}}"
-                                        data-toggle="modal" data-target="#media_upload_modal">
+                                        data-bs-toggle="modal" data-bs-target="#media_upload_modal">
                                     {{__('Upload Image')}}
                                 </button>
                             </div>
@@ -159,7 +159,7 @@
 
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">{{__('Close')}}</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">{{__('Close')}}</button>
                         <button id="update" type="submit" class="btn btn-primary">{{__('Save Change')}}</button>
                     </div>
                 </form>

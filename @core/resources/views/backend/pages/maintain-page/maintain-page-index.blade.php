@@ -61,7 +61,7 @@
                                             @endif
                                         </div>
                                         <input type="hidden" id="maintain_page_logo" name="maintain_page_logo" value="">
-                                        <button type="button" class="btn btn-info media_upload_form_btn" data-btntitle="Select Maintains Logo Image" data-modaltitle="Upload Maintains Logo Image" data-toggle="modal" data-target="#media_upload_modal">
+                                        <button type="button" class="btn btn-info media_upload_form_btn" data-btntitle="Select Maintains Logo Image" data-modaltitle="Upload Maintains Logo Image" data-bs-toggle="modal" data-bs-target="#media_upload_modal">
                                             {{__($blog_image_btn_label)}}
                                         </button>
                                     </div>
@@ -87,7 +87,7 @@
                                             @endif
                                         </div>
                                         <input type="hidden" id="maintain_page_background_image" name="maintain_page_background_image" value="">
-                                        <button type="button" class="btn btn-info media_upload_form_btn" data-btntitle="{{__('Select Background Image')}}" data-modaltitle="{{__('Upload Background Image')}}" data-toggle="modal" data-target="#media_upload_modal">
+                                        <button type="button" class="btn btn-info media_upload_form_btn" data-btntitle="{{__('Select Background Image')}}" data-modaltitle="{{__('Upload Background Image')}}" data-bs-toggle="modal" data-bs-target="#media_upload_modal">
                                             {{__($maintain_page_background_image_btn_label)}}
                                         </button>
                                     </div>

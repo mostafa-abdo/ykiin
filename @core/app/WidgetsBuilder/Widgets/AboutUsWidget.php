@@ -3,8 +3,9 @@
 namespace App\WidgetsBuilder\Widgets;
 
 
-use App\Language;
 use App\Widgets;
+use App\Language;
+use App\SocialIcons;
 use App\WidgetsBuilder\WidgetBase;
 
 class AboutUsWidget extends WidgetBase
@@ -46,20 +47,48 @@ class AboutUsWidget extends WidgetBase
 
     public function frontend_render()
     {
+        $home_page = get_static_option('home_page_variant');
+        
+
         $widget_saved_values = $this->get_settings();
         $description = $widget_saved_values['description'] ?? '';
         $image_val = $widget_saved_values['site_logo'] ?? '';
+        $socail_media_items = SocialIcons::all();
 
-        $output = $this->widget_before(); //render widget before content
 
-        $output .= '<div class="about_us_widget">';
-        $output .= render_image_markup_by_attachment_id($image_val, 'footer-logo');
-        $output .= '<p>' . purify_html($description) . '</p>';
-        $output .= '</div>';
+        if(!empty($home_page) && $home_page == '00'){
+            $image_details = get_attachment_image_by_id($image_val);
 
-        $output .= $this->widget_after(); // render widget after content
+            $output = '<div class="col-md-4 col-12 d-flex flex-column align-items-center mb-6">'; //render widget before content
 
-        return $output;
+            $output .= '<div class="footer-logo text-center  mb-3">';
+            $output .= '<a href="#">';
+            $output .= '<img src="' . $image_details['img_url'] . '" alt="logo">';
+            $output .= '</a>';
+            $output .= '</div>';
+            $output .= '<p>' . purify_html($description) . '</p>';
+            $output .= '<ul class="footer-social-list border-0">';
+            foreach ($socail_media_items as $item) {
+                $output .= '<li><a href="' . $item->url . '" target="_blank"><i class="' . $item->icon . '"></i></a></li>';
+            }
+            $output .= '</ul>';
+            $output .= '</div>';
+
+            $output .= ''; // render widget after content
+            
+            return $output;
+        }else{
+            $output = $this->widget_before(); //render widget before content
+
+            $output .= '<div class="about_us_widget">';
+            $output .= render_image_markup_by_attachment_id($image_val, 'footer-logo');
+            $output .= '<p>' . purify_html($description) . '</p>';
+            $output .= '</div>';
+
+            $output .= $this->widget_after(); // render widget after content
+            
+            return $output;
+        }
     }
 
     public function widget_title(){

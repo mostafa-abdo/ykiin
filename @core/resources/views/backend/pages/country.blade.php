@@ -24,7 +24,7 @@
                                 </div>
 
                                 <div class="btn-wrapper">
-                                    <a href="" data-toggle="modal" data-target="#new_testimonial"
+                                    <a href="" data-bs-toggle="modal" data-bs-target="#new_testimonial"
                                        class="btn btn-info pull-right mb-4">{{__('Add New')}}</a>
                                 </div>
 
@@ -56,8 +56,8 @@
                                                 <x-delete-popover :url="route('admin.country.delete',$data->id)"/>
 
                                                 <a href="#"
-                                                   data-toggle="modal"
-                                                   data-target="#testimonial_item_edit_modal"
+                                                   data-bs-toggle="modal"
+                                                   data-bs-target="#testimonial_item_edit_modal"
                                                    class="btn btn-primary btn-xs mb-3 mr-1 testimonial_edit_btn"
                                                    data-id="{{$data->id}}"
                                                    data-action="{{route('admin.country.update')}}"
@@ -84,7 +84,7 @@
                         <div class="modal-content">
                             <div class="modal-header">
                                 <h5 class="modal-title">{{__('New Country Item')}}</h5>
-                                <button type="button" class="close" data-dismiss="modal"><span>×</span></button>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
                             <form action="{{route('admin.country')}}" method="post" enctype="multipart/form-data">
                                 <div class="modal-body">
@@ -106,7 +106,7 @@
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary"
-                                            data-dismiss="modal">{{__('Close')}}</button>
+                                            data-bs-dismiss="modal">{{__('Close')}}</button>
                                     <button type="submit" class="btn btn-primary">{{__('Save Changes')}}</button>
                                 </div>
                             </form>
@@ -119,7 +119,7 @@
                         <div class="modal-content">
                             <div class="modal-header">
                                 <h5 class="modal-title">{{__('Edit Testimonial Item')}}</h5>
-                                <button type="button" class="close" data-dismiss="modal"><span>×</span></button>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
                             <form action="#" id="testimonial_edit_modal_form" method="post"
                                   enctype="multipart/form-data">
@@ -142,7 +142,7 @@
 
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary"
-                                            data-dismiss="modal">{{__('Close')}}</button>
+                                            data-bs-dismiss="modal">{{__('Close')}}</button>
                                     <button type="submit" class="btn btn-primary">{{__('Save Changes')}}</button>
                                 </div>
                             </form>

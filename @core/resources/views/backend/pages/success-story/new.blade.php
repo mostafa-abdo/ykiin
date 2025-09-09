@@ -95,8 +95,8 @@
                                         <input type="hidden" name="image">
                                         <button type="button" class="btn btn-info media_upload_form_btn"
                                                 data-btntitle="{{__('Select Image')}}"
-                                                data-modaltitle="{{__('Upload Image')}}" data-toggle="modal"
-                                                data-target="#media_upload_modal">
+                                                data-modaltitle="{{__('Upload Image')}}" data-bs-toggle="modal"
+                                                data-bs-target="#media_upload_modal">
                                             {{__('Upload Image')}}
                                         </button>
                                     </div>
@@ -108,8 +108,8 @@
                                         <input type="hidden" name="og_meta_image">
                                         <button type="button" class="btn btn-info media_upload_form_btn"
                                                 data-btntitle="{{__('Select Image')}}"
-                                                data-modaltitle="{{__('Upload Image')}}" data-toggle="modal"
-                                                data-target="#media_upload_modal">
+                                                data-modaltitle="{{__('Upload Image')}}" data-bs-toggle="modal"
+                                                data-bs-target="#media_upload_modal">
                                             {{__('Upload Image')}}
                                         </button>
                                     </div>

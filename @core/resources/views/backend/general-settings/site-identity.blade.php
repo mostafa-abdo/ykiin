@@ -35,7 +35,7 @@
                                         @endif
                                     </div>
                                     <input type="hidden" id="site_logo" name="site_logo" value="{{get_static_option('site_logo')}}">
-                                    <button type="button" class="btn btn-info media_upload_form_btn" data-btntitle="{{__('Select Site Logo Image')}}" data-modaltitle="{{__('Upload Site Logo Image')}}" data-toggle="modal" data-target="#media_upload_modal">
+                                    <button type="button" class="btn btn-info media_upload_form_btn" data-btntitle="{{__('Select Site Logo Image')}}" data-modaltitle="{{__('Upload Site Logo Image')}}" data-bs-toggle="modal" data-bs-target="#media_upload_modal">
                                         {{__($blog_image_btn_label)}}
                                     </button>
                                 </div>
@@ -61,7 +61,7 @@
                                         @endif
                                     </div>
                                     <input type="hidden" id="site_white_logo" name="site_white_logo" value="{{get_static_option('site_white_logo')}}">
-                                    <button type="button" class="btn btn-info media_upload_form_btn" data-btntitle="{{__('Select Site Logo Image')}}" data-modaltitle="{{__('Upload Site Logo Image')}}" data-toggle="modal" data-target="#media_upload_modal">
+                                    <button type="button" class="btn btn-info media_upload_form_btn" data-btntitle="{{__('Select Site Logo Image')}}" data-modaltitle="{{__('Upload Site Logo Image')}}" data-bs-toggle="modal" data-bs-target="#media_upload_modal">
                                         {{__($site_white_logo_btn_label)}}
                                     </button>
                                 </div>
@@ -87,7 +87,7 @@
                                         @endif
                                     </div>
                                     <input type="hidden" id="site_favicon" name="site_favicon" value="{{get_static_option('site_favicon')}}">
-                                    <button type="button" class="btn btn-info media_upload_form_btn" data-btntitle="{{__('Select Site Favicon Image')}}" data-modaltitle="{{__('Upload Site Favicon Image')}}" data-toggle="modal" data-target="#media_upload_modal">
+                                    <button type="button" class="btn btn-info media_upload_form_btn" data-btntitle="{{__('Select Site Favicon Image')}}" data-modaltitle="{{__('Upload Site Favicon Image')}}" data-bs-toggle="modal" data-bs-target="#media_upload_modal">
                                         {{__($site_favicon_btn_label)}}
                                     </button>
                                 </div>
@@ -113,7 +113,7 @@
                                         @endif
                                     </div>
                                     <input type="hidden" id="site_breadcrumb_bg" name="site_breadcrumb_bg" value="{{get_static_option('site_breadcrumb_bg')}}">
-                                    <button type="button" class="btn btn-info media_upload_form_btn" data-btntitle="{{__('Select Site Breadcrumb Image')}}" data-modaltitle="{{__('Upload Site Breadcrumb Image')}}" data-toggle="modal" data-target="#media_upload_modal">
+                                    <button type="button" class="btn btn-info media_upload_form_btn" data-btntitle="{{__('Select Site Breadcrumb Image')}}" data-modaltitle="{{__('Upload Site Breadcrumb Image')}}" data-bs-toggle="modal" data-bs-target="#media_upload_modal">
                                         {{__($site_breadcrumb_bg_btn_label)}}
                                     </button>
                                 </div>

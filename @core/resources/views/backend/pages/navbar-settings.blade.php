@@ -56,7 +56,7 @@
                                         <i class="{{get_static_option('home_page_navbar_button_icon')}}"></i>
                                     </button>
                                     <button type="button" class="icp icp-dd btn btn-primary dropdown-toggle"
-                                            data-selected="{{get_static_option('home_page_navbar_button_icon')}}" data-toggle="dropdown">
+                                            data-selected="{{get_static_option('home_page_navbar_button_icon')}}" data-bs-toggle="dropdown">
                                         <span class="caret"></span>
                                         <span class="sr-only">Toggle Dropdown</span>
                                     </button>

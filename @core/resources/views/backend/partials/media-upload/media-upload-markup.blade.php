@@ -3,17 +3,17 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="exampleModalLabel">{{__('Media Uploads')}}</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
                 <ul class="nav nav-tabs" role="tablist">
                     <li class="nav-item">
-                        <a class="nav-link active" id="upload_media_image" data-toggle="tab" href="#upload_files" role="tab" aria-selected="true">{{__('Upload Files')}}</a>
+                        <a class="nav-link active" id="upload_media_image" data-bs-toggle="tab" href="#upload_files" role="tab" aria-selected="true">{{__('Upload Files')}}</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link"  data-toggle="tab" href="#media_library" role="tab" id="load_all_media_images" aria-controls="media_library" aria-selected="false">{{__('Media Library')}}</a>
+                        <a class="nav-link"  data-bs-toggle="tab" href="#media_library" role="tab" id="load_all_media_images" aria-controls="media_library" aria-selected="false">{{__('Media Library')}}</a>
                     </li>
                 </ul>
                 <div class="tab-content">

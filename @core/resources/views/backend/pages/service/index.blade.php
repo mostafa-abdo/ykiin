@@ -57,7 +57,7 @@
                             @php $a=0; @endphp
                             @foreach($all_services as $key => $service)
                                 <li class="nav-item">
-                                    <a class="nav-link @if($a == 0) active @endif"  data-toggle="tab" href="#slider_tab_{{$key}}" role="tab" aria-controls="home" aria-selected="true">{{get_language_by_slug($key)}}</a>
+                                    <a class="nav-link @if($a == 0) active @endif"  data-bs-toggle="tab" href="#slider_tab_{{$key}}" role="tab" aria-controls="home" aria-selected="true">{{get_language_by_slug($key)}}</a>
                                 </li>
                                 @php $a++; @endphp
                             @endforeach
@@ -131,7 +131,7 @@
                                                 <td>
                                                     <a tabindex="0" class="btn btn-lg btn-danger btn-xs mb-3 mr-1"
                                                        role="button"
-                                                       data-toggle="popover"
+                                                       data-bs-toggle="popover"
                                                        data-trigger="focus"
                                                        data-html="true"
                                                        title=""

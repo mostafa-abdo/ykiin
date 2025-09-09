@@ -66,7 +66,7 @@
                                             data-btntitle="{{__('Select Image')}}"
                                             data-modaltitle="{{__('Upload Image')}}"
                                             data-imgid="{{get_static_option('about_page_our_mission_left_image_image')}}"
-                                            data-toggle="modal" data-target="#media_upload_modal">
+                                            data-bs-toggle="modal" data-bs-target="#media_upload_modal">
                                         {{__($signature_image_upload_btn_label)}}
                                     </button>
                                 </div>
@@ -101,7 +101,7 @@
                                                         <i class="{{$icon_field}}"></i>
                                                     </button>
                                                     <button type="button" class="icp icp-dd btn btn-primary dropdown-toggle"
-                                                            data-selected="{{$icon_field}}" data-toggle="dropdown">
+                                                            data-selected="{{$icon_field}}" data-bs-toggle="dropdown">
                                                         <span class="caret"></span>
                                                         <span class="sr-only">Toggle Dropdown</span>
                                                     </button>

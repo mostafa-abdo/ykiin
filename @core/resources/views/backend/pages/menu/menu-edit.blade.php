@@ -51,8 +51,8 @@
                                                 <div class="card-header" id="page-list-items">
                                                     <h2 class="mb-0">
                                                         <button class="btn btn-link" type="button"
-                                                                data-toggle="collapse"
-                                                                data-target="#page-list-items-content"
+                                                                data-bs-toggle="collapse"
+                                                                data-bs-target="#page-list-items-content"
                                                                 aria-expanded="true"
                                                                 aria-controls="page-list-items-content">
                                                             {{__('Pages')}}
@@ -85,8 +85,8 @@
                                                 <div class="card-header" id="custom-links">
                                                     <h2 class="mb-0">
                                                         <button class="btn btn-link collapsed" type="button"
-                                                                data-toggle="collapse"
-                                                                data-target="#custom-links-content"
+                                                                data-bs-toggle="collapse"
+                                                                data-bs-target="#custom-links-content"
                                                                 aria-expanded="false"
                                                                 aria-controls="custom-links-content">
                                                             {{__('Custom Links')}}

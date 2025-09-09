@@ -58,7 +58,7 @@
                                         @endif
                                     </div>
                                     <input type="hidden" name="image" value="{{auth()->user()->image}}">
-                                    <button type="button" class="btn btn-info media_upload_form_btn" data-btntitle="{{__('Select Profile Picture')}}" data-modaltitle="{{__('Upload Profile Picture')}}" data-imgid="{{auth()->user()->image}}" data-toggle="modal" data-target="#media_upload_modal">
+                                    <button type="button" class="btn btn-info media_upload_form_btn" data-btntitle="{{__('Select Profile Picture')}}" data-modaltitle="{{__('Upload Profile Picture')}}" data-imgid="{{auth()->user()->image}}" data-bs-toggle="modal" data-bs-target="#media_upload_modal">
                                         {{__($image_upload_btn_label)}}
                                     </button>
                                 </div>

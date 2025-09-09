@@ -58,7 +58,7 @@
                                                         <i class="{{$icon_field}}"></i>
                                                     </button>
                                                     <button type="button" class="icp icp-dd btn btn-primary dropdown-toggle"
-                                                            data-selected="{{$icon_field}}" data-toggle="dropdown">
+                                                            data-selected="{{$icon_field}}" data-bs-toggle="dropdown">
                                                         <span class="caret"></span>
                                                         <span class="sr-only">Toggle Dropdown</span>
                                                     </button>

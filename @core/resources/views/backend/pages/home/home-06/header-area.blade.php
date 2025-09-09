@@ -50,8 +50,8 @@
                                     <button type="button" class="btn btn-info media_upload_form_btn"
                                             data-btntitle="{{__('Select Image')}}"
                                             data-modaltitle="{{__('Upload Image')}}"
-                                            data-imgid="{{ get_static_option('home_page_06_header_area_bg_image') }}" data-toggle="modal"
-                                            data-target="#media_upload_modal">
+                                            data-imgid="{{ get_static_option('home_page_06_header_area_bg_image') }}" data-bs-toggle="modal"
+                                            data-bs-target="#media_upload_modal">
                                         {{__($signature_image_upload_btn_label)}}
                                     </button>
                                 </div>
@@ -153,8 +153,8 @@
                                                     <button type="button" class="btn btn-info media_upload_form_btn"
                                                             data-btntitle="{{__('Select Image')}}"
                                                             data-modaltitle="{{__('Upload Image')}}"
-                                                            data-imgid="{{$image_field}}" data-toggle="modal"
-                                                            data-target="#media_upload_modal">
+                                                            data-imgid="{{$image_field}}" data-bs-toggle="modal"
+                                                            data-bs-target="#media_upload_modal">
                                                         {{__($signature_image_upload_btn_label)}}
                                                     </button>
                                                 </div>

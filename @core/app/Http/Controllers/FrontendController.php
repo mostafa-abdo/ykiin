@@ -65,45 +65,59 @@ class FrontendController extends Controller
         $all_team_members = TeamMember::orderBy('id', 'desc')->take(get_static_option('home_page_01_team_member_items'))->get();
 
 
-        $feature_cause = Cause::where(['status' => 'publish','featured' => 'on'])->inRandomOrder()->get();
+        $feature_cause = Cause::where(['status' => 'publish', 'featured' => 'on'])->inRandomOrder()->get();
         $all_donation_category = CauseCategory::where(['status' => 'publish'])->get();
 
-        $all_recent_events = Events::select('title','date','content','time','cost','image','slug','category_id','venue_location','id')->where(['status' => 'publish'])
-            ->orderBY('id','desc');
-       $all_recent_donation = Cause::select('title','amount','cause_content','raised','image','slug','categories_id','excerpt','featured','id','reward')->where(['status' => 'publish'])
-            ->orderBY('id','desc');
-        $all_blog = Blog::where([ 'status' => 'publish'])->orderBy('id', 'desc');
-        $all_success_stories = SuccessStory::where('status','publish')->orderBy('id', 'desc');
-
-            if(in_array($home_page_variant,['04'])) {
-                $events_passing_homes = $all_recent_events->take(get_static_option('home_page_04_events_area_item_show'))->get();
-                $donations_passing_homes = $all_recent_donation->take(get_static_option('home_page_04_recent_causes_area_item_show'))->get();
-                $blogs_passing_homes = $all_blog->take(get_static_option('home_page_04_recent_blog_area_item_show'))->get();
-                $success_stories_passing_homes = $all_success_stories->take(get_static_option('home_page_04_success_story_area_item_show'))->get();
-            }else{
-             $events_passing_homes = $all_recent_events->take(get_static_option('home_page_01_latest_event_items'))->get();
-             $donations_passing_homes = $all_recent_donation->take(get_static_option('home_page_01_latest_cause_items'))->get();
-             $blogs_passing_homes = $all_blog->take(get_static_option('home_page_01_latest_news_items'))->get();
-             $success_stories_passing_homes = $all_success_stories->take(get_static_option('home_page_04_success_story_area_item_show'))->get();
-
-            }
+        $all_recent_events = Events::select('title', 'date', 'content', 'time', 'cost', 'image', 'slug', 'category_id', 'venue_location', 'id')->where(['status' => 'publish'])
+            ->orderBY('id', 'desc');
+        $all_recent_donation = Cause::select('title', 'amount', 'cause_content', 'raised', 'image', 'slug', 'categories_id', 'excerpt', 'featured', 'id', 'reward')->where(['status' => 'publish'])
+            ->orderBY('id', 'desc');
+        $all_blog = Blog::where(['status' => 'publish'])->orderBy('id', 'desc');
+        $all_success_stories = SuccessStory::where('status', 'publish')->orderBy('id', 'desc');
 
 
-            if(in_array($home_page_variant,['05'])) {
-                $success_stories_passing_homes = $all_success_stories->take(get_static_option('home_page_05_success_story_area_item_show'))->get();
-                 $donations_passing_homes = $all_recent_donation->take(get_static_option('home_page_05_recent_causes_area_item_show'))->get();
-                $events_passing_homes = $all_recent_events->take(get_static_option('home_page_05_events_area_item_show'))->get();
-                $blogs_passing_homes = $all_blog->take(get_static_option('home_page_05_recent_blog_area_item_show'))->get();
-            }
-
-        if(in_array($home_page_variant,['06'])) {
-            $success_stories_passing_homes = $all_success_stories->take(get_static_option('home_page_06_success_story_area_item_show'))->get();
-            $events_passing_homes = $all_recent_events->take(get_static_option('home_page_06_events_area_item_show'))->get();
-             $donations_passing_homes = $all_recent_donation->take(get_static_option('home_page_06_recent_causes_area_item_show'))->get();
+        $all_recent_donation_per_category = [];
+        $selected_donation_category = [];
+        if (in_array($home_page_variant, ['00'])) {
+            $selected_donation_category = get_static_option('home_page_00_projects_area_categories');
+            $selected_donation_category = !empty($selected_donation_category) ? unserialize($selected_donation_category) : [];
+            $selected_donation_category = CauseCategory::whereIn('id', $selected_donation_category)->get();
+           foreach ($selected_donation_category as $donation_category){ 
+               $all_recent_donation_per_category[$donation_category->id] = Cause::where(['status' => 'publish', 'categories_id' => $donation_category->id])->orderBy('id', 'desc')->take(8)->get();
+           }
         }
 
+
+        if (in_array($home_page_variant, ['04'])) {
+            $events_passing_homes = $all_recent_events->take(get_static_option('home_page_04_events_area_item_show'))->get();
+            $donations_passing_homes = $all_recent_donation->take(get_static_option('home_page_04_recent_causes_area_item_show'))->get();
+            $blogs_passing_homes = $all_blog->take(get_static_option('home_page_04_recent_blog_area_item_show'))->get();
+            $success_stories_passing_homes = $all_success_stories->take(get_static_option('home_page_04_success_story_area_item_show'))->get();
+        } else {
+            $events_passing_homes = $all_recent_events->take(get_static_option('home_page_01_latest_event_items'))->get();
+            $donations_passing_homes = $all_recent_donation->take(get_static_option('home_page_01_latest_cause_items'))->get();
+            $blogs_passing_homes = $all_blog->take(get_static_option('home_page_01_latest_news_items'))->get();
+            $success_stories_passing_homes = $all_success_stories->take(get_static_option('home_page_04_success_story_area_item_show'))->get();
+        }
+
+
+        if (in_array($home_page_variant, ['05'])) {
+            $success_stories_passing_homes = $all_success_stories->take(get_static_option('home_page_05_success_story_area_item_show'))->get();
+            $donations_passing_homes = $all_recent_donation->take(get_static_option('home_page_05_recent_causes_area_item_show'))->get();
+            $events_passing_homes = $all_recent_events->take(get_static_option('home_page_05_events_area_item_show'))->get();
+            $blogs_passing_homes = $all_blog->take(get_static_option('home_page_05_recent_blog_area_item_show'))->get();
+        }
+
+        if (in_array($home_page_variant, ['06'])) {
+            $success_stories_passing_homes = $all_success_stories->take(get_static_option('home_page_06_success_story_area_item_show'))->get();
+            $events_passing_homes = $all_recent_events->take(get_static_option('home_page_06_events_area_item_show'))->get();
+            $donations_passing_homes = $all_recent_donation->take(get_static_option('home_page_06_recent_causes_area_item_show'))->get();
+        }
+
+
+
         //make a function to call all static option by home page
-        $static_field_data = StaticOption::whereIn('option_name',HomePageStaticSettings::get_home_field(get_static_option('home_page_variant')))->get()->mapWithKeys(function ($item) {
+        $static_field_data = StaticOption::whereIn('option_name', HomePageStaticSettings::get_home_field(get_static_option('home_page_variant')))->get()->mapWithKeys(function ($item) {
             return [$item->option_name => $item->option_value];
         })->toArray();
 
@@ -118,6 +132,8 @@ class FrontendController extends Controller
             'all_team_members' => $all_team_members,
             'static_field_data' => $static_field_data,
             'all_donation_category' => $all_donation_category,
+            'all_recent_donation_per_category' => $all_recent_donation_per_category,      
+            'selected_donation_category' => $selected_donation_category,  
             'all_recent_donation' => $donations_passing_homes,
             'all_recent_events' => $events_passing_homes,
             'feature_cause' => $feature_cause,
@@ -128,16 +144,16 @@ class FrontendController extends Controller
 
     public function home_page_change($id)
     {
-//        $whitelist = array(
-//            '127.0.0.1',
-//            '::1',
-//        );
-//        $remote_addr = $_SERVER['REMOTE_ADDR'];
-//        preg_match('/xgenious/',$remote_addr,$match);
-//        if(in_array($remote_addr, $whitelist) || !empty($match)){
-//            return redirect()->route('homepage');
-//        }
-        if(!in_array($id,['01','02','03','04','05','06'])){
+        //        $whitelist = array(
+        //            '127.0.0.1',
+        //            '::1',
+        //        );
+        //        $remote_addr = $_SERVER['REMOTE_ADDR'];
+        //        preg_match('/xgenious/',$remote_addr,$match);
+        //        if(in_array($remote_addr, $whitelist) || !empty($match)){
+        //            return redirect()->route('homepage');
+        //        }
+        if (!in_array($id, ['01', '02', '03', '04', '05', '06'])) {
             abort(404);
         }
 
@@ -148,26 +164,26 @@ class FrontendController extends Controller
         $all_testimonial = Testimonial::where(['status' => 'publish'])->orderBy('id', 'desc')->get();
         $all_team_members = TeamMember::orderBy('id', 'desc')->take(get_static_option('home_page_01_team_member_items'))->get();;
         $all_donation_category = CauseCategory::where(['status' => 'publish'])->get();
-        $feature_cause = Cause::where(['status' => 'publish','featured' => 'on'])->inRandomOrder()->get();
-        $all_recent_donation = Cause::select('title','amount','cause_content','raised','image','slug','categories_id','excerpt','featured','id','reward')->where(['status' => 'publish'])->orderBY('id','desc');
-        $all_recent_events = Events::select('title','content','date','time','cost','image','slug','category_id','venue_location','id')->where(['status' => 'publish'])
-            ->orderBY('id','desc');
-        $all_blog = Blog::where([ 'status' => 'publish'])->orderBy('id', 'desc');
-        $all_success_stories = SuccessStory::where('status','publish')->orderBy('id', 'desc');
+        $feature_cause = Cause::where(['status' => 'publish', 'featured' => 'on'])->inRandomOrder()->get();
+        $all_recent_donation = Cause::select('title', 'amount', 'cause_content', 'raised', 'image', 'slug', 'categories_id', 'excerpt', 'featured', 'id', 'reward')->where(['status' => 'publish'])->orderBY('id', 'desc');
+        $all_recent_events = Events::select('title', 'content', 'date', 'time', 'cost', 'image', 'slug', 'category_id', 'venue_location', 'id')->where(['status' => 'publish'])
+            ->orderBY('id', 'desc');
+        $all_blog = Blog::where(['status' => 'publish'])->orderBy('id', 'desc');
+        $all_success_stories = SuccessStory::where('status', 'publish')->orderBy('id', 'desc');
 
-        if(in_array($home_page_variant,['04'])){
+        if (in_array($home_page_variant, ['04'])) {
             $events_passing_homes = $all_recent_events->take(get_static_option('home_page_04_events_area_item_show'))->get();
             $donations_passing_homes = $all_recent_donation->take(get_static_option('home_page_04_recent_causes_area_item_show'))->get();
             $blogs_passing_homes = $all_blog->take(get_static_option('home_page_04_recent_blog_area_item_show'))->get();
             $success_stories_passing_homes = $all_success_stories->take(get_static_option('home_page_04_success_story_area_item_show'))->get();
-        }else{
+        } else {
             $events_passing_homes = $all_recent_events->take(get_static_option('home_page_01_latest_event_items'))->get();
             $donations_passing_homes = $all_recent_donation->take(get_static_option('home_page_01_latest_cause_items'))->get();
             $blogs_passing_homes = $all_blog->take(get_static_option('home_page_01_latest_news_items'))->get();
             $success_stories_passing_homes = $all_success_stories->take(get_static_option('home_page_04_success_story_area_item_show'))->get();
         }
 
-        if(in_array($home_page_variant,['05'])) {
+        if (in_array($home_page_variant, ['05'])) {
             $success_stories_passing_homes = $all_success_stories->take(get_static_option('home_page_05_success_story_area_item_show'))->get();
             $events_passing_homes = $all_recent_events->take(get_static_option('home_page_05_events_area_item_show'))->get();
             $blogs_passing_homes = $all_blog->take(get_static_option('home_page_05_recent_blog_area_item_show'))->get();
@@ -175,14 +191,14 @@ class FrontendController extends Controller
         }
 
 
-        if(in_array($home_page_variant,['06'])) {
+        if (in_array($home_page_variant, ['06'])) {
             $success_stories_passing_homes = $all_success_stories->take(get_static_option('home_page_06_success_story_area_item_show'))->get();
             $events_passing_homes = $all_recent_events->take(get_static_option('home_page_06_events_area_item_show'))->get();
-             $donations_passing_homes = $all_recent_donation->take(get_static_option('home_page_06_recent_causes_area_item_show'))->get();
+            $donations_passing_homes = $all_recent_donation->take(get_static_option('home_page_06_recent_causes_area_item_show'))->get();
         }
 
         //make a function to call all static option by home page
-        $static_field_data = StaticOption::whereIn('option_name',HomePageStaticSettings::get_home_field($id))->get()->mapWithKeys(function ($item) {
+        $static_field_data = StaticOption::whereIn('option_name', HomePageStaticSettings::get_home_field($id))->get()->mapWithKeys(function ($item) {
             return [$item->option_name => $item->option_value];
         })->toArray();
 
@@ -226,8 +242,8 @@ class FrontendController extends Controller
     public function category_wise_blog_page($id)
     {
         $all_blogs = Blog::where(['blog_categories_id' => $id])->orderBy('id', 'desc')->paginate(get_static_option('blog_page_item'));
-        if(empty($all_blogs)){
-                abort(404);
+        if (empty($all_blogs)) {
+            abort(404);
         }
         $all_recent_blogs = Blog::orderBy('id', 'desc')->take(get_static_option('blog_page_recent_post_widget_item'))->get();
         $all_category = BlogCategory::where(['status' => 'publish'])->orderBy('id', 'desc')->get();
@@ -244,9 +260,9 @@ class FrontendController extends Controller
     {
         $all_blogs = Blog::Where('tags', 'LIKE', '%' . $tag . '%')
             ->orderBy('id', 'desc')->paginate(get_static_option('blog_page_item'));
-            if(empty($all_blogs)){
-                abort(404);
-            }
+        if (empty($all_blogs)) {
+            abort(404);
+        }
         $all_recent_blogs = Blog::orderBy('id', 'desc')->take(get_static_option('blog_page_recent_post_widget_item'))->get();
         $all_category = BlogCategory::where(['status' => 'publish'])->orderBy('id', 'desc')->get();
         return view('frontend.pages.blog.blog-tags')->with([
@@ -277,7 +293,7 @@ class FrontendController extends Controller
     {
 
         $blog_post = Blog::where('slug', $slug)->first();
-        if(empty($blog_post)){
+        if (empty($blog_post)) {
             abort('404');
         }
         $all_recent_blogs = Blog::orderBy('id', 'desc')->paginate(get_static_option('blog_page_recent_post_widget_item'));
@@ -296,10 +312,10 @@ class FrontendController extends Controller
     public function dynamic_single_page($slug)
     {
         $page_post = Page::where('slug', $slug)->first();
-        if(empty($page_post)){
+        if (empty($page_post)) {
             abort(404);
         }
-        
+
         return view('frontend.pages.dynamic-single')->with([
             'page_post' => $page_post
         ]);
@@ -327,15 +343,15 @@ class FrontendController extends Controller
                 'username' => $user_info->username,
                 'message' => $message
             ];
-            
-           try{
+
+            try {
                 Mail::to($user_info->email)->send(new AdminResetEmail($data));
-           }catch(\Exception $e){
+            } catch (\Exception $e) {
                 return redirect()->back()->with([
-                'msg' => $e->getMessage(),
-                'type' => 'success'
-            ]);
-           }
+                    'msg' => $e->getMessage(),
+                    'type' => 'success'
+                ]);
+            }
 
             return redirect()->back()->with([
                 'msg' => __('Check Your Mail For Reset Password Link'),
@@ -384,6 +400,26 @@ class FrontendController extends Controller
 
     public function about_page()
     {
+
+        if(get_static_option('home_page_variant') == '00'){
+          
+            $all_testimonial = Testimonial::orderBy('id', 'desc')->take(get_static_option('about_page_testimonial_item'))->get();
+
+            return view('frontend.pages.about-00')->with([
+                'all_testimonial' => $all_testimonial,
+            ]);
+
+        }else{
+             $all_team_members = TeamMember::orderBy('id', 'desc')->take(get_static_option('about_page_team_member_item'))->get();
+            $all_testimonial = Testimonial::orderBy('id', 'desc')->take(get_static_option('about_page_testimonial_item'))->get();
+            $all_counterup = Counterup::orderBy('id', 'desc')->get();
+
+            return view('frontend.pages.about')->with([
+                'all_team_members' => $all_team_members,
+                'all_testimonial' => $all_testimonial,
+                'all_counterup' => $all_counterup,
+            ]);
+        }
         $all_team_members = TeamMember::orderBy('id', 'desc')->take(get_static_option('about_page_team_member_item'))->get();
         $all_testimonial = Testimonial::orderBy('id', 'desc')->take(get_static_option('about_page_testimonial_item'))->get();
         $all_counterup = Counterup::orderBy('id', 'desc')->get();
@@ -404,7 +440,7 @@ class FrontendController extends Controller
 
     public function faq_page()
     {
-        $all_faq = Faq::where([ 'status' => 'publish'])->get();
+        $all_faq = Faq::where(['status' => 'publish'])->get();
         return view('frontend.pages.faq-page')->with([
             'all_faqs' => $all_faq
         ]);
@@ -412,7 +448,7 @@ class FrontendController extends Controller
 
     public function success_story_page()
     {
-        $all_success_stories = SuccessStory::where([ 'status' => 'publish'])->paginate(get_static_option('success_story_page_item_show'));
+        $all_success_stories = SuccessStory::where(['status' => 'publish'])->paginate(get_static_option('success_story_page_item_show'));
         return view('frontend.pages.success-story.success-story')->with([
             'all_success_stories' => $all_success_stories
         ]);
@@ -422,7 +458,7 @@ class FrontendController extends Controller
     {
 
         $success_story = SuccessStory::where('slug', $slug)->first();
-        if(empty($success_story)){
+        if (empty($success_story)) {
             abort('404');
         }
         $all_category = SuccessStoryCategory::where(['status' => 'publish'])->orderBy('id', 'desc')->get();
@@ -436,7 +472,7 @@ class FrontendController extends Controller
     public function success_story_category($id)
     {
         $all_success_stories = SuccessStory::where(['success_story_category_id' => $id])->orderBy('id', 'desc')->paginate(2);
-        if(empty($all_success_stories)){
+        if (empty($all_success_stories)) {
             abort(404);
         }
         $category_name = SuccessStoryCategory::where(['id' => $id, 'status' => 'publish'])->first()->name;
@@ -465,55 +501,56 @@ class FrontendController extends Controller
 
     public function subscribe_newsletter(Request $request)
     {
-     $this->validate($request, [
+        $this->validate($request, [
             'email' => 'required|string|email|max:191|unique:newsletters'
         ]);
 
 
-             $verify_token = Str::random(32);
-             Newsletter::create([
-                 'user_id' => Auth::guard('web')->id(),
-                 'email' => $request->email,
-                 'verified' => 0,
-                 'token' => $verify_token
-             ]);
-             $message = __('Please Verify Your Email To Get All The News From') .' '. get_static_option('site_title') . '<div class="btn-wrap"> <a class="anchor-btn" href="' . route('subscriber.verify', ['token' => $verify_token]) . '">' . __('verify email') . '</a></div>';
-             $data = [
-                 'message' => $message,
-                 'subject' => __('Please Verify Your Email')
-             ];
-             //send verify mail to newsletter subscriber
-           try{
-                 Mail::to($request->email)->send(new BasicMail($data));
-           }catch(\Exception $e){
-           }
-    
-         return response()->json([
-             'msg' => __('Thanks for Subscribing To Our Newsletter'),
-             'type' => 'success'
-         ]);
+        $verify_token = Str::random(32);
+        Newsletter::create([
+            'user_id' => Auth::guard('web')->id(),
+            'email' => $request->email,
+            'verified' => 0,
+            'token' => $verify_token
+        ]);
+        $message = __('Please Verify Your Email To Get All The News From') . ' ' . get_static_option('site_title') . '<div class="btn-wrap"> <a class="anchor-btn" href="' . route('subscriber.verify', ['token' => $verify_token]) . '">' . __('verify email') . '</a></div>';
+        $data = [
+            'message' => $message,
+            'subject' => __('Please Verify Your Email')
+        ];
+        //send verify mail to newsletter subscriber
+        try {
+            Mail::to($request->email)->send(new BasicMail($data));
+        } catch (\Exception $e) {
+        }
+
+        return response()->json([
+            'msg' => __('Thanks for Subscribing To Our Newsletter'),
+            'type' => 'success'
+        ]);
     }
 
 
-    public function subscriber_verify(Request $request){
-        $newsletter = Newsletter::where('token',$request->token)->first();
+    public function subscriber_verify(Request $request)
+    {
+        $newsletter = Newsletter::where('token', $request->token)->first();
         $title = __('Sorry');
         $description = __('your token is expired');
-        if (!empty($newsletter)){
-            Newsletter::where('token',$request->token)->update([
+        if (!empty($newsletter)) {
+            Newsletter::where('token', $request->token)->update([
                 'verified' => 1
             ]);
             $title = __('Thanks');
             $description = __('We are really thankful for subscribing to our newsletter');
         }
-        return view('frontend.thankyou',compact('title','description'));
+        return view('frontend.thankyou', compact('title', 'description'));
     }
 
 
     public function newsletter_unsubscribe()
     {
         $user_id = Auth::guard('web')->id();
-        Newsletter::where('user_id',$user_id)->delete();
+        Newsletter::where('user_id', $user_id)->delete();
         return redirect()->back()->with(FlashMsg::settings_delete('You have been unsubscribed..!'));
     }
 
@@ -546,9 +583,9 @@ class FrontendController extends Controller
                 'message' => $message
             ];
 
-            try{
+            try {
                 Mail::to($user_info->email)->send(new AdminResetEmail($data));
-            }catch(\Exception $e){
+            } catch (\Exception $e) {
                 return redirect()->back()->with([
                     'type' => 'danger',
                     'msg' => $e->getMessage()
@@ -628,16 +665,16 @@ class FrontendController extends Controller
         $order = !empty(get_static_option('site_image_gallery_order')) ? get_static_option('site_image_gallery_order') : 'DESC';
         $order_by = !empty(get_static_option('site_image_gallery_order_by')) ? get_static_option('site_image_gallery_order_by') : 'id';
         $all_gallery_images = ImageGallery::orderBy($order_by, $order)->paginate(get_static_option('site_image_gallery_post_items'));
-        $all_contain_cat = $all_gallery_images->map(function ($item){
+        $all_contain_cat = $all_gallery_images->map(function ($item) {
             return $item->cat_id;
         });
         $all_category = ImageGalleryCategory::find($all_contain_cat);
-        return view('frontend.pages.image-gallery')->with(['all_gallery_images' => $all_gallery_images,'all_category' => $all_category]);
+        return view('frontend.pages.image-gallery')->with(['all_gallery_images' => $all_gallery_images, 'all_category' => $all_category]);
     }
 
     public function donor_list()
     {
-        $all_donation_log = CauseLogs::where('status', 'complete')->orderBy('id','desc')->paginate(40);
+        $all_donation_log = CauseLogs::where('status', 'complete')->orderBy('id', 'desc')->paginate(40);
         return view('frontend.pages.donor-list')->with(['all_donation_log' => $all_donation_log]);
     }
 
@@ -646,16 +683,16 @@ class FrontendController extends Controller
         $this->validate($request, [
             'username' => 'required|string',
             'password' => 'required|min:6'
-        ],[
+        ], [
             'username.required'   => __('username required'),
             'password.required' => __('password required'),
             'password.min' => __('password length must be 6 characters')
         ]);
 
         if (Auth::guard('web')->attempt(['username' => $request->username, 'password' => $request->password], $request->get('remember'))) {
-            
+
             $user_details = auth("web")->user();
-            if(!is_null($user_details) && $user_details->deactivate === 1){
+            if (!is_null($user_details) && $user_details->deactivate === 1) {
                 return response()->json([
                     'msg' => __('Your account is deactivated'),
                     'type' => 'danger',
@@ -676,12 +713,11 @@ class FrontendController extends Controller
         ]);
     }
 
-    public function user_campaign(){
-        if (Auth::guard('web')->check()){
+    public function user_campaign()
+    {
+        if (Auth::guard('web')->check()) {
             return redirect()->route('user.campaign.new');
         }
         return view('frontend.user.login')->with(['title' => __('Login To Create New Campaign')]);
     }
-
-
 }//end class

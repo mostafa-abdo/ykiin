@@ -4,7 +4,7 @@
 @endsection
 @section('style')
     <x-media.css/>
-    <link rel="stylesheet" href="{{asset('assets/backend/css/summernote-bs4.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/backend/vendor/summernote-0.9.0/summernote-bs5.min.css')}}">
     <link rel="stylesheet" href="{{asset('assets/backend/css/bootstrap-tagsinput.css')}}">
     <link rel="stylesheet" href="{{asset('assets/backend/css/select2.min.css')}}">
 @endsection
@@ -104,7 +104,7 @@
                                         <div class="media-upload-btn-wrapper">
                                             <div class="img-wrap"></div>
                                             <input type="hidden" name="og_meta_image">
-                                            <button type="button" class="btn btn-info media_upload_form_btn" data-btntitle="{{__('Select Image')}}" data-modaltitle="{{__('Upload Image')}}" data-toggle="modal" data-target="#media_upload_modal">
+                                            <button type="button" class="btn btn-info media_upload_form_btn" data-btntitle="{{__('Select Image')}}" data-modaltitle="{{__('Upload Image')}}" data-bs-toggle="modal" data-bs-target="#media_upload_modal">
                                                 {{__('Upload Image')}}
                                             </button>
                                         </div>
@@ -115,7 +115,7 @@
                                         <div class="media-upload-btn-wrapper">
                                             <div class="img-wrap"></div>
                                             <input type="hidden" name="image">
-                                            <button type="button" class="btn btn-info media_upload_form_btn" data-btntitle="{{__('Select Image')}}" data-modaltitle="{{__('Upload Image')}}" data-toggle="modal" data-target="#media_upload_modal">
+                                            <button type="button" class="btn btn-info media_upload_form_btn" data-btntitle="{{__('Select Image')}}" data-modaltitle="{{__('Upload Image')}}" data-bs-toggle="modal" data-bs-target="#media_upload_modal">
                                                 {{__('Upload Image')}}
                                             </button>
                                         </div>
@@ -135,7 +135,7 @@
                                         <div class="media-upload-btn-wrapper">
                                             <div class="img-wrap"></div>
                                             <input type="hidden" name="image_gallery">
-                                            <button type="button" class="btn btn-info media_upload_form_btn" data-mulitple="true" data-btntitle="{{__('Select Image')}}" data-modaltitle="{{__('Upload Image')}}" data-toggle="modal" data-target="#media_upload_modal">
+                                            <button type="button" class="btn btn-info media_upload_form_btn" data-mulitple="true" data-btntitle="{{__('Select Image')}}" data-modaltitle="{{__('Upload Image')}}" data-bs-toggle="modal" data-bs-target="#media_upload_modal">
                                                 {{__('Upload Images')}}
                                             </button>
                                         </div>
@@ -146,7 +146,7 @@
                                         <div class="media-upload-btn-wrapper">
                                             <div class="img-wrap"></div>
                                             <input type="hidden" name="medical_document">
-                                            <button type="button" class="btn btn-info media_upload_form_btn" data-mulitple="true" data-btntitle="{{__('Select Image')}}" data-modaltitle="{{__('Upload Image')}}" data-toggle="modal" data-target="#media_upload_modal">
+                                            <button type="button" class="btn btn-info media_upload_form_btn" data-mulitple="true" data-btntitle="{{__('Select Image')}}" data-modaltitle="{{__('Upload Image')}}" data-bs-toggle="modal" data-bs-target="#media_upload_modal">
                                                 {{__('Upload Document')}}
                                             </button>
                                         </div>
@@ -320,8 +320,8 @@
             });
         })(jQuery);
     </script>
-    <script src="{{asset('assets/backend/js/summernote-bs4.js')}}"></script>
-    <script src="{{asset('assets/backend/js/dropzone.js')}}"></script>
+    <script src="{{asset('assets/backend/vendor/summernote-0.9.0/summernote-bs5.min.js')}}"></script>
+    <script src="{{asset('assets/backend/js/dropzone.min.js')}}"></script>
     <script src="{{asset('assets/backend/js/bootstrap-tagsinput.js')}}"></script>
     <x-media.js/>
    <x-repeater/>

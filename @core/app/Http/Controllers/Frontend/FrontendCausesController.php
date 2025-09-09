@@ -85,18 +85,39 @@ class FrontendCausesController extends Controller
         // Generate QR code with event details
         $qr_code = QrCode::size(150)->generate(route('frontend.donation.in.separate.page', $donation->id));
 
-        return view(self::BASE_PATH . 'donation-single')->with([
-            'all_donations' => $all_donations,
-            'donation' => $donation,
-            'qr_code' => $qr_code,
-            'causeUpCount' => $causeUpCount,
-            'causeCommentCount' => $causeCommentCount,
-            'all_donors' => $all_donors,
-            'all_related_cause' => $all_related_cause,
-            'follow_user' => $follow_user,
-            'minimum_goal_amount' => $minimum_goal_amount,
-            'type' => request()->get('type') ?? null,
-        ]);
+
+        $home_page_variant = get_static_option('home_page_variant');
+
+
+        if (in_array($home_page_variant, ['00'])) {
+
+            return view('frontend.donations-00.donation-single')->with([
+                'all_donations' => $all_donations,
+                'donation' => $donation,
+                'qr_code' => $qr_code,
+                'causeUpCount' => $causeUpCount,
+                'causeCommentCount' => $causeCommentCount,
+                'all_donors' => $all_donors,
+                'all_related_cause' => $all_related_cause,
+                'follow_user' => $follow_user,
+                'minimum_goal_amount' => $minimum_goal_amount,
+                'type' => request()->get('type') ?? null,
+            ]);
+        }else{
+
+            return view(self::BASE_PATH . 'donation-single')->with([
+                'all_donations' => $all_donations,
+                'donation' => $donation,
+                'qr_code' => $qr_code,
+                'causeUpCount' => $causeUpCount,
+                'causeCommentCount' => $causeCommentCount,
+                'all_donors' => $all_donors,
+                'all_related_cause' => $all_related_cause,
+                'follow_user' => $follow_user,
+                'minimum_goal_amount' => $minimum_goal_amount,
+                'type' => request()->get('type') ?? null,
+            ]);
+        }
     }
 
     public function downloadQrCode($id)

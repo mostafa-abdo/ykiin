@@ -63,7 +63,7 @@
                                         <i class="fas fa-exclamation-triangle"></i>
                                     </button>
                                     <button type="button" class="icp icp-dd btn btn-primary dropdown-toggle"
-                                            data-selected="fas fa-exclamation-triangle" data-toggle="dropdown">
+                                            data-selected="fas fa-exclamation-triangle" data-bs-toggle="dropdown">
                                         <span class="caret"></span>
                                         <span class="sr-only">Toggle Dropdown</span>
                                     </button>
@@ -76,7 +76,7 @@
                                 <div class="media-upload-btn-wrapper">
                                     <div class="img-wrap"></div>
                                     <input type="hidden" id="img_icon" name="img_icon">
-                                    <button type="button" class="btn btn-info media_upload_form_btn" data-btntitle="{{__('Select Image')}}" data-modaltitle="{{__('Upload Image')}}" data-toggle="modal" data-target="#media_upload_modal">
+                                    <button type="button" class="btn btn-info media_upload_form_btn" data-btntitle="{{__('Select Image')}}" data-modaltitle="{{__('Upload Image')}}" data-bs-toggle="modal" data-bs-target="#media_upload_modal">
                                         {{__('Upload Image Icon')}}
                                     </button>
                                 </div>
@@ -135,7 +135,7 @@
                                 <div class="media-upload-btn-wrapper">
                                     <div class="img-wrap"></div>
                                     <input type="hidden" name="image">
-                                    <button type="button" class="btn btn-info media_upload_form_btn" data-btntitle="{{__('Select Service Image')}}" data-modaltitle="{{__('Upload Service Image')}}" data-toggle="modal" data-target="#media_upload_modal">
+                                    <button type="button" class="btn btn-info media_upload_form_btn" data-btntitle="{{__('Select Service Image')}}" data-modaltitle="{{__('Upload Service Image')}}" data-bs-toggle="modal" data-bs-target="#media_upload_modal">
                                         {{__('Upload Image')}}
                                     </button>
                                 </div>

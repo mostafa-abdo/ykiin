@@ -24,6 +24,13 @@
                                 <div class="col-lg-3 col-md-6">
                                     <div class="img-select selected">
                                         <div class="img-wrap">
+                                            <img src="{{asset('assets/frontend/home-variant/home-00.png')}}" data-home_id="00" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-md-6">
+                                    <div class="img-select selected">
+                                        <div class="img-wrap">
                                             <img src="{{asset('assets/frontend/home-variant/home-01.png')}}" data-home_id="01" alt="">
                                         </div>
                                     </div>

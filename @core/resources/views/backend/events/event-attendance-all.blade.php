@@ -64,7 +64,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title">{{__('Send Mail To Attendance')}}</h5>
-                    <button type="button" class="close" data-dismiss="modal"><span>×</span></button>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
 
                 <form action="{{route('admin.event.attendance.send.mail')}}" method="post" enctype="multipart/form-data">
@@ -91,7 +91,7 @@
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">{{__('Close')}}</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">{{__('Close')}}</button>
                         <button id="submit" type="submit" class="btn btn-primary">{{__('Send Mail')}}</button>
                     </div>
                 </form>
@@ -105,7 +105,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title">{{__('Booking Status Change')}}</h5>
-                    <button type="button" class="close" data-dismiss="modal"><span>×</span></button>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                <x-msg.error/>
                 <form action="{{route('admin.event.attendance.logs')}}" method="post" enctype="multipart/form-data">
@@ -122,7 +122,7 @@
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">{{__('Close')}}</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">{{__('Close')}}</button>
                         <button type="submit" class="btn btn-primary">{{__('Change Status')}}</button>
                     </div>
                 </form>

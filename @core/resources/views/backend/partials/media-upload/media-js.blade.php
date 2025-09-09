@@ -102,8 +102,8 @@
 
         Dropzone.options.placeholderfForm = {
             dictDefaultMessage: "{{__('Drag or Select Your Image')}}",
-            maxFiles: 50,
-            maxFilesize: 10, //MB
+            maxFiles: 200,
+            maxFilesize: 1024, //MB
             acceptedFiles: 'image/*',
             success: function (file, response) {
                 if (file.previewElement) {

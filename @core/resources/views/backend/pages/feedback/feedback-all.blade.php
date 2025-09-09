@@ -68,8 +68,8 @@
                                             <x-delete-popover :url="route('admin.feedback.delete',$data->id)"/>
 
                                             <a href="#"
-                                               data-toggle="modal"
-                                               data-target="#view_order_details_modal"
+                                               data-bs-toggle="modal"
+                                               data-bs-target="#view_order_details_modal"
                                                data-email="{{$data->email}}"
                                                data-name="{{$data->name}}"
                                                data-ratings="{{$data->ratings}}"

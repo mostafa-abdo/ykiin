@@ -73,7 +73,7 @@
                                                     data-btntitle="{{__('Select Image')}}"
                                                     data-modaltitle="{{__('Upload Image')}}"
                                                     data-imgid="{{$home_page_04_header_area_line_image}}"
-                                                    data-toggle="modal" data-target="#media_upload_modal">
+                                                    data-bs-toggle="modal" data-bs-target="#media_upload_modal">
                                                 {{__($background_image_upload_btn_label)}}
                                             </button>
                                         </div>
@@ -95,7 +95,7 @@
                                                     data-btntitle="{{__('Select Image')}}"
                                                     data-modaltitle="{{__('Upload Image')}}"
                                                     data-imgid="{{$home_page_04_header_area_bg_image}}"
-                                                    data-toggle="modal" data-target="#media_upload_modal">
+                                                    data-bs-toggle="modal" data-bs-target="#media_upload_modal">
                                                 {{__($background_image_upload_btn_label)}}
                                             </button>
                                         </div>

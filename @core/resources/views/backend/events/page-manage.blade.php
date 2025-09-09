@@ -31,7 +31,7 @@
                                         {!! render_attachment_preview_for_admin($event_page_bg_image) !!}
                                     </div>
                                     <input type="hidden" name="event_page_bg_image" value="{{$event_page_bg_image}}">
-                                    <button type="button" class="btn btn-info media_upload_form_btn" data-btntitle="{{__('Select Image')}}" data-modaltitle="{{__('Upload Image')}}" data-imgid="{{$event_page_bg_image}}" data-toggle="modal" data-target="#media_upload_modal">
+                                    <button type="button" class="btn btn-info media_upload_form_btn" data-btntitle="{{__('Select Image')}}" data-modaltitle="{{__('Upload Image')}}" data-imgid="{{$event_page_bg_image}}" data-bs-toggle="modal" data-bs-target="#media_upload_modal">
                                         {{__($background_image_upload_btn_label)}}
                                     </button>
                                 </div>

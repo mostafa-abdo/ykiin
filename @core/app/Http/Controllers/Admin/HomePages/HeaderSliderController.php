@@ -14,9 +14,22 @@ class HeaderSliderController extends Controller
     }
 
     public function index(){
+        
+        $home_page = get_static_option('home_page_variant');
 
-        $all_header_slider = HeaderSlider::all();
-        return view('backend.pages.home.header')->with(['all_header_slider' => $all_header_slider]);
+        if(!empty($home_page) && $home_page == '00')
+        {
+            $all_header_slider = HeaderSlider::all();
+
+            return view('backend.pages.home.header-00')->with(['all_header_slider' => $all_header_slider]);
+        }else
+        {
+            $all_header_slider = HeaderSlider::all();
+
+            return view('backend.pages.home.header')->with(['all_header_slider' => $all_header_slider]);
+        }
+
+        
     }
 
     public function store(Request $request){

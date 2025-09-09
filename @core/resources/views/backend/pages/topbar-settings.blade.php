@@ -45,7 +45,7 @@
                                                         <i class="{{$icon_field}}"></i>
                                                     </button>
                                                     <button type="button" class="icp icp-dd btn btn-primary dropdown-toggle"
-                                                            data-selected="{{$icon_field}}" data-toggle="dropdown">
+                                                            data-selected="{{$icon_field}}" data-bs-toggle="dropdown">
                                                         <span class="caret"></span>
                                                         <span class="sr-only">Toggle Dropdown</span>
                                                     </button>
@@ -72,7 +72,7 @@
                 <div class="card">
                     <div class="card-body">
                         <h4 class="header-title">{{__('Social Icons')}}</h4>
-                        <div class="right-cotnent margin-bottom-40"><a class="btn btn-primary" data-target="#add_social_icon" data-toggle="modal" href="#">{{__('Add New Social Item')}}</a></div>
+                        <div class="right-cotnent margin-bottom-40"><a class="btn btn-primary" data-bs-target="#add_social_icon" data-bs-toggle="modal" href="#">{{__('Add New Social Item')}}</a></div>
                         <table class="table table-default">
                             <thead>
                             <th>{{__('ID')}}</th>
@@ -89,8 +89,8 @@
                                     <td>
                                         <x-delete-popover :url="route('admin.delete.social.item',$data->id)"/>
                                         <a href="#"
-                                           data-toggle="modal"
-                                           data-target="#social_item_edit_modal"
+                                           data-bs-toggle="modal"
+                                           data-bs-target="#social_item_edit_modal"
                                            class="btn btn-xs btn-primary  mb-3 mr-1 social_item_edit_btn"
                                            data-id="{{$data->id}}"
                                            data-url="{{$data->url}}"
@@ -113,7 +113,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title">{{__('Add Social Item')}}</h5>
-                    <button type="button" class="close" data-dismiss="modal"><span>×</span></button>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <form action="{{route('admin.new.social.item')}}"  method="post">
                     <div class="modal-body">
@@ -125,7 +125,7 @@
                                     <i class="fas fa-exclamation-triangle"></i>
                                 </button>
                                 <button type="button" class="icp icp-dd btn btn-primary dropdown-toggle"
-                                        data-selected="fas fa-exclamation-triangle" data-toggle="dropdown">
+                                        data-selected="fas fa-exclamation-triangle" data-bs-toggle="dropdown">
                                     <span class="caret"></span>
                                     <span class="sr-only">Toggle Dropdown</span>
                                 </button>
@@ -139,7 +139,7 @@
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">{{__('Close')}}</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">{{__('Close')}}</button>
                         <button id="submit" type="submit" class="btn btn-primary">{{__('Add Social Item')}}</button>
                     </div>
                 </form>
@@ -152,7 +152,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title">{{__('Edit Social Item')}}</h5>
-                    <button type="button" class="close" data-dismiss="modal"><span>×</span></button>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <form action="{{route('admin.update.social.item')}}"  method="post">
                     <div class="modal-body">
@@ -166,7 +166,7 @@
                                     <i class="fas fa-exclamation-triangle"></i>
                                 </button>
                                 <button type="button" class="icp icp-dd btn btn-primary dropdown-toggle"
-                                        data-selected="fas fa-exclamation-triangle" data-toggle="dropdown">
+                                        data-selected="fas fa-exclamation-triangle" data-bs-toggle="dropdown">
                                     <span class="caret"></span>
                                     <span class="sr-only">Toggle Dropdown</span>
                                 </button>
@@ -180,7 +180,7 @@
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">{{__('Close')}}</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">{{__('Close')}}</button>
                         <button id="update" type="submit" class="btn btn-primary">{{__('Save Changes')}}</button>
                     </div>
                 </form>

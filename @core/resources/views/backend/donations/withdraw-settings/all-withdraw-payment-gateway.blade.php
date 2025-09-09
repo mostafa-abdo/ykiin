@@ -53,8 +53,8 @@
                                         </td>
                                         <td>
                                             <a class="mb-3 mx-1 btn btn-warning edit_gateway_modal update-gateway"
-                                               data-toggle="modal"
-                                               data-target="#edit-gateway-modal"
+                                               data-bs-toggle="modal"
+                                               data-bs-target="#edit-gateway-modal"
                                                data-name="{{ ucfirst($gateway->name) }}"
                                                data-id="{{ $gateway->id }}"
                                                data-blog-filed="{{ json_encode(unserialize($gateway->field)) }}">
@@ -123,7 +123,7 @@
                     <input type="hidden" value="" name="id" />
                     <div class="modal-header">
                         <h5 class="modal-title" id="exampleModalLabel">{{ __("Update wallet withdraw gateway") }}</h5>
-                        <button type="button" class="close" data-dismiss="modal"><span>×</span></button>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
                         @csrf
@@ -141,7 +141,7 @@
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-danger" data-dismiss="modal">{{ __("Close") }}</button>
+                        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">{{ __("Close") }}</button>
                         <div class="btn_wrapper">
                             <button type="submit" id="update" class="btn btn-warning">{{ __('Update') }}</button>
                         </div>

@@ -54,7 +54,7 @@
                             @foreach($all_category as $key => $slider)
 
                                 <li class="nav-item">
-                                    <a class="nav-link @if($a == 0) active @endif"  data-toggle="tab" href="#slider_tab_{{$key}}" role="tab" aria-controls="home" aria-selected="true">{{get_language_by_slug($key)}}</a>
+                                    <a class="nav-link @if($a == 0) active @endif"  data-bs-toggle="tab" href="#slider_tab_{{$key}}" role="tab" aria-controls="home" aria-selected="true">{{get_language_by_slug($key)}}</a>
                                 </li>
                                 @php $a++; @endphp
                             @endforeach
@@ -96,7 +96,7 @@
                                                 <td>
                                                     <a tabindex="0" class="btn btn-danger btn-xs mb-3 mr-1"
                                                        role="button"
-                                                       data-toggle="popover"
+                                                       data-bs-toggle="popover"
                                                        data-trigger="focus"
                                                        data-html="true"
                                                        title=""
@@ -111,8 +111,8 @@
                                                         <i class="ti-trash"></i>
                                                     </a>
                                                     <a href="#"
-                                                       data-toggle="modal"
-                                                       data-target="#category_edit_modal"
+                                                       data-bs-toggle="modal"
+                                                       data-bs-target="#category_edit_modal"
                                                        class="btn btn-primary btn-xs mb-3 mr-1 category_edit_btn"
                                                        data-id="{{$data->id}}"
                                                        data-lang="{{$data->lang}}"
@@ -175,7 +175,7 @@
                                         <i class="fas fa-exclamation-triangle"></i>
                                     </button>
                                     <button type="button" class="icp icp-dd btn btn-primary dropdown-toggle"
-                                            data-selected="fas fa-exclamation-triangle" data-toggle="dropdown">
+                                            data-selected="fas fa-exclamation-triangle" data-bs-toggle="dropdown">
                                         <span class="caret"></span>
                                         <span class="sr-only">Toggle Dropdown</span>
                                     </button>
@@ -188,7 +188,7 @@
                                 <div class="media-upload-btn-wrapper">
                                     <div class="img-wrap"></div>
                                     <input type="hidden" name="img_icon">
-                                    <button type="button" class="btn btn-info media_upload_form_btn" data-btntitle="{{__('Select Image')}}" data-modaltitle="{{__('Upload Image')}}" data-toggle="modal" data-target="#media_upload_modal">
+                                    <button type="button" class="btn btn-info media_upload_form_btn" data-btntitle="{{__('Select Image')}}" data-modaltitle="{{__('Upload Image')}}" data-bs-toggle="modal" data-bs-target="#media_upload_modal">
                                         {{__('Upload Image')}}
                                     </button>
                                 </div>
@@ -213,7 +213,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title">{{__('Update Category')}}</h5>
-                    <button type="button" class="close" data-dismiss="modal"><span>×</span></button>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <form action="{{route('admin.service.category.update')}}"  method="post">
                     <input type="hidden" name="id" id="category_id">
@@ -245,7 +245,7 @@
                                     <i class="fas fa-exclamation-triangle"></i>
                                 </button>
                                 <button type="button" class="icp icp-dd btn btn-primary dropdown-toggle"
-                                        data-selected="fas fa-exclamation-triangle" data-toggle="dropdown">
+                                        data-selected="fas fa-exclamation-triangle" data-bs-toggle="dropdown">
                                     <span class="caret"></span>
                                     <span class="sr-only">Toggle Dropdown</span>
                                 </button>
@@ -258,7 +258,7 @@
                             <div class="media-upload-btn-wrapper">
                                 <div class="img-wrap"></div>
                                 <input type="hidden" id="edit_img_icon" name="img_icon">
-                                <button type="button" class="btn btn-info media_upload_form_btn" data-btntitle="{{__('Select Image')}}" data-modaltitle="{{__('Upload Image')}}" data-toggle="modal" data-target="#media_upload_modal">
+                                <button type="button" class="btn btn-info media_upload_form_btn" data-btntitle="{{__('Select Image')}}" data-modaltitle="{{__('Upload Image')}}" data-bs-toggle="modal" data-bs-target="#media_upload_modal">
                                     {{__('Upload Image')}}
                                 </button>
                             </div>
@@ -273,7 +273,7 @@
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">{{__('Close')}}</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">{{__('Close')}}</button>
                         <button type="submit" class="btn btn-primary">{{__('Save Change')}}</button>
                     </div>
                 </form>

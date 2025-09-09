@@ -52,7 +52,7 @@
                             @php $a=0; @endphp
                             @foreach($all_price_plan as $key => $plan)
                                 <li class="nav-$all_price_plan">
-                                    <a class="nav-link @if($a == 0) active @endif"  data-toggle="tab" href="#slider_tab_{{$key}}" role="tab" aria-controls="home" aria-selected="true">{{get_language_by_slug($key)}}</a>
+                                    <a class="nav-link @if($a == 0) active @endif"  data-bs-toggle="tab" href="#slider_tab_{{$key}}" role="tab" aria-controls="home" aria-selected="true">{{get_language_by_slug($key)}}</a>
                                 </li>
                                 @php $a++; @endphp
                             @endforeach
@@ -105,7 +105,7 @@
                                                 <td>
                                                     <a tabindex="0" class="btn btn-danger btn-xs mb-3 mr-1"
                                                        role="button"
-                                                       data-toggle="popover"
+                                                       data-bs-toggle="popover"
                                                        data-trigger="focus"
                                                        data-html="true"
                                                        title=""
@@ -120,8 +120,8 @@
                                                         <i class="ti-trash"></i>
                                                     </a>
                                                     <a href="#"
-                                                       data-toggle="modal"
-                                                       data-target="#price_plan_item_edit_modal"
+                                                       data-bs-toggle="modal"
+                                                       data-bs-target="#price_plan_item_edit_modal"
                                                        class="btn btn-lg btn-primary btn-xs mb-3 mr-1 price_plan_edit_btn"
                                                        data-id="{{$data->id}}"
                                                        data-action="{{route('admin.price.plan.update')}}"
@@ -167,7 +167,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title">{{__('Edit Price Plan Item')}}</h5>
-                    <button type="button" class="close" data-dismiss="modal"><span>×</span></button>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <form action="#" id="price_plan_edit_modal_form"  method="post" enctype="multipart/form-data">
                     <div class="modal-body">
@@ -237,7 +237,7 @@
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">{{__('Close')}}</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">{{__('Close')}}</button>
                         <button type="submit" class="btn btn-primary">{{__('Save Changes')}}</button>
                     </div>
                 </form>

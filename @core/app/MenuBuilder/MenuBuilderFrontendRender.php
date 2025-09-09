@@ -22,10 +22,26 @@ class MenuBuilderFrontendRender
         $menu_data = json_decode($menu_details_from_db->content);
         $this->page_id = 1;
 
-        if (count((array)$menu_data) > 0){
-            foreach ($menu_data as $menu_item){
-                $this->page_id++;
-                $output .= $this->render_menu_item($menu_item,$this->page_id,$default_lang);
+        $home_page_variant = get_static_option('home_page_variant');
+
+
+        if($home_page_variant == '00'){
+
+            if (count((array)$menu_data) > 0){
+                foreach ($menu_data as $menu_item){
+                    $this->page_id++;
+                    $output .= $this->render_menu_item_00($menu_item,$this->page_id,$default_lang);
+                        
+                }
+            }
+
+            
+        }else {
+            if (count((array)$menu_data) > 0){
+                foreach ($menu_data as $menu_item){
+                    $this->page_id++;
+                    $output .= $this->render_menu_item($menu_item,$this->page_id,$default_lang);
+                }
             }
         }
 
@@ -215,6 +231,52 @@ class MenuBuilderFrontendRender
         $output .= '</li>';
         return $output;
     }
+
+    private function render_menu_item_00($menu_item, int $page_id, $default_lang)
+    {
+        
+        $attributes_string = property_exists($menu_item,'children') ? ['class' => ['nav-item dropdown']]  : ['class' => ['nav-item']];
+        
+        $output = '';
+        if (empty((array)$menu_item)){return;}
+        $menu_item = (object) $menu_item ;
+        $ptype =  property_exists($menu_item,'ptype') ? $menu_item->ptype : '';
+        $pname =  property_exists($menu_item,'pname') ? $menu_item->pname : '';
+        $output .= '<li '.$this->get_attribute_string($attributes_string).'>'."\n";
+        $title = $pname;
+        if(property_exists($menu_item,'children')){
+            $output .= $this->get_anchor_markup($title,[
+                'href' => '#',
+                'class' => 'nav-link dropdown-toggle',
+                'role' => 'button',
+                'data-bs-toggle' => 'dropdown',
+                'target' => $menu_item->antarget ?? '',
+            ],$menu_item->icon ?? '');
+        }else{
+            $output .= $this->get_anchor_markup($title,[
+                'href' => str_replace('@url',url('/'),$menu_item->purl ?? ''),
+                'target' => $menu_item->antarget ?? '',
+                'class' => 'nav-link',
+            ],$menu_item->icon ?? '');
+        }
+       
+        if(property_exists($menu_item,'children')){
+            $output .= '<ul class="dropdown-menu">'."\n";
+            foreach ( $menu_item->children as $ch_item) {
+                $output .=  '<li>'."\n";
+                $output .= $this->get_anchor_markup($ch_item->pname ?? '',[
+                    'href' => str_replace('@url',url('/'),$ch_item->pslug ?? ''),
+                    'class' => 'dropdown-item',
+                ]);
+                $output .= '</li>'."\n";
+            }
+            $output .= '</ul>'."\n";
+        }
+        $output .= '</li>'."\n";
+
+        return $output;
+    }
+    
 
     protected function render_children_item($menu_item,$default_lang){
         if (empty((array)$menu_item)){return;}

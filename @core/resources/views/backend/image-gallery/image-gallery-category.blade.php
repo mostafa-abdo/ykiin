@@ -35,7 +35,7 @@
                                 @endcan
                                 @can('image-gallery-category-create')
                                     <div class="btn-wrapper">
-                                        <a data-toggle="modal" data-target="#image_category_item_new_modal"
+                                        <a data-bs-toggle="modal" data-bs-target="#image_category_item_new_modal"
                                            class="btn btn-info text-white pull-right mb-4">{{__("Add New")}}</a>
                                     </div>
                                 @endcan
@@ -74,8 +74,8 @@
                                                 @endcan
                                                 @can('image-gallery-category-edit')
                                                     <a href="#"
-                                                       data-toggle="modal"
-                                                       data-target="#image_category_item_edit_modal"
+                                                       data-bs-toggle="modal"
+                                                       data-bs-target="#image_category_item_edit_modal"
                                                        class="btn btn-xs btn-primary mb-3 mr-1 category_edit_btn"
                                                        data-id="{{$data->id}}"
                                                        data-name="{{$data->title}}"
@@ -102,7 +102,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title">{{__('New Category')}}</h5>
-                    <button type="button" class="close" data-dismiss="modal"><span>×</span></button>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <form action="{{route('admin.gallery.category.new')}}" method="post" enctype="multipart/form-data">
                     <div class="modal-body">
@@ -121,7 +121,7 @@
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">{{__('Close')}}</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">{{__('Close')}}</button>
                         <button id="submit" type="submit" class="btn btn-primary">{{__('Submit')}}</button>
                     </div>
                 </form>
@@ -135,7 +135,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title">{{__('Edit Category')}}</h5>
-                    <button type="button" class="close" data-dismiss="modal"><span>×</span></button>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <form action="{{route('admin.gallery.category.update')}}" method="post" enctype="multipart/form-data">
                     <div class="modal-body">
@@ -155,7 +155,7 @@
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">{{__('Close')}}</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">{{__('Close')}}</button>
                         <button id="update" type="submit" class="btn btn-primary">{{__('Update')}}</button>
                     </div>
                 </form>

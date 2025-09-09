@@ -111,7 +111,7 @@
                                         </td>
                                         <td>
                                             <div class="btn-group">
-                                                <button type="button" class="{{$data->priority}} dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                <button type="button" class="{{$data->priority}} dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                                     {{$data->priority}}
                                                 </button>
                                                 <div class="dropdown-menu">
@@ -124,7 +124,7 @@
                                         </td>
                                         <td>
                                             <div class="btn-group">
-                                                <button type="button" class="status-{{$data->status}} dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                <button type="button" class="status-{{$data->status}} dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                                     {{$data->status}}
                                                 </button>
                                                 <div class="dropdown-menu">

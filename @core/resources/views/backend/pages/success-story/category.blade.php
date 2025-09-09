@@ -22,7 +22,7 @@
                             <x-bulk-action/>
                             @endcan
                                 <div class="btn-wrapper">
-                                    <a data-toggle="modal" data-target="#new_category_modal"
+                                    <a data-bs-toggle="modal" data-bs-target="#new_category_modal"
                                        class="btn btn-info text-white pull-right mb-3">{{__('New Category')}}</a>
                                 </div>
                          </div>
@@ -56,8 +56,8 @@
 
                                            @can('success-story-category-edit')
                                             <a href="#"
-                                               data-toggle="modal"
-                                               data-target="#category_edit_modal"
+                                               data-bs-toggle="modal"
+                                               data-bs-target="#category_edit_modal"
                                                class="btn btn-primary btn-xs mb-3 mr-1 category_edit_btn"
                                                data-id="{{$data->id}}"
                                                data-name="{{$data->name}}"
@@ -85,7 +85,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title">{{__('Add New Category')}}</h5>
-                    <button type="button" class="close" data-dismiss="modal"><span>×</span></button>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <form action="{{route('admin.success.story.category')}}" method="post">
                     <div class="modal-body">
@@ -104,7 +104,7 @@
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">{{__('Close')}}</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">{{__('Close')}}</button>
                         <button id="submit" type="submit" class="btn btn-primary">{{__('Submit')}}</button>
                     </div>
                 </form>
@@ -119,7 +119,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title">{{__('Update Category')}}</h5>
-                    <button type="button" class="close" data-dismiss="modal"><span>×</span></button>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <form action="{{route('admin.success.story.category.update')}}" method="post">
                     <input type="hidden" name="id" id="category_id">
@@ -139,7 +139,7 @@
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">{{__('Close')}}</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">{{__('Close')}}</button>
                         <button id="update" type="submit" class="btn btn-primary">{{__('Save Change')}}</button>
                     </div>
                 </form>

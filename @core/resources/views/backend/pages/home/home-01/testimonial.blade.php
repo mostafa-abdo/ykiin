@@ -52,7 +52,7 @@
                                         @endif
                                     </div>
                                     <input type="hidden" name="home_01_testimonial_bg" value="{{get_static_option('home_01_testimonial_bg')}}">
-                                    <button type="button" class="btn btn-info media_upload_form_btn" data-btntitle="{{__('Select Image')}}" data-modaltitle="{{__('Upload Image')}}" data-imgid="{{get_static_option('home_01_testimonial_bg')}}" data-toggle="modal" data-target="#media_upload_modal">
+                                    <button type="button" class="btn btn-info media_upload_form_btn" data-btntitle="{{__('Select Image')}}" data-modaltitle="{{__('Upload Image')}}" data-imgid="{{get_static_option('home_01_testimonial_bg')}}" data-bs-toggle="modal" data-bs-target="#media_upload_modal">
                                         {{__($home_03_image_upload_btn_label)}}
                                     </button>
                                 </div>

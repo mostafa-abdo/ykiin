@@ -8,7 +8,6 @@ use App\Http\Controllers\Payment\CustomPaystackController;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Route;
 
-
 Route::feeds();
 Route::post('/subscribe-newsletter','FrontendController@subscribe_newsletter')->name('frontend.subscribe.newsletter')->middleware('setlang:frontend');
 /*----------------------------------------------------------------------------------------------------------------------------
@@ -68,7 +67,7 @@ Route::get('/lang','FrontendController@lang_change')->name('frontend.langchange'
         //
 
     });
-
+     
     /*----------------------------------------------------------------------------------------------------------------------------
      | EVENTS PAYMENTS
      |----------------------------------------------------------------------------------------------------------------------------*/
@@ -129,7 +128,7 @@ Route::get('/lang','FrontendController@lang_change')->name('frontend.langchange'
      |----------------------------------------------------------------------------------------------------------------------------*/
     Route::namespace('Frontend')->group(function (){
         $donation_page_slug = !empty(get_static_option('donation_page_slug')) ? get_static_option('donation_page_slug') : 'donations';
-
+       
         //donation page
         Route::get('/'.$donation_page_slug.'/payment/donate/{id}','FrontendCausesController@donations_in_separate_page')->name('frontend.donation.in.separate.page');
         Route::get('/'.$donation_page_slug.'/payment/recurring-separate/{token}','FrontendCausesController@donations_recuring_separate')->name('frontend.donation.recurring.separate.page');
@@ -714,7 +713,22 @@ Route::prefix('admin-home')->middleware(['setlang:backend','adminglobalVariable'
         });
     });
 
+//===================================================================================================================================
+    //HOME PAGE MANAGE (00)
+//===================================================================================================================================
+    Route::group(['prefix'=>'home-page-00','namespace'=>'Admin\HomePages'],function() {
+        //Header Area
+        Route::get('/header-area','HomePageZeroController@header_area')->name('admin.home.zero.header.area');
+        Route::post('/header-area','HomePageZeroController@update_header_area');
 
+        //Projects Area
+        Route::get('/projects-area','HomePageZeroController@projects_area')->name('admin.home.zero.projects.area');
+        Route::post('/projects-area','HomePageZeroController@update_projects_area');
+
+        Route::get('/section-manage-home-zero','HomePageController@home_00_section_manage')->name('admin.home.zero.section.manage');
+        Route::post('/section-manage-home-zero','HomePageController@update_home_00_section_manage');
+       
+    });
 
 
 //===================================================================================================================================
@@ -993,6 +1007,12 @@ Route::group(['prefix'=>'form-builder','namespace'=>'Admin'],function() {
         //our mission
         Route::get('/our-mission','AboutUsPageController@about_page_our_section')->name('admin.about.our.mission');
         Route::post('/our-mission','AboutUsPageController@about_page_update_our_section');
+        //our vision
+        Route::get('/our-vision','AboutUsPageController@about_page_our_vision_section')->name('admin.about.our.vision');
+        Route::post('/our-vision','AboutUsPageController@about_page_update_our_vision_section');
+        //our values
+        Route::get('/our-values','AboutUsPageController@about_page_our_values_section')->name('admin.about.our.values');
+        Route::post('/our-values','AboutUsPageController@about_page_update_our_values_section');
         //counterup
         Route::get('/counterup','AboutUsPageController@about_page_counterup_section')->name('admin.about.counterup');
         Route::post('/counterup','AboutUsPageController@about_page_update_counterup_section');

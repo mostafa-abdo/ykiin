@@ -68,8 +68,8 @@
 {{--                                                            <i class="ti-eye"></i>--}}
 {{--                                                        </a>--}}
 {{--                                                        <a href="#"--}}
-{{--                                                           data-toggle="modal"--}}
-{{--                                                           data-target="#send_mail_modal"--}}
+{{--                                                           data-bs-toggle="modal"--}}
+{{--                                                           data-bs-target="#send_mail_modal"--}}
 {{--                                                           data-id="{{$data->id}}"--}}
 {{--                                                           data-name="{{$data->name}}"--}}
 {{--                                                           data-email="{{$data->email}}"--}}
@@ -97,7 +97,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title">{{__('Send Mail To Applicant')}}</h5>
-                    <button type="button" class="close" data-dismiss="modal"><span>×</span></button>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
 
                 <form action="{{route('admin.jobs.applicant.mail')}}" method="post" enctype="multipart/form-data">
@@ -123,7 +123,7 @@
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">{{__('Close')}}</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">{{__('Close')}}</button>
                         <button type="submit" class="btn btn-primary">{{__('Send Mail')}}</button>
                     </div>
                 </form>

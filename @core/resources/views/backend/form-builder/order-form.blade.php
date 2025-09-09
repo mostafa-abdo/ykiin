@@ -105,7 +105,7 @@
 
                 function render_drag_drop_form_field_markup(type,random,formFiledLength){
                     var markup = '';
-                    markup += '<span class="ui-icon ui-icon-arrowthick-2-n-s"></span>\n <span class="remove-fields">x</span>\n<a data-toggle="collapse" href="#collapseExample-' + random + '" role="button" aria-expanded="false" aria-controls="collapseExample">\n' +
+                    markup += '<span class="ui-icon ui-icon-arrowthick-2-n-s"></span>\n <span class="remove-fields">x</span>\n<a data-bs-toggle="collapse" href="#collapseExample-' + random + '" role="button" aria-expanded="false" aria-controls="collapseExample">\n' +
                         type + ': <span class="placeholder-name"></span>\n</a>\n' +
                         '<div class="collapse" id="collapseExample-' + random + '">\n' +
                         '<div class="card card-body margin-top-30">\n' +

@@ -70,8 +70,8 @@
                                                    data-id="{{$data->id}}"
                                                    data-causeid="{{$data->cause_id}}"
                                                    data-status="{{optional($data->cause)->status}}"
-                                                   data-toggle="modal"
-                                                   data-target="#cause_status_change_modal"
+                                                   data-bs-toggle="modal"
+                                                   data-bs-target="#cause_status_change_modal"
                                                    class="btn btn-lg btn-warning btn-sm mb-3 mr-1 cause_status_change_btn"
                                                 >
                                                     {{__("Update Status")}}
@@ -82,8 +82,8 @@
                                                 @can('donations-flag-report-mail-send')
                                                     <a class="btn btn-lg btn-primary btn-sm mb-3 mr-1 send_mail_modal_btn"
                                                        href="#"
-                                                       data-toggle="modal"
-                                                       data-target="#send_mail_to_subscriber_modal"
+                                                       data-bs-toggle="modal"
+                                                       data-bs-target="#send_mail_to_subscriber_modal"
                                                        data-email="{{$data->email}}"
                                                     >
                                                         <i class="ti-email"></i>
@@ -108,7 +108,7 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <h5 class="modal-title">{{__('Send Mail To Flag Sender')}}</h5>
-                        <button type="button" class="close" data-dismiss="modal"><span>×</span></button>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <form action="{{route('admin.donations.flag.report.mail.send')}}" id="send_mail_to_subscriber_edit_modal_form"  method="post">
                         <div class="modal-body">
@@ -128,7 +128,7 @@
                             </div>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">{{__('Close')}}</button>
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">{{__('Close')}}</button>
                             <button id="submit" type="submit" class="btn btn-primary">{{__('Send Mail')}}</button>
                         </div>
                     </form>
@@ -144,7 +144,7 @@
 
                 <div class="modal-header">
                     <h5 class="modal-title">{{__('Cause Status Change')}}</h5>
-                    <button type="button" class="close" data-dismiss="modal"><span>×</span></button>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
 
                 <form action="{{route('admin.donations.flag.reports.cause.status.change')}}" method="post" enctype="multipart/form-data">
@@ -162,7 +162,7 @@
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">{{__('Close')}}</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">{{__('Close')}}</button>
                         <button type="submit" class="btn btn-primary">{{__('Change Status')}}</button>
                     </div>
                 </form>

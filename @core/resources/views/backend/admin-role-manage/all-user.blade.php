@@ -64,8 +64,8 @@
                                                         </a>
                                                         <a href="#"
                                                            data-id="{{$data->id}}"
-                                                           data-toggle="modal"
-                                                           data-target="#user_change_password_modal"
+                                                           data-bs-toggle="modal"
+                                                           data-bs-target="#user_change_password_modal"
                                                            class="btn btn-lg btn-info btn-sm mb-3 mr-1 user_change_password_btn"
                                                         >
                                                             {{__("Change Password")}}
@@ -90,7 +90,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title">{{__('Change Admin Password')}}</h5>
-                    <button type="button" class="close" data-dismiss="modal"><span>×</span></button>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 @include('backend/partials/error')
                 <form action="{{route('admin.user.password.change')}}" id="user_password_change_modal_form" method="post" enctype="multipart/form-data">
@@ -107,7 +107,7 @@
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">{{__('Close')}}</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">{{__('Close')}}</button>
                         <button type="submit" class="btn btn-primary">{{__('Change Password')}}</button>
                     </div>
                 </form>

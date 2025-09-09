@@ -11,7 +11,50 @@ class HomePageStaticSettings
             'white_logo'
         ];
     }
+
     public function home_01(){
+        $list = [
+            'home_page_01_about_us_subtitle',
+            'home_page_01_about_us_title',
+            'home_page_01_about_us_description',
+            'home_page_01_about_us_lists',
+            'home_page_01_about_us_right_image',
+            'home_page_01_about_us_total_donation',
+            'home_page_01_about_us_donation_text',
+            'homepage_01_feature_section_icon',
+            'homepage_01_feature_section_title',
+            'homepage_01_feature_section_description',
+            'homepage_01_feature_section_url',
+            'home_page_01_donation_category_subtitle',
+            'home_page_01_donation_category_title',
+            'home_page_01_featured_cause_area_subtitle',
+            'home_page_01_featured_cause_area_title',
+            'home_page_01_featured_cause_area_button_text',
+            'home_page_01_cta_area_background_image',
+            'home_page_01_cta_area_signature_image',
+            'home_page_01_cta_area_title',
+            'home_page_01_cta_area_video_url',
+            'home_page_01_latest_cause_subtitle',
+            'home_page_01_latest_cause_title',
+            'home_page_01_latest_cause_readmore',
+            'home_page_01_latest_cause_button_text',
+            'home_page_01_team_member_section_subtitle',
+            'home_page_01_team_member_section_title',
+            'home_01_testimonial_bg',
+            'home_page_01_testimonial_section_title',
+            'home_page_01_latest_event_subtitle',
+            'home_page_01_latest_event_title',
+            'home_page_01_latest_event_button_text',
+            'home_page_01_latest_news_subtitle',
+            'home_page_01_latest_news_title',
+            'home_page_01_topbar_info_list_icon_icon',
+            'home_page_01_topbar_info_list_text'
+        ];
+        return array_merge(self::default_settings(),$list);
+    }
+
+
+    public function home_00(){
         $list = [
             'home_page_01_about_us_subtitle',
             'home_page_01_about_us_title',

@@ -37,6 +37,38 @@
                                 <input type="hidden" name="about_page_about_section_description" >
                                 <div class="summernote" data-content='{{get_static_option('about_page_about_section_description')}}'></div>
                             </div>
+                            <div class="form-group">
+                                <label for="about_page_image_one">{{__('Left Image')}}</label>
+                                @php $signature_image_upload_btn_label = 'Upload Image'; @endphp
+                                <div class="media-upload-btn-wrapper">
+                                    <div class="img-wrap">
+                                        @php
+                                            $signature_img = get_attachment_image_by_id(get_static_option('about_page_about_section_left_image_image'),null,false);
+                                        @endphp
+                                        @if (!empty($signature_img))
+                                            <div class="attachment-preview">
+                                                <div class="thumbnail">
+                                                    <div class="centered">
+                                                        <img class="avatar user-thumb"
+                                                             src="{{$signature_img['img_url']}}">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            @php $signature_image_upload_btn_label = 'Change Image'; @endphp
+                                        @endif
+                                    </div>
+                                    <input type="hidden" name="about_page_about_section_left_image_image"
+                                           value="{{get_static_option('about_page_about_section_left_image_image')}}">
+                                    <button type="button" class="btn btn-info media_upload_form_btn"
+                                            data-btntitle="{{__('Select Image')}}"
+                                            data-modaltitle="{{__('Upload Image')}}"
+                                            data-imgid="{{get_static_option('about_page_about_section_left_image_image')}}"
+                                            data-bs-toggle="modal" data-bs-target="#media_upload_modal">
+                                        {{__($signature_image_upload_btn_label)}}
+                                    </button>
+                                </div>
+                                <small>{{__('recommended image size is 650x380 pixel')}}</small>
+                            </div>
 
                             <button id="update" type="submit" class="btn btn-primary mt-4 pr-4 pl-4">{{__('Update Settings')}}</button>
                         </form>

@@ -85,7 +85,7 @@
                                                             <i class="ti-eye"></i>
                                                         </a>
                                                         @if($data->package_gateway == 'manual_payment' && $data->status == 'pending')
-                                                        <a tabindex="0" class="btn btn-lg btn-success btn-sm mb-3 mr-1" role="button" data-toggle="popover" data-trigger="focus" data-html="true" title="" data-content="
+                                                        <a tabindex="0" class="btn btn-lg btn-success btn-sm mb-3 mr-1" role="button" data-bs-toggle="popover" data-trigger="focus" data-html="true" title="" data-content="
                                                        <h6>{{__('Are you sure to approve this payment?')}}</h6>
                                                        <form method='post' action='{{route('admin.payment.approve',$data->id)}}'>
                                                        <input type='hidden' name='_token' value='{{csrf_token()}}'>

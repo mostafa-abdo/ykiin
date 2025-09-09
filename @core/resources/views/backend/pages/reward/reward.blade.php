@@ -29,7 +29,7 @@
                             @endcan
                             @can('reward-create')
                                 <div class="btn-wrapper">
-                                    <a href="" data-toggle="modal" data-target="#new_reward_modal"
+                                    <a href="" data-bs-toggle="modal" data-bs-target="#new_reward_modal"
                                        class="btn btn-info pull-right mb-4 .new_reward_btn">{{__('Add New')}}</a>
                                 </div>
                             @endcan
@@ -74,8 +74,8 @@
 
                                             @can('reward-edit')
                                                 <a href="#"
-                                                   data-toggle="modal"
-                                                   data-target="#reward_item_edit_modal"
+                                                   data-bs-toggle="modal"
+                                                   data-bs-target="#reward_item_edit_modal"
                                                    class="btn btn-primary btn-xs mb-3 mr-1 reward_edit_btn"
                                                    data-id="{{$data->id}}"
                                                    data-reward_title="{{$data->reward_title}}"
@@ -105,7 +105,7 @@
                         <div class="modal-content">
                             <div class="modal-header">
                                 <h5 class="modal-title">{{__('New Reward Item')}}</h5>
-                                <button type="button" class="close" data-dismiss="modal"><span>×</span></button>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
                             <form action="{{route('admin.reward')}}" method="post" enctype="multipart/form-data">
                                 <div class="modal-body">
@@ -160,7 +160,7 @@
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary"
-                                            data-dismiss="modal">{{__('Close')}}</button>
+                                            data-bs-dismiss="modal">{{__('Close')}}</button>
                                     <button type="submit" class="btn btn-primary">{{__('Save Changes')}}</button>
                                 </div>
                             </form>
@@ -175,7 +175,7 @@
                         <div class="modal-content">
                             <div class="modal-header">
                                 <h5 class="modal-title">{{__('Edit Reward Item')}}</h5>
-                                <button type="button" class="close" data-dismiss="modal"><span>×</span></button>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
                             <form action="{{route('admin.reward.update')}}" id="reward_edit_modal_form" method="post"
                                   enctype="multipart/form-data">
@@ -230,7 +230,7 @@
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary"
-                                            data-dismiss="modal">{{__('Close')}}</button>
+                                            data-bs-dismiss="modal">{{__('Close')}}</button>
                                     <button type="submit" class="btn btn-primary">{{__('Save Changes')}}</button>
                                 </div>
                             </form>

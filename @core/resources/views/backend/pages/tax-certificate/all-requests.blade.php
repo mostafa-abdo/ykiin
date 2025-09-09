@@ -67,17 +67,17 @@
                                         </td>
                                         <td>
                                             <a class="btn btn-warning btn-sm mb-3 certificate_modal_button"
-                                               data-toggle="modal"
+                                               data-bs-toggle="modal"
                                                data-id="{{$data->id}}"
                                                data-start_date="{{ date('d-m-Y',strtotime($data->start_date)) }}"
                                                data-end_date="{{date('d-m-Y',strtotime($data->end_date))}}"
-                                               data-target="#certificate_modal">{{__('Create Certificate')}}</a>
+                                               data-bs-target="#certificate_modal">{{__('Create Certificate')}}</a>
 
                                             <a class="btn btn-info text-white mb-3 send_certificate_modal"
-                                               data-toggle="modal"
+                                               data-bs-toggle="modal"
                                                data-id="{{$data->id}}"
                                                data-name="{{optional($data->user)->name}}"
-                                               data-target="#certificate_send_modal">{{__('Send Certificate')}}</a>
+                                               data-bs-target="#certificate_send_modal">{{__('Send Certificate')}}</a>
 
                                             @can('user-tax-delete')
                                             <x-delete-popover :url="route('admin.tax.request.delete',$data->id)"/>
@@ -99,7 +99,7 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <h5 class="modal-title">{{__('Generate Certificate')}}</h5>
-                        <button type="button" class="close" data-dismiss="modal"><span>×</span></button>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="another-content ml-4 my-2">
                         <span>{{__('According :')}} <strong class="show_start_date"></strong> to  <strong class="show_end_date"></strong> </span>
@@ -133,7 +133,7 @@
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary"
-                                    data-dismiss="modal">{{__('Close')}}</button>
+                                    data-bs-dismiss="modal">{{__('Close')}}</button>
                             <button type="submit" class="btn btn-primary">{{__('Generate Certificate')}}</button>
                         </div>
                     </form>
@@ -147,7 +147,7 @@
                     <div class="modal-content">
                         <div class="modal-header">
                             <h5 class="modal-title">{{__('Send Certificate')}}</h5>
-                            <button type="button" class="close" data-dismiss="modal"><span>×</span></button>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="another-content ml-4 my-2">
                             <span>{{__('Send To :')}} <strong class="send_user_name"></strong> </span>
@@ -165,7 +165,7 @@
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary"
-                                        data-dismiss="modal">{{__('Close')}}</button>
+                                        data-bs-dismiss="modal">{{__('Close')}}</button>
                                 <button type="submit" class="btn btn-primary">{{__('Send Certificate')}}</button>
                             </div>
                         </form>

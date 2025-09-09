@@ -13,8 +13,8 @@
                         <h4 class="header-title">{{__("License Settings")}}
                             <button class="btn btn-sm btn-info"
                                     style="padding: 5px; margin-left: 20px"
-                                    data-toggle="modal"
-                                    data-target="#licenseRequestModal"
+                                    data-bs-toggle="modal"
+                                    data-bs-target="#licenseRequestModal"
                             >{{__("Get License Key")}}</button></h4>
                         @if('verified' == get_static_option('item_license_status'))
                             <div class="alert alert-success">{{__('Your Application is Registered')}}</div>
@@ -44,7 +44,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title">{{__('Request for license key...')}}</h5>
-                    <button type="button" class="close" data-dismiss="modal"><span>×</span></button>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <form action="{{route("admin.general.license.key.generate")}}" id="user_password_change_modal_form" method="post" enctype="multipart/form-data">
                     @csrf
@@ -66,7 +66,7 @@
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">{{__('Close')}}</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">{{__('Close')}}</button>
                         <button id="update" type="submit" class="btn btn-primary">{{__('Submit')}}</button>
                     </div>
                 </form>

@@ -66,8 +66,8 @@
                                             @endcan
                                             @can('faq-edit')
                                             <a href="#"
-                                               data-toggle="modal"
-                                               data-target="#faq_item_edit_modal"
+                                               data-bs-toggle="modal"
+                                               data-bs-target="#faq_item_edit_modal"
                                                class="btn btn-primary btn-xs mb-3 mr-1 faq_edit_btn"
                                                data-id="{{$data->id}}"
                                                data-title="{{$data->title}}"
@@ -143,7 +143,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title">{{__('Edit Faq Item')}}</h5>
-                    <button type="button" class="close" data-dismiss="modal"><span>×</span></button>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <form action="{{route('admin.faq.update')}}" id="faq_edit_modal_form" enctype="multipart/form-data"
                       method="post">
@@ -177,7 +177,7 @@
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">{{__('Close')}}</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">{{__('Close')}}</button>
                         <button id="update" type="submit" class="btn btn-primary">{{__('Save Changes')}}</button>
                     </div>
                 </form>

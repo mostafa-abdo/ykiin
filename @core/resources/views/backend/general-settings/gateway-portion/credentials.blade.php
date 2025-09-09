@@ -4,8 +4,8 @@
             <div class="card-header" id="paypal_settings">
                 <h5 class="mb-0">
                     <button class="btn btn-link" type="button"
-                            data-toggle="collapse"
-                            data-target="#paypal_settings_content"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#paypal_settings_content"
                             aria-expanded="true">
                         <span class="page-title"> {{__('Paypal Settings')}}</span>
                     </button>
@@ -62,8 +62,8 @@
                                     class="btn btn-info media_upload_form_btn"
                                     data-btntitle="{{__('Select Image')}}"
                                     data-modaltitle="{{__('Upload Image')}}"
-                                    data-toggle="modal"
-                                    data-target="#media_upload_modal">
+                                    data-bs-toggle="modal"
+                                    data-bs-target="#media_upload_modal">
                                 {{__($paypal_image_btn_label)}}
                             </button>
                         </div>
@@ -119,8 +119,8 @@
             <div class="card-header" id="paytm_settings">
                 <h5 class="mb-0">
                     <button class="btn btn-link" type="button"
-                            data-toggle="collapse"
-                            data-target="#paytm_settings_content"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#paytm_settings_content"
                             aria-expanded="false">
                         <span class="page-title"> {{__('Paytm Settings')}}</span>
                     </button>
@@ -179,8 +179,8 @@
                                     class="btn btn-info media_upload_form_btn"
                                     data-btntitle="{{__('Select Image')}}"
                                     data-modaltitle="{{__('Upload Image')}}"
-                                    data-toggle="modal"
-                                    data-target="#media_upload_modal">
+                                    data-bs-toggle="modal"
+                                    data-bs-target="#media_upload_modal">
                                 {{__($paytm_image_btn_label)}}
                             </button>
                         </div>
@@ -212,7 +212,7 @@
         <div class="card">
             <div class="card-header" id="stripe_settings">
                 <h5 class="mb-0">
-                    <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#stripe_settings_content" aria-expanded="false" >
+                    <button class="btn btn-link" type="button" data-bs-toggle="collapse" data-bs-target="#stripe_settings_content" aria-expanded="false" >
                         <span class="page-title"> {{__('Stripe Settings')}}</span>
                     </button>
                 </h5>
@@ -255,7 +255,7 @@
                                 @endif
                             </div>
                             <input type="hidden" id="stripe_preview_logo" name="stripe_preview_logo" value="{{get_static_option('stripe_preview_logo')}}">
-                            <button type="button" class="btn btn-info media_upload_form_btn" data-btntitle="{{__('Select Image')}}" data-modaltitle="{{__('Upload Image')}}" data-toggle="modal" data-target="#media_upload_modal">
+                            <button type="button" class="btn btn-info media_upload_form_btn" data-btntitle="{{__('Select Image')}}" data-modaltitle="{{__('Upload Image')}}" data-bs-toggle="modal" data-bs-target="#media_upload_modal">
                                 {{__($stripe_image_btn_label)}}
                             </button>
                         </div>
@@ -275,7 +275,7 @@
         <div class="card">
             <div class="card-header" id="razorpay_settings">
                 <h5 class="mb-0">
-                    <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#razorpay_settings_content" aria-expanded="false" >
+                    <button class="btn btn-link" type="button" data-bs-toggle="collapse" data-bs-target="#razorpay_settings_content" aria-expanded="false" >
                         <span class="page-title"> {{__('Razorpay Settings')}}</span>
                     </button>
                 </h5>
@@ -320,7 +320,7 @@
                                 @endif
                             </div>
                             <input type="hidden" id="razorpay_preview_logo" name="razorpay_preview_logo" value="{{get_static_option('razorpay_preview_logo')}}">
-                            <button type="button" class="btn btn-info media_upload_form_btn" data-btntitle="{{__('Select Image')}}" data-modaltitle="{{__('Upload Image')}}" data-toggle="modal" data-target="#media_upload_modal">
+                            <button type="button" class="btn btn-info media_upload_form_btn" data-btntitle="{{__('Select Image')}}" data-modaltitle="{{__('Upload Image')}}" data-bs-toggle="modal" data-bs-target="#media_upload_modal">
                                 {{__($razorpay_image_btn_label)}}
                             </button>
                         </div>
@@ -340,7 +340,7 @@
         <div class="card">
             <div class="card-header" id="paystack_settings">
                 <h5 class="mb-0">
-                    <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#paystack_settings_content" aria-expanded="false" >
+                    <button class="btn btn-link" type="button" data-bs-toggle="collapse" data-bs-target="#paystack_settings_content" aria-expanded="false" >
                         <span class="page-title"> {{__('PayStack Settings')}}</span>
                     </button>
                 </h5>
@@ -389,7 +389,7 @@
                                 @endif
                             </div>
                             <input type="hidden" id="paystack_preview_logo" name="paystack_preview_logo" value="{{get_static_option('paystack_preview_logo')}}">
-                            <button type="button" class="btn btn-info media_upload_form_btn" data-btntitle="{{__('Select Image')}}" data-modaltitle="{{__('Upload Image')}}" data-toggle="modal" data-target="#media_upload_modal">
+                            <button type="button" class="btn btn-info media_upload_form_btn" data-btntitle="{{__('Select Image')}}" data-modaltitle="{{__('Upload Image')}}" data-bs-toggle="modal" data-bs-target="#media_upload_modal">
                                 {{__($paystack_image_btn_label)}}
                             </button>
                         </div>
@@ -413,7 +413,7 @@
         <div class="card">
             <div class="card-header" id="mollie_settings">
                 <h5 class="mb-0">
-                    <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#mollie_settings_content" aria-expanded="false" >
+                    <button class="btn btn-link" type="button" data-bs-toggle="collapse" data-bs-target="#mollie_settings_content" aria-expanded="false" >
                         <span class="page-title"> {{__('Mollie Settings')}}</span>
                     </button>
                 </h5>
@@ -458,7 +458,7 @@
                                 @endif
                             </div>
                             <input type="hidden" id="mollie_preview_logo" name="mollie_preview_logo" value="{{get_static_option('mollie_preview_logo')}}">
-                            <button type="button" class="btn btn-info media_upload_form_btn" data-btntitle="{{__('Select Image')}}" data-modaltitle="{{__('Upload Image')}}" data-toggle="modal" data-target="#media_upload_modal">
+                            <button type="button" class="btn btn-info media_upload_form_btn" data-btntitle="{{__('Select Image')}}" data-modaltitle="{{__('Upload Image')}}" data-bs-toggle="modal" data-bs-target="#media_upload_modal">
                                 {{__($mollie_image_btn_label)}}
                             </button>
                         </div>
@@ -474,7 +474,7 @@
         <div class="card">
             <div class="card-header" id="flluterwave_settings">
                 <h5 class="mb-0">
-                    <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#flutterwave_settings_content" aria-expanded="false" >
+                    <button class="btn btn-link" type="button" data-bs-toggle="collapse" data-bs-target="#flutterwave_settings_content" aria-expanded="false" >
                         <span class="page-title"> {{__('Flutterwave Settings')}}</span>
                     </button>
                 </h5>
@@ -519,7 +519,7 @@
                                 @endif
                             </div>
                             <input type="hidden" id="flutterwave_preview_logo" name="flutterwave_preview_logo" value="{{get_static_option('flutterwave_preview_logo')}}">
-                            <button type="button" class="btn btn-info media_upload_form_btn" data-btntitle="{{__('Select Image')}}" data-modaltitle="{{__('Upload Image')}}" data-toggle="modal" data-target="#media_upload_modal">
+                            <button type="button" class="btn btn-info media_upload_form_btn" data-btntitle="{{__('Select Image')}}" data-modaltitle="{{__('Upload Image')}}" data-bs-toggle="modal" data-bs-target="#media_upload_modal">
                                 {{__($mollie_image_btn_label)}}
                             </button>
                         </div>
@@ -543,7 +543,7 @@
         <div class="card">
             <div class="card-header" id="midtrans_settings">
                 <h5 class="mb-0">
-                    <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#midtrans_settings_content" aria-expanded="false" >
+                    <button class="btn btn-link" type="button" data-bs-toggle="collapse" data-bs-target="#midtrans_settings_content" aria-expanded="false" >
                         <span class="page-title"> {{__('MIdtranse Settings')}}</span>
                     </button>
                 </h5>
@@ -588,7 +588,7 @@
                                 @endif
                             </div>
                             <input type="hidden" id="midtrans_preview_logo" name="midtrans_preview_logo" value="{{get_static_option('midtrans_preview_logo')}}">
-                            <button type="button" class="btn btn-info media_upload_form_btn" data-btntitle="{{__('Select Image')}}" data-modaltitle="{{__('Upload Image')}}" data-toggle="modal" data-target="#media_upload_modal">
+                            <button type="button" class="btn btn-info media_upload_form_btn" data-btntitle="{{__('Select Image')}}" data-modaltitle="{{__('Upload Image')}}" data-bs-toggle="modal" data-bs-target="#media_upload_modal">
                                 {{__($mollie_image_btn_label)}}
                             </button>
                         </div>
@@ -612,7 +612,7 @@
         <div class="card">
             <div class="card-header" id="payfast_settings">
                 <h5 class="mb-0">
-                    <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#payfast_settings_content" aria-expanded="false" >
+                    <button class="btn btn-link" type="button" data-bs-toggle="collapse" data-bs-target="#payfast_settings_content" aria-expanded="false" >
                         <span class="page-title"> {{__('Payfast Settings')}}</span>
                     </button>
                 </h5>
@@ -656,7 +656,7 @@
                                 @endif
                             </div>
                             <input type="hidden" id="payfast_preview_logo" name="payfast_preview_logo" value="{{get_static_option('payfast_preview_logo')}}">
-                            <button type="button" class="btn btn-info media_upload_form_btn" data-btntitle="{{__('Select Image')}}" data-modaltitle="{{__('Upload Image')}}" data-toggle="modal" data-target="#media_upload_modal">
+                            <button type="button" class="btn btn-info media_upload_form_btn" data-btntitle="{{__('Select Image')}}" data-modaltitle="{{__('Upload Image')}}" data-bs-toggle="modal" data-bs-target="#media_upload_modal">
                                 {{__($mollie_image_btn_label)}}
                             </button>
                         </div>
@@ -687,7 +687,7 @@
         <div class="card">
             <div class="card-header" id="cashfree_settings">
                 <h5 class="mb-0">
-                    <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#cashfree_settings_content" aria-expanded="false" >
+                    <button class="btn btn-link" type="button" data-bs-toggle="collapse" data-bs-target="#cashfree_settings_content" aria-expanded="false" >
                         <span class="page-title"> {{__('Cashfree Settings')}}</span>
                     </button>
                 </h5>
@@ -731,7 +731,7 @@
                                 @endif
                             </div>
                             <input type="hidden" id="cashfree_preview_logo" name="cashfree_preview_logo" value="{{get_static_option('cashfree_preview_logo')}}">
-                            <button type="button" class="btn btn-info media_upload_form_btn" data-btntitle="{{__('Select Image')}}" data-modaltitle="{{__('Upload Image')}}" data-toggle="modal" data-target="#media_upload_modal">
+                            <button type="button" class="btn btn-info media_upload_form_btn" data-btntitle="{{__('Select Image')}}" data-modaltitle="{{__('Upload Image')}}" data-bs-toggle="modal" data-bs-target="#media_upload_modal">
                                 {{__($mollie_image_btn_label)}}
                             </button>
                         </div>
@@ -754,7 +754,7 @@
         <div class="card">
             <div class="card-header" id="instamojo_settings">
                 <h5 class="mb-0">
-                    <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#instamojo_settings_content" aria-expanded="false" >
+                    <button class="btn btn-link" type="button" data-bs-toggle="collapse" data-bs-target="#instamojo_settings_content" aria-expanded="false" >
                         <span class="page-title"> {{__('Instamojo Settings')}}</span>
                     </button>
                 </h5>
@@ -798,7 +798,7 @@
                                 @endif
                             </div>
                             <input type="hidden" id="instamojo_preview_logo" name="instamojo_preview_logo" value="{{get_static_option('instamojo_preview_logo')}}">
-                            <button type="button" class="btn btn-info media_upload_form_btn" data-btntitle="{{__('Select Image')}}" data-modaltitle="{{__('Upload Image')}}" data-toggle="modal" data-target="#media_upload_modal">
+                            <button type="button" class="btn btn-info media_upload_form_btn" data-btntitle="{{__('Select Image')}}" data-modaltitle="{{__('Upload Image')}}" data-bs-toggle="modal" data-bs-target="#media_upload_modal">
                                 {{__($mollie_image_btn_label)}}
                             </button>
                         </div>
@@ -828,7 +828,7 @@
         <div class="card">
             <div class="card-header" id="marcado_pago_settings">
                 <h5 class="mb-0">
-                    <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#marcado_pago_settings_content" aria-expanded="false" >
+                    <button class="btn btn-link" type="button" data-bs-toggle="collapse" data-bs-target="#marcado_pago_settings_content" aria-expanded="false" >
                         <span class="page-title"> {{__('Marcado Pago Settings')}}</span>
                     </button>
                 </h5>
@@ -875,7 +875,7 @@
                                 @endif
                             </div>
                             <input type="hidden" id="marcadopago_preview_logo" name="marcadopago_preview_logo" value="{{get_static_option('marcadopago_preview_logo')}}">
-                            <button type="button" class="btn btn-info media_upload_form_btn" data-btntitle="{{__('Select Image')}}" data-modaltitle="{{__('Upload Image')}}" data-toggle="modal" data-target="#media_upload_modal">
+                            <button type="button" class="btn btn-info media_upload_form_btn" data-btntitle="{{__('Select Image')}}" data-modaltitle="{{__('Upload Image')}}" data-bs-toggle="modal" data-bs-target="#media_upload_modal">
                                 {{__($mollie_image_btn_label)}}
                             </button>
                         </div>
@@ -899,7 +899,7 @@
         <div class="card">
             <div class="card-header" id="squareup_settings">
                 <h5 class="mb-0">
-                    <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#squareup_settings_settings_content" aria-expanded="false" >
+                    <button class="btn btn-link" type="button" data-bs-toggle="collapse" data-bs-target="#squareup_settings_settings_content" aria-expanded="false" >
                         <span class="page-title"> {{__('Squareup Settings')}}</span>
                     </button>
                 </h5>
@@ -943,7 +943,7 @@
                                 @endif
                             </div>
                             <input type="hidden" id="squareup_preview_logo" name="squareup_preview_logo" value="{{get_static_option('squareup_preview_logo')}}">
-                            <button type="button" class="btn btn-info media_upload_form_btn" data-btntitle="{{__('Select Image')}}" data-modaltitle="{{__('Upload Image')}}" data-toggle="modal" data-target="#media_upload_modal">
+                            <button type="button" class="btn btn-info media_upload_form_btn" data-btntitle="{{__('Select Image')}}" data-modaltitle="{{__('Upload Image')}}" data-bs-toggle="modal" data-bs-target="#media_upload_modal">
                                 {{__($mollie_image_btn_label)}}
                             </button>
                         </div>
@@ -967,8 +967,8 @@
             <div class="card-header" id="cinetpay_settings">
                 <h5 class="mb-0">
                     <button class="btn btn-link" type="button"
-                            data-toggle="collapse"
-                            data-target="#cinetpay_settings_content"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#cinetpay_settings_content"
                             aria-expanded="false">
                         <span class="page-title"> {{__('Cinetpay Settings')}}</span>
                     </button>
@@ -1026,8 +1026,8 @@
                                     class="btn btn-info media_upload_form_btn"
                                     data-btntitle="{{__('Select Image')}}"
                                     data-modaltitle="{{__('Upload Image')}}"
-                                    data-toggle="modal"
-                                    data-target="#media_upload_modal">
+                                    data-bs-toggle="modal"
+                                    data-bs-target="#media_upload_modal">
                                 {{__($paytm_image_btn_label)}}
                             </button>
                         </div>
@@ -1049,8 +1049,8 @@
             <div class="card-header" id="pay_tabs_settings">
                 <h5 class="mb-0">
                     <button class="btn btn-link" type="button"
-                            data-toggle="collapse"
-                            data-target="#pay_tabs_settings_settings_content"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#pay_tabs_settings_settings_content"
                             aria-expanded="false">
                         <span class="page-title"> {{__('PayTabs Settings')}}</span>
                     </button>
@@ -1108,8 +1108,8 @@
                                     class="btn btn-info media_upload_form_btn"
                                     data-btntitle="{{__('Select Image')}}"
                                     data-modaltitle="{{__('Upload Image')}}"
-                                    data-toggle="modal"
-                                    data-target="#media_upload_modal">
+                                    data-bs-toggle="modal"
+                                    data-bs-target="#media_upload_modal">
                                 {{__($paytm_image_btn_label)}}
                             </button>
                         </div>
@@ -1139,8 +1139,8 @@
             <div class="card-header" id="bill_plz_settings">
                 <h5 class="mb-0">
                     <button class="btn btn-link" type="button"
-                            data-toggle="collapse"
-                            data-target="#bill_plz_settings_content"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#bill_plz_settings_content"
                             aria-expanded="false">
                         <span class="page-title"> {{__('BillPlz Settings')}}</span>
                     </button>
@@ -1198,8 +1198,8 @@
                                     class="btn btn-info media_upload_form_btn"
                                     data-btntitle="{{__('Select Image')}}"
                                     data-modaltitle="{{__('Upload Image')}}"
-                                    data-toggle="modal"
-                                    data-target="#media_upload_modal">
+                                    data-bs-toggle="modal"
+                                    data-bs-target="#media_upload_modal">
                                 {{__($paytm_image_btn_label)}}
                             </button>
                         </div>
@@ -1231,8 +1231,8 @@
             <div class="card-header" id="zitopay_settings">
                 <h5 class="mb-0">
                     <button class="btn btn-link" type="button"
-                            data-toggle="collapse"
-                            data-target="#zitopay_settings_content"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#zitopay_settings_content"
                             aria-expanded="false">
                         <span class="page-title"> {{__('Zitopay Settings')}}</span>
                     </button>
@@ -1290,8 +1290,8 @@
                                     class="btn btn-info media_upload_form_btn"
                                     data-btntitle="{{__('Select Image')}}"
                                     data-modaltitle="{{__('Upload Image')}}"
-                                    data-toggle="modal"
-                                    data-target="#media_upload_modal">
+                                    data-bs-toggle="modal"
+                                    data-bs-target="#media_upload_modal">
                                 {{__($paytm_image_btn_label)}}
                             </button>
                         </div>
@@ -1311,8 +1311,8 @@
             <div class="card-header" id="toyyibpay_settings">
                 <h5 class="mb-0">
                     <button class="btn btn-link" type="button"
-                            data-toggle="collapse"
-                            data-target="#toyyibpay_settings_content"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#toyyibpay_settings_content"
                             aria-expanded="false">
                         <span class="page-title"> {{__('Toyyibpay Settings')}}</span>
                     </button>
@@ -1370,8 +1370,8 @@
                                     class="btn btn-info media_upload_form_btn"
                                     data-btntitle="{{__('Select Image')}}"
                                     data-modaltitle="{{__('Upload Image')}}"
-                                    data-toggle="modal"
-                                    data-target="#media_upload_modal">
+                                    data-bs-toggle="modal"
+                                    data-bs-target="#media_upload_modal">
                                 {{__($paytm_image_btn_label)}}
                             </button>
                         </div>
@@ -1395,8 +1395,8 @@
             <div class="card-header" id="pagali_settings">
                 <h5 class="mb-0">
                     <button class="btn btn-link" type="button"
-                            data-toggle="collapse"
-                            data-target="#pagali_settings_content"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#pagali_settings_content"
                             aria-expanded="false">
                         <span class="page-title"> {{__('Pagali Settings')}}</span>
                     </button>
@@ -1454,8 +1454,8 @@
                                     class="btn btn-info media_upload_form_btn"
                                     data-btntitle="{{__('Select Image')}}"
                                     data-modaltitle="{{__('Upload Image')}}"
-                                    data-toggle="modal"
-                                    data-target="#media_upload_modal">
+                                    data-bs-toggle="modal"
+                                    data-bs-target="#media_upload_modal">
                                 {{__($paytm_image_btn_label)}}
                             </button>
                         </div>
@@ -1479,8 +1479,8 @@
             <div class="card-header" id="authorizenet_settings">
                 <h5 class="mb-0">
                     <button class="btn btn-link" type="button"
-                            data-toggle="collapse"
-                            data-target="#authorizenet_settings_content"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#authorizenet_settings_content"
                             aria-expanded="false">
                         <span class="page-title"> {{__('Authorize.net Settings')}}</span>
                     </button>
@@ -1538,8 +1538,8 @@
                                     class="btn btn-info media_upload_form_btn"
                                     data-btntitle="{{__('Select Image')}}"
                                     data-modaltitle="{{__('Upload Image')}}"
-                                    data-toggle="modal"
-                                    data-target="#media_upload_modal">
+                                    data-bs-toggle="modal"
+                                    data-bs-target="#media_upload_modal">
                                 {{__($paytm_image_btn_label)}}
                             </button>
                         </div>
@@ -1565,8 +1565,8 @@
             <div class="card-header" id="SitesWay_settings">
                 <h5 class="mb-0">
                     <button class="btn btn-link" type="button"
-                            data-toggle="collapse"
-                            data-target="#SitesWay_settings_content"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#SitesWay_settings_content"
                             aria-expanded="false">
                         <span class="page-title"> {{__('SitesWay Settings')}}</span>
                     </button>
@@ -1625,8 +1625,8 @@
                                     class="btn btn-info media_upload_form_btn"
                                     data-btntitle="{{__('Select Image')}}"
                                     data-modaltitle="{{__('Upload Image')}}"
-                                    data-toggle="modal"
-                                    data-target="#media_upload_modal">
+                                    data-bs-toggle="modal"
+                                    data-bs-target="#media_upload_modal">
                                 {{__($paytm_image_btn_label)}}
                             </button>
                         </div>
@@ -1650,8 +1650,8 @@
             <div class="card-header" id="senangpay_settings">
                 <h5 class="mb-0">
                     <button class="btn btn-link" type="button"
-                            data-toggle="collapse"
-                            data-target="#senangpay_settings_content"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#senangpay_settings_content"
                             aria-expanded="false">
                         <span class="page-title"> {{__('Senangpay Settings')}}</span>
                     </button>
@@ -1705,8 +1705,8 @@
                                 class="btn btn-info media_upload_form_btn"
                                 data-btntitle="{{__('Select Image')}}"
                                 data-modaltitle="{{__('Upload Image')}}"
-                                data-toggle="modal"
-                                data-target="#media_upload_modal">
+                                data-bs-toggle="modal"
+                                data-bs-target="#media_upload_modal">
                             {{__($senangpay_image_btn_label)}}
                         </button>
                     </div>
@@ -1727,8 +1727,8 @@
             <div class="card-header" id="iyzipay_settings">
                 <h5 class="mb-0">
                     <button class="btn btn-link" type="button"
-                            data-toggle="collapse"
-                            data-target="#iyzipay_settings_content"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#iyzipay_settings_content"
                             aria-expanded="false">
                         <span class="page-title"> {{__('Iyzipay Settings')}}</span>
                     </button>
@@ -1782,8 +1782,8 @@
                                 class="btn btn-info media_upload_form_btn"
                                 data-btntitle="{{__('Select Image')}}"
                                 data-modaltitle="{{__('Upload Image')}}"
-                                data-toggle="modal"
-                                data-target="#media_upload_modal">
+                                data-bs-toggle="modal"
+                                data-bs-target="#media_upload_modal">
                             {{__($iyzipay_image_btn_label)}}
                         </button>
                     </div>
@@ -1804,8 +1804,8 @@
             <div class="card-header" id="awdpay_settings">
                 <h5 class="mb-0">
                     <button class="btn btn-link" type="button"
-                            data-toggle="collapse"
-                            data-target="#awdpay_settings_content"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#awdpay_settings_content"
                             aria-expanded="false">
                         <span class="page-title"> {{__('Awdpay Settings')}}</span>
                     </button>
@@ -1859,8 +1859,8 @@
                                 class="btn btn-info media_upload_form_btn"
                                 data-btntitle="{{__('Select Image')}}"
                                 data-modaltitle="{{__('Upload Image')}}"
-                                data-toggle="modal"
-                                data-target="#media_upload_modal">
+                                data-bs-toggle="modal"
+                                data-bs-target="#media_upload_modal">
                             {{__($awdpay_image_btn_label)}}
                         </button>
                     </div>
@@ -1882,8 +1882,8 @@
             <div class="card-header" id="manual_payment_settings">
                 <h5 class="mb-0">
                     <button class="btn btn-link" type="button"
-                            data-toggle="collapse"
-                            data-target="#manual_payment_settings_content"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#manual_payment_settings_content"
                             aria-expanded="false">
                         <span class="page-title"> {{__('Manual Payment Settings')}}</span>
                     </button>
@@ -1929,8 +1929,8 @@
                                     class="btn btn-info media_upload_form_btn"
                                     data-btntitle="{{__('Select Image')}}"
                                     data-modaltitle="{{__('Upload Image')}}"
-                                    data-toggle="modal"
-                                    data-target="#media_upload_modal">
+                                    data-bs-toggle="modal"
+                                    data-bs-target="#media_upload_modal">
                                 {{__($paytm_image_btn_label)}}
                             </button>
                         </div>

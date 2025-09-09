@@ -27,7 +27,7 @@
                             <ul class="nav nav-tabs" id="myTab" role="tablist">
                                 @foreach(get_all_language() as $key => $lang)
                                     <li class="nav-item">
-                                        <a class="nav-link @if($key == 0) active @endif" data-toggle="tab" href="#tab_{{$key}}" role="tab"  aria-selected="true">{{$lang->name}}</a>
+                                        <a class="nav-link @if($key == 0) active @endif" data-bs-toggle="tab" href="#tab_{{$key}}" role="tab"  aria-selected="true">{{$lang->name}}</a>
                                     </li>
                                 @endforeach
                             </ul>

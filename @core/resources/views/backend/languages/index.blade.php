@@ -62,8 +62,8 @@
                                             <i class="ti-pencil"></i> {{__('Frontend Words')}}
                                         </a>
                                         <a href="#"
-                                           data-toggle="modal"
-                                           data-target="#language_item_edit_modal"
+                                           data-bs-toggle="modal"
+                                           data-bs-target="#language_item_edit_modal"
                                            class="btn btn-primary btn-xs mb-3 mr-1 lang_edit_btn"
                                            data-id="{{$data->id}}"
                                            data-name="{{$data->name}}"
@@ -258,7 +258,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title">{{__('Edit Language')}}</h5>
-                    <button type="button" class="close" data-dismiss="modal"><span>×</span></button>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <form action="{{route('admin.languages.update')}}" class="edit_language_form" method="post">
                     <div class="modal-body">
@@ -285,7 +285,7 @@
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">{{__('Close')}}</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">{{__('Close')}}</button>
                         <button type="submit" class="btn btn-primary">{{__('Save Changes')}}</button>
                     </div>
                 </form>

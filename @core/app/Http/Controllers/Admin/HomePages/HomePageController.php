@@ -289,6 +289,31 @@ class HomePageController extends Controller
         return redirect()->back()->with(FlashMsg::settings_update());
     }
 
+    public function home_00_section_manage()
+    {
+        return view('backend.pages.section-manage-home-00.section-manage');
+    }
+    public function update_home_00_section_manage(Request $request){
+
+      
+        $fields = [
+            'header_slider_area_00',
+            'projects_area_00',
+        ];
+        foreach($fields as $field){
+            $filed_name = 'home_page_'.$field.'_section_status';
+            update_static_option($filed_name,$request->$filed_name);
+        }
+
+        Artisan::call('route:clear');
+        Artisan::call('view:clear');
+        Artisan::call('config:clear');
+        Artisan::call('cache:clear');
+
+        return redirect()->back()->with(FlashMsg::settings_update());
+    }
+
+
     public function home_01_02_03_section_manage()
     {
         return view('backend.pages.section-manage-home-01-02-03.section-manage');

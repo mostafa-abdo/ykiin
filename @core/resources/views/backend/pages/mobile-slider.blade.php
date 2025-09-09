@@ -26,7 +26,7 @@
                             @endcan
                             @can('mobile-slider-create')
                                 <div class="btn-wrapper">
-                                    <a href="" data-toggle="modal" data-target="#new_testimonial"
+                                    <a href="" data-bs-toggle="modal" data-bs-target="#new_testimonial"
                                        class="btn btn-info pull-right mb-4">{{__('Add New')}}</a>
                                 </div>
                             @endcan
@@ -74,8 +74,8 @@
                                             @endcan
                                             @can('mobile-slider-edit')
                                                 <a href="#"
-                                                   data-toggle="modal"
-                                                   data-target="#testimonial_item_edit_modal"
+                                                   data-bs-toggle="modal"
+                                                   data-bs-target="#testimonial_item_edit_modal"
                                                    class="btn btn-primary btn-xs mb-3 mr-1 testimonial_edit_btn"
                                                    data-id="{{$data->id}}"
                                                    data-action="{{route('admin.mobile.slider.update')}}"
@@ -105,7 +105,7 @@
                         <div class="modal-content">
                             <div class="modal-header">
                                 <h5 class="modal-title">{{__('New Mobile Slider Item')}}</h5>
-                                <button type="button" class="close" data-dismiss="modal"><span>×</span></button>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
                             <form action="{{route('admin.mobile.slider')}}" method="post" enctype="multipart/form-data">
                                 <div class="modal-body">
@@ -138,8 +138,8 @@
                                             <input type="hidden" name="image" value="">
                                             <button type="button" class="btn btn-info media_upload_form_btn"
                                                     data-btntitle="{{__('Select Image')}}"
-                                                    data-modaltitle="{{__('Upload Image')}}" data-toggle="modal"
-                                                    data-target="#media_upload_modal">
+                                                    data-modaltitle="{{__('Upload Image')}}" data-bs-toggle="modal"
+                                                    data-bs-target="#media_upload_modal">
                                                 {{__('Upload Image')}}
                                             </button>
                                         </div>
@@ -147,7 +147,7 @@
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary"
-                                            data-dismiss="modal">{{__('Close')}}</button>
+                                            data-bs-dismiss="modal">{{__('Close')}}</button>
                                     <button type="submit" class="btn btn-primary">{{__('Save Changes')}}</button>
                                 </div>
                             </form>
@@ -161,7 +161,7 @@
                         <div class="modal-content">
                             <div class="modal-header">
                                 <h5 class="modal-title">{{__('Edit Mobile Slider Item')}}</h5>
-                                <button type="button" class="close" data-dismiss="modal"><span>×</span></button>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
                             <form action="#" id="testimonial_edit_modal_form" method="post"
                                   enctype="multipart/form-data">
@@ -195,8 +195,8 @@
                                             <input type="hidden" id="edit_image" name="image" value="">
                                             <button type="button" class="btn btn-info media_upload_form_btn"
                                                     data-btntitle="{{__('Select Image')}}"
-                                                    data-modaltitle="{{__('Upload Image')}}" data-toggle="modal"
-                                                    data-target="#media_upload_modal">
+                                                    data-modaltitle="{{__('Upload Image')}}" data-bs-toggle="modal"
+                                                    data-bs-target="#media_upload_modal">
                                                 {{__('Upload Image')}}
                                             </button>
                                         </div>
@@ -204,7 +204,7 @@
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary"
-                                            data-dismiss="modal">{{__('Close')}}</button>
+                                            data-bs-dismiss="modal">{{__('Close')}}</button>
                                     <button type="submit" class="btn btn-primary">{{__('Save Changes')}}</button>
                                 </div>
                             </form>

@@ -86,16 +86,16 @@
                                                            data-zipcode="{{$data->zipcode}}"
                                                            data-country_id="{{$data->country_id}}"
                                                            data-email_verified="{{$data->email_verified}}"
-                                                           data-toggle="modal"
-                                                           data-target="#user_edit_modal"
+                                                           data-bs-toggle="modal"
+                                                           data-bs-target="#user_edit_modal"
                                                            class="btn btn-primary btn-sm mb-3 mr-1 user_edit_btn"
                                                         >
                                                             <i class="ti-pencil"></i>
                                                         </a>
                                                         <a href="#"
                                                            data-id="{{$data->id}}"
-                                                           data-toggle="modal"
-                                                           data-target="#user_change_password_modal"
+                                                           data-bs-toggle="modal"
+                                                           data-bs-target="#user_change_password_modal"
                                                            class="btn btn-info btn-sm mb-3 mr-1 user_change_password_btn"
                                                         >
                                                             {{__("Change Password")}}
@@ -125,8 +125,8 @@
                                                             <a href="#"
                                                                data-id="{{$data->id}}"
                                                                data-campaign_permission="{{$data->campaign_permission}}"
-                                                               data-toggle="modal"
-                                                               data-target="#user_campaign_permission_modal"
+                                                               data-bs-toggle="modal"
+                                                               data-bs-target="#user_campaign_permission_modal"
                                                                class="btn btn-primary btn-sm mb-3 mr-1 mt-2 permission_change_btn"
                                                             >
                                                                 {{__("Campaign Permission")}}
@@ -152,7 +152,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title">{{__('User Details Edit')}}</h5>
-                    <button type="button" class="close" data-dismiss="modal"><span>×</span></button>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <form action="{{route('admin.frontend.user.update')}}" id="user_edit_modal_form" method="post" enctype="multipart/form-data">
                     @csrf
@@ -196,7 +196,7 @@
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">{{__('Close')}}</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">{{__('Close')}}</button>
                         <button id="update" type="submit" class="btn btn-primary">{{__('Save changes')}}</button>
                     </div>
                 </form>
@@ -209,7 +209,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title">{{__('Change Admin Password')}}</h5>
-                    <button type="button" class="close" data-dismiss="modal"><span>×</span></button>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 @if($errors->any())
                     <div class="alert alert-danger">
@@ -234,7 +234,7 @@
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">{{__('Close')}}</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">{{__('Close')}}</button>
                         <button id="update" type="submit" class="btn btn-primary">{{__('Change Password')}}</button>
                     </div>
                 </form>
@@ -247,7 +247,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title">{{__('User Campaign Permission')}}</h5>
-                    <button type="button" class="close" data-dismiss="modal"><span>×</span></button>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 @if($errors->any())
                     <div class="alert alert-danger">
@@ -273,7 +273,7 @@
 
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">{{__('Close')}}</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">{{__('Close')}}</button>
                         <button id="update" type="submit" class="btn btn-primary">{{__('Submit')}}</button>
                     </div>
                 </form>

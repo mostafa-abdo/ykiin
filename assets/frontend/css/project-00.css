@@ -1,0 +1,130 @@
+.project-info-container {
+    max-width: 550px;
+}
+
+.project-info-container  .infos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.project-info-container  .infos .info {
+    flex: 0 0 calc(50% - 20px);
+    padding: 10px;
+    text-align: start;
+    border: 1px solid #ccc;
+    width: max-content;
+    font-size: 14px;
+}
+
+
+.project-info-container .donateamount {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    width: 100%;
+    overflow: hidden;
+    margin-bottom:  16px;
+    border: 1px solid #D4D3D3;
+    border-radius: 5px;
+    padding: 5px 10px;
+
+}   
+.project-info-container .donateamount .title {
+    text-wrap: nowrap;
+    font-weight: 700;
+    font-size: 14px;
+}
+.project-info-container .donateamount .amount-input {
+    flex-grow: 1;
+}
+.project-info-container .donateamount .amount-input input{
+    font-size: 18px;
+    font-weight: 700;
+    width: 100%;
+    height: 35px;
+    text-align: center;
+    border: none;
+}
+
+.project-info-container .donateamount .currency {
+    font-weight: 600;
+}
+
+.project-info-container .progress-bar {
+    width: 0;
+    background-color: #569446;
+    transition: width 0.3s ease-in-out;
+   
+}
+
+
+.project-info-container .amount-btn.active {
+    background-color: #5a1932;
+    color: #ffffff;
+}
+
+
+
+
+
+
+
+
+
+.project-images-container {
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+    width: 100%;
+}
+
+.project-images-container .project-image-view {
+    border-radius: 30px;
+    width: 100%;
+    aspect-ratio: 1.4;
+    overflow: hidden;
+}
+
+.project-images-container .project-image-view img {
+    width: 100%;
+    height: 100%;
+}
+
+.project-images-container .project-images {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: start;
+}
+
+.project-images-container .project-image {
+    display: flex;
+    width: 100%;
+    max-width: 120px;
+    aspect-ratio: 1;
+    overflow: hidden;
+    aspect-ratio: 1.4;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+.project-images-container .project-image img {
+    width: 100%;
+    height: 100%;
+}
+
+.project-images-container .project-image img:hover {
+    scale: 1.1;
+}
+
+@media screen and (max-width: 768px) {
+.project-info-container  .infos .info {
+    flex: 0 0 100%;
+    padding: 10px;
+    text-align: start;
+    border: 1px solid #ccc;
+    width: max-content;
+}
+}

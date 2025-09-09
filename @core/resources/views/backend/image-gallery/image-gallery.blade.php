@@ -33,8 +33,8 @@
                             @endcan
                             @can('image-gallery-create')
                                 <div class="btn-wrapper">
-                                    <a href="#" class="btn btn-info pull-right mb-4" data-toggle="modal"
-                                       data-target="#testimonial_item_new_modal">{{__('Add New')}}</a>
+                                    <a href="#" class="btn btn-info pull-right mb-4" data-bs-toggle="modal"
+                                       data-bs-target="#testimonial_item_new_modal">{{__('Add New')}}</a>
                                 </div>
                             @endcan
                         </div>
@@ -85,8 +85,8 @@
                                             @endcan
                                             @can('image-gallery-edit')
                                                 <a href="#"
-                                                   data-toggle="modal"
-                                                   data-target="#testimonial_item_edit_modal"
+                                                   data-bs-toggle="modal"
+                                                   data-bs-target="#testimonial_item_edit_modal"
                                                    class="btn btn-lg btn-primary btn-xs mb-3 mr-1 testimonial_edit_btn"
                                                    data-id="{{$data->id}}"
                                                    data-title="{{$data->title}}"
@@ -117,7 +117,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title">{{__('New Testimonial Item')}}</h5>
-                    <button type="button" class="close" data-dismiss="modal"><span>×</span></button>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <form action="{{route('admin.gallery.new')}}" method="post" enctype="multipart/form-data">
                     <div class="modal-body">
@@ -141,8 +141,8 @@
                                 <div class="img-wrap"></div>
                                 <input type="hidden" name="image">
                                 <button type="button" class="btn btn-info media_upload_form_btn"
-                                        data-btntitle="Select Image" data-modaltitle="Upload Image" data-toggle="modal"
-                                        data-target="#media_upload_modal">
+                                        data-btntitle="Select Image" data-modaltitle="Upload Image" data-bs-toggle="modal"
+                                        data-bs-target="#media_upload_modal">
                                     {{__('Upload Image')}}
                                 </button>
                             </div>
@@ -150,7 +150,7 @@
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">{{__('Close')}}</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">{{__('Close')}}</button>
                         <button id="submit" type="submit" class="btn btn-primary">{{__('Submit')}}</button>
                     </div>
                 </form>
@@ -164,7 +164,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title">{{__('Edit Testimonial Item')}}</h5>
-                    <button type="button" class="close" data-dismiss="modal"><span>×</span></button>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <form action="{{route('admin.gallery.update')}}" id="testimonial_edit_modal_form" method="post"
                       enctype="multipart/form-data">
@@ -190,8 +190,8 @@
                                 <div class="img-wrap"></div>
                                 <input type="hidden" id="edit_image" name="image" value="">
                                 <button type="button" class="btn btn-info media_upload_form_btn"
-                                        data-btntitle="Select Image" data-modaltitle="Upload Image" data-toggle="modal"
-                                        data-target="#media_upload_modal">
+                                        data-btntitle="Select Image" data-modaltitle="Upload Image" data-bs-toggle="modal"
+                                        data-bs-target="#media_upload_modal">
                                     {{__('Upload Image')}}
                                 </button>
                             </div>
@@ -199,7 +199,7 @@
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">{{__('Close')}}</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">{{__('Close')}}</button>
                         <button id="update" type="submit" class="btn btn-primary">{{__('Save Changes')}}</button>
                     </div>
                 </form>

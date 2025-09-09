@@ -75,94 +75,94 @@
 </div>
 
 @if(get_static_option('home_page_header_slider_area_06_section_status'))
-<div class="header-slider-new">
-    @php
-        $all_title_fields = get_static_option('home_page_06_header_area_title');
-        $all_title_fields = !empty($all_title_fields) ? unserialize($all_title_fields) : [];
+    <div class="header-slider-new">
+        @php
+            $all_title_fields = get_static_option('home_page_06_header_area_title');
+            $all_title_fields = !empty($all_title_fields) ? unserialize($all_title_fields) : [];
 
-        $all_sub_fields = get_static_option('home_page_06_header_area_subtitle');
-        $all_sub_fields = !empty($all_sub_fields) ? unserialize($all_sub_fields) : [];
+            $all_sub_fields = get_static_option('home_page_06_header_area_subtitle');
+            $all_sub_fields = !empty($all_sub_fields) ? unserialize($all_sub_fields) : [];
 
-        $all_donate_button_title_fields = get_static_option('home_page_06_header_area_donate_button_title');
-        $all_donate_button_title_fields = !empty($all_donate_button_title_fields) ? unserialize($all_donate_button_title_fields) : [];
+            $all_donate_button_title_fields = get_static_option('home_page_06_header_area_donate_button_title');
+            $all_donate_button_title_fields = !empty($all_donate_button_title_fields) ? unserialize($all_donate_button_title_fields) : [];
 
-        $all_donate_button_title_url_fields = get_static_option('home_page_06_header_area_donate_button_url');
-        $all_donate_button_title_url_fields = !empty($all_donate_button_title_url_fields) ? unserialize($all_donate_button_title_url_fields) : [];
+            $all_donate_button_title_url_fields = get_static_option('home_page_06_header_area_donate_button_url');
+            $all_donate_button_title_url_fields = !empty($all_donate_button_title_url_fields) ? unserialize($all_donate_button_title_url_fields) : [];
 
-        $all_read_more_button_title_fields = get_static_option('home_page_06_header_area_read_more_button_title');
-        $all_read_more_button_title_fields = !empty($all_read_more_button_title_fields) ? unserialize($all_read_more_button_title_fields) : [];
+            $all_read_more_button_title_fields = get_static_option('home_page_06_header_area_read_more_button_title');
+            $all_read_more_button_title_fields = !empty($all_read_more_button_title_fields) ? unserialize($all_read_more_button_title_fields) : [];
 
-        $all_read_more_button_title_url_fields =  get_static_option('home_page_06_header_area_read_more_button_url');
-        $all_read_more_button_title_url_fields = !empty($all_read_more_button_title_url_fields) ? unserialize($all_read_more_button_title_url_fields) : [];
+            $all_read_more_button_title_url_fields =  get_static_option('home_page_06_header_area_read_more_button_url');
+            $all_read_more_button_title_url_fields = !empty($all_read_more_button_title_url_fields) ? unserialize($all_read_more_button_title_url_fields) : [];
 
-        $all_image_fields =  get_static_option('home_page_06_header_area_image');
-        $all_image_fields = !empty($all_image_fields) ? unserialize($all_image_fields,['class' => false]) : [];
-        $home_page_06_header_area_donation =  get_static_option('home_page_06_header_area_donation');
-        $home_page_06_header_area_donation = !empty($home_page_06_header_area_donation) ? unserialize($home_page_06_header_area_donation,['class' => false]) : [''];
+            $all_image_fields =  get_static_option('home_page_06_header_area_image');
+            $all_image_fields = !empty($all_image_fields) ? unserialize($all_image_fields,['class' => false]) : [];
+            $home_page_06_header_area_donation =  get_static_option('home_page_06_header_area_donation');
+            $home_page_06_header_area_donation = !empty($home_page_06_header_area_donation) ? unserialize($home_page_06_header_area_donation,['class' => false]) : [''];
 
 
-    @endphp
+        @endphp
 
-    @foreach($all_title_fields as $key=> $title)
-    <div class="header-area inner-padding header-bg-05" {!! render_background_image_markup_by_attachment_id(get_static_option('home_page_06_header_area_bg_image')) !!}>
-        <div class="container-fluid">
-            <div class="row align-items-center">
-                <div class="col-xl-5 col-lg-12 order-2 order-xl-1">
-                    <div class="banner-contents-slider">
-                        <div class="header-inner-02 header-inner-04 header-inner-06">
-                            <p class="animate-style-02">{{$title}}</p>
-                            @php
-                                $donation_cause_id = $home_page_06_header_area_donation[$loop->index] ?? '';
-                                $donation_cause = \App\Cause::find($donation_cause_id);
-                                $content = $all_sub_fields[$key];
-                                $subExplode = explode(' ',$content);
-                                $lastWord = array_pop($subExplode);
-                                $first_word = implode(' ',$subExplode);
-                            @endphp
+        @foreach($all_title_fields as $key=> $title)
+            <div class="header-area inner-padding header-bg-05" {!! render_background_image_markup_by_attachment_id(get_static_option('home_page_06_header_area_bg_image')) !!}>
+                <div class="container-fluid">
+                    <div class="row align-items-center">
+                        <div class="col-xl-5 col-lg-12 order-2 order-xl-1">
+                            <div class="banner-contents-slider">
+                                <div class="header-inner-02 header-inner-04 header-inner-06">
+                                    <p class="animate-style-02">{{$title}}</p>
+                                    @php
+                                        $donation_cause_id = $home_page_06_header_area_donation[$loop->index] ?? '';
+                                        $donation_cause = \App\Cause::find($donation_cause_id);
+                                        $content = $all_sub_fields[$key];
+                                        $subExplode = explode(' ',$content);
+                                        $lastWord = array_pop($subExplode);
+                                        $first_word = implode(' ',$subExplode);
+                                    @endphp
 
-                            <h1 class="title animate-style">{{$first_word ?? ''}}<span>{{$lastWord ?? ''}}</span></h1>
+                                    <h1 class="title animate-style">{{$first_word ?? ''}}<span>{{$lastWord ?? ''}}</span></h1>
 
-                            @if(!is_null($donation_cause))
-                            <div class="progress-wrapper">
-                                 <div class="progress-item">
-                                    <div class="single-progressbar">
-                                        <div class="donation-progress" data-percentage="{{get_percentage($donation_cause->amount,$donation_cause->raised)}}"></div>
+                                    @if(!is_null($donation_cause))
+                                    <div class="progress-wrapper">
+                                        <div class="progress-item">
+                                            <div class="single-progressbar">
+                                                <div class="donation-progress" data-percentage="{{get_percentage($donation_cause->amount,$donation_cause->raised)}}"></div>
+                                            </div>
+                                        </div>
+                                        <span class="targets"> {{__('Amount Raised:')}} {{ amount_with_currency_symbol($donation_cause->raised)  }} </span>
+                                    </div>
+                                    <div class="btn-wrapper padding-top-30">
+                                        @php
+                                            $button_title_url = !empty($all_donate_button_title_url_fields[$loop->index]) ? $all_donate_button_title_url_fields[$loop->index] : route('frontend.donation.in.separate.page',$donation_cause->id);
+                                            $button_read_more_url = !empty($all_read_more_button_title_url_fields[$loop->index]) ? $all_read_more_button_title_url_fields[$loop->index] : route('frontend.donations.single',$donation_cause->slug);
+                                        @endphp
+                                        <a href="{{ $button_title_url }}" class="boxed-btn btn-color-five btn-rounded">
+                                            {{ $all_donate_button_title_fields[$loop->index] ?? '' }}
+                                        </a>
+                                        <a href="{{$button_read_more_url}}" class="boxed-btn btn-rounded btn-outline-white ml-3">
+                                            {{$all_read_more_button_title_fields[$loop->index] ?? ''}}
+                                        </a>
+                                    </div>
+                                    @endif
+                                </div>
+
+                            </div>
+
+                        </div>
+                        <div class="col-xl-7 col-lg-12 order-1 order-xl-2">
+                            <div class="banner-mask-slider">
+                                <div class="banner-mask-contents">
+                                    <div class="banner-mask-image">
+                                        {!! render_image_markup_by_attachment_id($all_image_fields[$loop->index]) !!}
                                     </div>
                                 </div>
-                                <span class="targets"> {{__('Amount Raised:')}} {{ amount_with_currency_symbol($donation_cause->raised)  }} </span>
-                            </div>
-                            <div class="btn-wrapper padding-top-30">
-                                @php
-                                    $button_title_url = !empty($all_donate_button_title_url_fields[$loop->index]) ? $all_donate_button_title_url_fields[$loop->index] : route('frontend.donation.in.separate.page',$donation_cause->id);
-                                    $button_read_more_url = !empty($all_read_more_button_title_url_fields[$loop->index]) ? $all_read_more_button_title_url_fields[$loop->index] : route('frontend.donations.single',$donation_cause->slug);
-                                @endphp
-                                <a href="{{ $button_title_url }}" class="boxed-btn btn-color-five btn-rounded">
-                                    {{ $all_donate_button_title_fields[$loop->index] ?? '' }}
-                                </a>
-                                <a href="{{$button_read_more_url}}" class="boxed-btn btn-rounded btn-outline-white ml-3">
-                                    {{$all_read_more_button_title_fields[$loop->index] ?? ''}}
-                                </a>
-                            </div>
-                            @endif
-                        </div>
-
-                    </div>
-
-                </div>
-                <div class="col-xl-7 col-lg-12 order-1 order-xl-2">
-                    <div class="banner-mask-slider">
-                        <div class="banner-mask-contents">
-                            <div class="banner-mask-image">
-                                {!! render_image_markup_by_attachment_id($all_image_fields[$loop->index]) !!}
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+        @endforeach
     </div>
-@endforeach
-</div>
 @endif
 
 

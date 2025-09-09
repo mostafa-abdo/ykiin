@@ -59,10 +59,13 @@ class MenuController extends Controller
             'content' => 'nullable',
             'title' => 'required',
         ]);
+
         Menu::where('id',$id)->update([
             'content' => $request->menu_content,
             'title' => $request->title,
         ]);
+
+
 
         return redirect()->back()->with([
             'msg' => __('Menu updated...'),

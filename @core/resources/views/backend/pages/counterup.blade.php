@@ -24,8 +24,8 @@
                             @endcan
                             @can('counterup-create')
                                 <div class="btn-wrapper">
-                                    <a data-toggle="modal" class="btn btn-info text-white pull-right mb-4"
-                                       data-target="#new_coutnerup_item">{{__('New Counterup')}}</a>
+                                    <a data-bs-toggle="modal" class="btn btn-info text-white pull-right mb-4"
+                                       data-bs-target="#new_coutnerup_item">{{__('New Counterup')}}</a>
                                 </div>
                             @endcan
                         </div>
@@ -58,8 +58,8 @@
                                             @endcan
                                             @can('counterup-edit')
                                                 <a href="#"
-                                                   data-toggle="modal"
-                                                   data-target="#counterup_item_edit_modal"
+                                                   data-bs-toggle="modal"
+                                                   data-bs-target="#counterup_item_edit_modal"
                                                    class="btn btn-primary btn-xs mb-3 mr-1 counterup_edit_btn"
                                                    data-id="{{$data->id}}"
                                                    data-action="{{route('admin.counterup.update')}}"
@@ -89,7 +89,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title">{{__('New Counterup Item')}}</h5>
-                    <button type="button" class="close" data-dismiss="modal"><span>×</span></button>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <form action="{{route('admin.counterup')}}" enctype="multipart/form-data" method="post">
                     <div class="modal-body">
@@ -106,7 +106,7 @@
                                     <i class="fas fa-exclamation-triangle"></i>
                                 </button>
                                 <button type="button" class="icp icp-dd btn btn-primary dropdown-toggle"
-                                        data-selected="fas fa-exclamation-triangle" data-toggle="dropdown">
+                                        data-selected="fas fa-exclamation-triangle" data-bs-toggle="dropdown">
                                     <span class="caret"></span>
                                     <span class="sr-only">Toggle Dropdown</span>
                                 </button>
@@ -127,7 +127,7 @@
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">{{__('Close')}}</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">{{__('Close')}}</button>
                         <button id="submit" type="submit" class="btn btn-primary">{{__('Submit')}}</button>
                     </div>
                 </form>
@@ -141,7 +141,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title">{{__('Edit Counterup Item')}}</h5>
-                    <button type="button" class="close" data-dismiss="modal"><span>×</span></button>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <form action="#" id="counterup_edit_modal_form" method="post">
                     <div class="modal-body">
@@ -160,7 +160,7 @@
                                     <i class="fas fa-exclamation-triangle"></i>
                                 </button>
                                 <button type="button" class="icp icp-dd btn btn-primary dropdown-toggle"
-                                        data-selected="fas fa-exclamation-triangle" data-toggle="dropdown">
+                                        data-selected="fas fa-exclamation-triangle" data-bs-toggle="dropdown">
                                     <span class="caret"></span>
                                     <span class="sr-only">Toggle Dropdown</span>
                                 </button>
@@ -181,7 +181,7 @@
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">{{__('Close')}}</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">{{__('Close')}}</button>
                         <button id="update" type="submit" class="btn btn-primary">{{__('Save Changes')}}</button>
                     </div>
                 </form>

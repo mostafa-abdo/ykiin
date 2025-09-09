@@ -1143,6 +1143,10 @@ table.dbkit-table tr td {
     font-size: 19px;
 }
 
+.form-group {
+    margin-bottom: 1rem;
+}
+
 .exhcange-rate {
     padding: 38px;
     background: #f7fafb;

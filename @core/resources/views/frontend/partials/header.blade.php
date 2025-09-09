@@ -1,3 +1,6 @@
+@php
+    $home_page_variant = isset($home_page) ? $home_page : get_static_option('home_page_variant');
+@endphp
 <!DOCTYPE html>
 <html class="no-js" lang="{{get_default_language()}}"dir="{{get_default_language_direction()}}">
 <head>
@@ -15,10 +18,10 @@
     @endif
     {!! render_favicon_by_id(filter_static_option_value('site_favicon',$global_static_field_data)) !!}
     {!! load_google_fonts() !!}
-    <link rel="stylesheet" href="{{asset('assets/frontend/css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/frontend/vendor/bootstrap-5.3.6-dist/css/bootstrap.rtl.min.css')}}">
     <link rel="stylesheet" href="{{asset('assets/frontend/css/line-awesome.min.css')}}">
-    <link rel="stylesheet" href="{{asset('assets/frontend/css/fontawesome.min.css')}}">
-    <link rel="stylesheet" href="{{asset('assets/common/css/font-awesome.min.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/frontend/vendor/fontawesome-free-6.6.0-web/css/all.min.css')}}">
+    {{-- <link rel="stylesheet" href="{{asset('assets/common/css/font-awesome.min.css')}}"> --}}
     <link rel="stylesheet" href="{{asset('assets/frontend/css/owl.carousel.min.css')}}">
     <link rel="stylesheet" href="{{asset('assets/frontend/css/animate.css')}}">
     <link rel="stylesheet" href="{{asset('assets/frontend/css/flaticon.css')}}">
@@ -26,8 +29,12 @@
     <link rel="stylesheet" href="{{asset('assets/backend/css/nice-select.css')}}">
     <link rel="stylesheet" href="{{asset('assets/common/css/toastr.css')}}">
     <link rel="stylesheet" href="{{asset('assets/frontend/css/slick.css')}}">
-    <link rel="stylesheet" href="{{asset('assets/frontend/css/style.css')}}">
-    <link rel="stylesheet" href="{{asset('assets/frontend/css/style_02.css')}}">
+    @if($home_page_variant != '00')
+        <link rel="stylesheet" href="{{asset('assets/frontend/css/style.css')}}">
+        <link rel="stylesheet" href="{{asset('assets/frontend/css/style_02.css')}}">
+    @else
+        <link rel="stylesheet" href="{{asset('assets/frontend/css/main-00.css')}}">
+    @endif
     <link rel="stylesheet" href="{{asset('assets/frontend/css/responsive.css')}}">
     <link rel="stylesheet" href="{{asset('assets/frontend/css/jquery.ihavecookies.css')}}">
     <link rel="stylesheet" href="{{asset('assets/frontend/css/dynamic-style.css')}}">
@@ -36,8 +43,8 @@
     @yield('style')
 
     @if(!empty(filter_static_option_value('site_rtl_enabled',$global_static_field_data)) || get_user_lang_direction() == 'rtl')
-         <link rel="stylesheet" href="{{asset('assets/frontend/css/rtl.css')}}">
-     @endif
+        <link rel="stylesheet" href="{{asset('assets/frontend/css/rtl.css')}}">
+    @endif
     @include('frontend.partials.og-meta')
     <script src="{{asset('assets/frontend/js/jquery-3.4.1.min.js')}}"></script>
     <script src="{{asset('assets/frontend/js/jquery-migrate-3.1.0.min.js')}}"></script>
@@ -50,4 +57,3 @@
     $home_page_variant = $home_page ?? filter_static_option_value('home_page_variant',$global_static_field_data);
 @endphp
 <body class="version_{{getenv('XGENIOUS_SCRIPT_VERSION')}} {{filter_static_option_value('item_license_status',$global_static_field_data)}} apps_key_{{getenv('XGENIOUS_API_KEY')}} ">
-@include('frontend.partials.preloader')

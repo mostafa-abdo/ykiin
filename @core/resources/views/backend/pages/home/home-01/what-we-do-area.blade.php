@@ -41,7 +41,7 @@
                                         {!! render_attachment_preview_for_admin($home_page_01_about_us_right_image) !!}
                                     </div>
                                     <input type="hidden" name="home_page_02_what_we_do_left_image" value="{{$home_page_01_about_us_right_image}}">
-                                    <button type="button" class="btn btn-info media_upload_form_btn" data-btntitle="{{__('Select Image')}}" data-modaltitle="{{__('Upload Image')}}" data-imgid="{{$home_page_01_about_us_right_image}}" data-toggle="modal" data-target="#media_upload_modal">
+                                    <button type="button" class="btn btn-info media_upload_form_btn" data-btntitle="{{__('Select Image')}}" data-modaltitle="{{__('Upload Image')}}" data-imgid="{{$home_page_01_about_us_right_image}}" data-bs-toggle="modal" data-bs-target="#media_upload_modal">
                                         {{__($background_image_upload_btn_label)}}
                                     </button>
                                 </div>
@@ -88,7 +88,7 @@
                                                         <i class="{{$icon_field}}"></i>
                                                     </button>
                                                     <button type="button" class="icp icp-dd btn btn-primary dropdown-toggle"
-                                                            data-selected="{{$icon_field}}" data-toggle="dropdown">
+                                                            data-selected="{{$icon_field}}" data-bs-toggle="dropdown">
                                                         <span class="caret"></span>
                                                         <span class="sr-only">Toggle Dropdown</span>
                                                     </button>

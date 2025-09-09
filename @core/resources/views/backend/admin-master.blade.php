@@ -20,7 +20,9 @@
         <link rel="icon" href="{{$site_favicon['img_url']}}" type="image/png">
     @endif
 
-    <link rel="stylesheet" href="{{asset('assets/common/css/bootstrap.min.css')}}">
+    {{-- <link rel="stylesheet" href="{{asset('assets/common/css/bootstrap.min.css')}}"> --}}
+    <link rel="stylesheet" href="{{asset('assets/common/css/bootstrap5.3.8.rtl.min.css')}}">
+
     <link rel="stylesheet" href="{{asset('assets/common/css/font-awesome.min.css')}}">
     <link rel="stylesheet" href="{{asset('assets/common/css/themify-icons.css')}}">
     <link rel="stylesheet" href="{{asset('assets/common/css/toastr.css')}}">
@@ -81,7 +83,7 @@
 
                         {{--Notification--}}
                             <li class="dropdown">
-                                <i class="ti-bell dropdown-toggle" data-toggle="dropdown">
+                                <i class="ti-bell dropdown-toggle" data-bs-toggle="dropdown">
                                     <span>{{count($new_notification)}}</span>
                                 </i>
                                 <div class="dropdown-menu bell-notify-box notify-box">
@@ -162,7 +164,7 @@
                        @if (!empty($profile_img))
                            <img class="avatar user-thumb" src="{{$profile_img['img_url']}}" alt="{{auth()->user()->name}}">
                        @endif
-                     <h4 class="user-name dropdown-toggle" data-toggle="dropdown">{{ Auth::user()->name }} <i class="fa fa-angle-down"></i></h4>
+                     <h4 class="user-name dropdown-toggle" data-bs-toggle="dropdown">{{ Auth::user()->name }} <i class="fa fa-angle-down"></i></h4>
                         <div class="dropdown-menu">
                             <a class="dropdown-item" href="{{route('admin.profile.update')}}">{{__('Edit Profile')}}</a>
                             <a class="dropdown-item" href="{{route('admin.password.change')}}">{{__('Password Change')}}</a>
@@ -187,7 +189,9 @@
 
 <script src="{{asset('assets/frontend/js/jquery-3.4.1.min.js')}}"></script>
 <script src="{{asset('assets/common/js/jquery-migrate-3.3.2.min.js')}}"></script>
-<script src="{{asset('assets/common/js/bootstrap.min.js')}}"></script>
+{{-- <script src="{{asset('assets/common/js/bootstrap.min.js')}}"></script> --}}
+<script src="{{asset('assets/common/js/bootstrap5.3.8.bundle.min.js')}}"></script>
+
 <script src="{{asset('assets/backend/js/sweetalert2.js')}}"></script>
 <script src="{{asset('assets/backend/js/metisMenu.min.js')}}"></script>
 <script src="{{asset('assets/backend/js/jquery.slimscroll.min.js')}}"></script>

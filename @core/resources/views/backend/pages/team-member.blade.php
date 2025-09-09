@@ -27,8 +27,8 @@
                             @endcan
                             @can('team-member-create')
                                 <div class="btn-wrapper">
-                                    <a href="" class="btn btn-info pull-right mb-4" data-toggle="modal"
-                                       data-target="#new_team_member">{{__('Add New')}}</a>
+                                    <a href="" class="btn btn-info pull-right mb-4" data-bs-toggle="modal"
+                                       data-bs-target="#new_team_member">{{__('Add New')}}</a>
                                 </div>
                             @endcan
                         </div>
@@ -75,8 +75,8 @@
                                             @endcan
                                             @can('team-member-edit')
                                             <a href="#"
-                                               data-toggle="modal"
-                                               data-target="#team_member_item_edit_modal"
+                                               data-bs-toggle="modal"
+                                               data-bs-target="#team_member_item_edit_modal"
                                                class="btn btn-primary btn-xs mb-3 mr-1 team_member_edit_btn"
                                                data-id="{{$data->id}}"
                                                data-action="{{route('admin.team.member.update')}}"
@@ -112,7 +112,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title">{{__('New Team Member')}}</h5>
-                    <button type="button" class="close" data-dismiss="modal"><span>×</span></button>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <form action="{{route('admin.team.member')}}" method="post" enctype="multipart/form-data">
                     <div class="modal-body">
@@ -133,7 +133,7 @@
                                     <i class="fab fa-instagram"></i>
                                 </button>
                                 <button type="button" class="icp icp-dd btn btn-primary dropdown-toggle"
-                                        data-selected="fab fa-instagram" data-toggle="dropdown">
+                                        data-selected="fab fa-instagram" data-bs-toggle="dropdown">
                                     <span class="caret"></span>
                                     <span class="sr-only">Toggle Dropdown</span>
                                 </button>
@@ -154,7 +154,7 @@
                                     <i class="fab fa-twitter"></i>
                                 </button>
                                 <button type="button" class="icp icp-dd btn btn-primary dropdown-toggle"
-                                        data-selected="fab fa-twitter" data-toggle="dropdown">
+                                        data-selected="fab fa-twitter" data-bs-toggle="dropdown">
                                     <span class="caret"></span>
                                     <span class="sr-only">Toggle Dropdown</span>
                                 </button>
@@ -175,7 +175,7 @@
                                     <i class="fab fa-facebook-f"></i>
                                 </button>
                                 <button type="button" class="icp icp-dd btn btn-primary dropdown-toggle"
-                                        data-selected="fab fa-facebook-f" data-toggle="dropdown">
+                                        data-selected="fab fa-facebook-f" data-bs-toggle="dropdown">
                                     <span class="caret"></span>
                                     <span class="sr-only">Toggle Dropdown</span>
                                 </button>
@@ -196,7 +196,7 @@
                                 <input type="hidden" name="image">
                                 <button type="button" class="btn btn-info media_upload_form_btn"
                                         data-btntitle="{{__('Select Image')}}" data-modaltitle="{{__('Upload Image')}}"
-                                        data-toggle="modal" data-target="#media_upload_modal">
+                                        data-bs-toggle="modal" data-bs-target="#media_upload_modal">
                                     {{__('Upload Image')}}
                                 </button>
                             </div>
@@ -204,7 +204,7 @@
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">{{__('Close')}}</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">{{__('Close')}}</button>
                         <button id="submit" type="submit" class="btn btn-primary">{{__('Submit')}}</button>
                     </div>
                 </form>
@@ -218,7 +218,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title">{{__('Edit Team Member Item')}}</h5>
-                    <button type="button" class="close" data-dismiss="modal"><span>×</span></button>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <form action="#" id="team_member_edit_modal_form" method="post" enctype="multipart/form-data">
                     <div class="modal-body">
@@ -242,7 +242,7 @@
                                     <i class="fas fa-exclamation-triangle"></i>
                                 </button>
                                 <button type="button" class="icp icp-dd btn btn-primary dropdown-toggle"
-                                        data-selected="fas fa-exclamation-triangle" data-toggle="dropdown">
+                                        data-selected="fas fa-exclamation-triangle" data-bs-toggle="dropdown">
                                     <span class="caret"></span>
                                     <span class="sr-only">Toggle Dropdown</span>
                                 </button>
@@ -263,7 +263,7 @@
                                     <i class="fas fa-exclamation-triangle"></i>
                                 </button>
                                 <button type="button" class="icp icp-dd btn btn-primary dropdown-toggle"
-                                        data-selected="fas fa-exclamation-triangle" data-toggle="dropdown">
+                                        data-selected="fas fa-exclamation-triangle" data-bs-toggle="dropdown">
                                     <span class="caret"></span>
                                     <span class="sr-only">Toggle Dropdown</span>
                                 </button>
@@ -284,7 +284,7 @@
                                     <i class="fas fa-exclamation-triangle"></i>
                                 </button>
                                 <button type="button" class="icp icp-dd btn btn-primary dropdown-toggle"
-                                        data-selected="fas fa-exclamation-triangle" data-toggle="dropdown">
+                                        data-selected="fas fa-exclamation-triangle" data-bs-toggle="dropdown">
                                     <span class="caret"></span>
                                     <span class="sr-only">Toggle Dropdown</span>
                                 </button>
@@ -305,7 +305,7 @@
                                 <input type="hidden" id="edit_image" name="image" value="">
                                 <button type="button" class="btn btn-info media_upload_form_btn"
                                         data-btntitle="{{__('Select Image')}}" data-modaltitle="{{__('Upload Image')}}"
-                                        data-toggle="modal" data-target="#media_upload_modal">
+                                        data-bs-toggle="modal" data-bs-target="#media_upload_modal">
                                     {{__('Upload Image')}}
                                 </button>
                             </div>
@@ -313,7 +313,7 @@
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">{{__('Close')}}</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">{{__('Close')}}</button>
                         <button id="update" type="submit" class="btn btn-primary">{{__('Save Changes')}}</button>
                     </div>
                 </form>

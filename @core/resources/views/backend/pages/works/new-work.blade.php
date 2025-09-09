@@ -89,7 +89,7 @@
                                 <div class="media-upload-btn-wrapper">
                                     <div class="img-wrap"></div>
                                     <input type="hidden" name="gallery">
-                                    <button type="button" class="btn btn-info media_upload_form_btn" data-mulitple="true" data-btntitle="Select Image" data-modaltitle="Upload Image" data-toggle="modal" data-target="#media_upload_modal">
+                                    <button type="button" class="btn btn-info media_upload_form_btn" data-mulitple="true" data-btntitle="Select Image" data-modaltitle="Upload Image" data-bs-toggle="modal" data-bs-target="#media_upload_modal">
                                         {{__('Upload Image')}}
                                     </button>
                                 </div>
@@ -107,7 +107,7 @@
                                 <div class="media-upload-btn-wrapper">
                                     <div class="img-wrap"></div>
                                     <input type="hidden" name="image">
-                                    <button type="button" class="btn btn-info media_upload_form_btn" data-btntitle="{{__('Select Work Image')}}" data-modaltitle={{__('"Upload Work Image')}}" data-toggle="modal" data-target="#media_upload_modal">
+                                    <button type="button" class="btn btn-info media_upload_form_btn" data-btntitle="{{__('Select Work Image')}}" data-modaltitle={{__('"Upload Work Image')}}" data-bs-toggle="modal" data-bs-target="#media_upload_modal">
                                         {{__('Upload Image')}}
                                     </button>
                                 </div>

@@ -104,7 +104,7 @@
                                                 {!! render_attachment_preview_for_admin($gift->image) !!}
                                             </div>
                                             <input type="hidden" name="image" value="{{$gift->image}}">
-                                            <button type="button" class="btn btn-info media_upload_form_btn" data-btntitle="{{__('Select Donation Image')}}" data-modaltitle="{{__('Upload Donation Image')}}" data-toggle="modal" data-target="#media_upload_modal">
+                                            <button type="button" class="btn btn-info media_upload_form_btn" data-btntitle="{{__('Select Donation Image')}}" data-modaltitle="{{__('Upload Donation Image')}}" data-bs-toggle="modal" data-bs-target="#media_upload_modal">
                                                 {{'Change Image'}}
                                             </button>
                                         </div>
@@ -112,7 +112,7 @@
                                 </div>
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">{{__('Close')}}</button>
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">{{__('Close')}}</button>
                                 <button id="submit" type="submit" class="btn btn-primary">{{__('Submit')}}</button>
                             </div>
                         </form>

@@ -69,8 +69,8 @@
                                             @can('newsletter-mail-send')
                                             <a class="btn btn-lg btn-primary btn-sm mb-3 mr-1 send_mail_modal_btn"
                                                href="#"
-                                               data-toggle="modal"
-                                               data-target="#send_mail_to_subscriber_modal"
+                                               data-bs-toggle="modal"
+                                               data-bs-target="#send_mail_to_subscriber_modal"
                                                data-email="{{$data->email}}"
                                                data-id="{{$data->id}}"
                                             >
@@ -118,7 +118,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title">{{__('Send Mail To Subscriber')}}</h5>
-                    <button type="button" class="close" data-dismiss="modal"><span>×</span></button>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <form action="{{route('admin.newsletter.single.mail')}}" id="send_mail_to_subscriber_edit_modal_form"  method="post">
                     <div class="modal-body">
@@ -139,7 +139,7 @@
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">{{__('Close')}}</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">{{__('Close')}}</button>
                         <button id="submit" type="submit" class="btn btn-primary">{{__('Send Mail')}}</button>
                     </div>
                 </form>

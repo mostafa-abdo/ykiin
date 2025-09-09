@@ -129,7 +129,7 @@
                                         <div class="media-upload-btn-wrapper">
                                             <div class="img-wrap"></div>
                                             <input type="hidden" name="image">
-                                            <button type="button" class="btn btn-info media_upload_form_btn" data-btntitle="{{__('Select Event Image')}}" data-modaltitle="{{__('Upload Event Image')}}" data-toggle="modal" data-target="#media_upload_modal">
+                                            <button type="button" class="btn btn-info media_upload_form_btn" data-btntitle="{{__('Select Event Image')}}" data-modaltitle="{{__('Upload Event Image')}}" data-bs-toggle="modal" data-bs-target="#media_upload_modal">
                                                 {{__('Upload Image')}}
                                             </button>
                                         </div>

@@ -3,8 +3,8 @@
     {{__('Testimonial Item')}}
 @endsection
 @section('style')
+    @include('backend.partials.datatable.style-enqueue')
     <x-media.css/>
-    <x-datatable.css/>
 @endsection
 @section('content')
     <div class="col-lg-12 col-ml-12 padding-bottom-30">
@@ -26,7 +26,7 @@
                             @endcan
                             @can('testimonial-create')
                                 <div class="btn-wrapper">
-                                    <a href="" data-toggle="modal" data-target="#new_testimonial"
+                                    <a href="" data-bs-toggle="modal" data-bs-target="#new_testimonial"
                                        class="btn btn-info pull-right mb-4">{{__('Add New')}}</a>
                                 </div>
                             @endcan
@@ -78,8 +78,8 @@
                                             @endcan
                                             @can('testimonial-edit')
                                                 <a href="#"
-                                                   data-toggle="modal"
-                                                   data-target="#testimonial_item_edit_modal"
+                                                   data-bs-toggle="modal"
+                                                   data-bs-target="#testimonial_item_edit_modal"
                                                    class="btn btn-primary btn-xs mb-3 mr-1 testimonial_edit_btn"
                                                    data-id="{{$data->id}}"
                                                    data-action="{{route('admin.testimonial.update')}}"
@@ -113,7 +113,7 @@
                         <div class="modal-content">
                             <div class="modal-header">
                                 <h5 class="modal-title">{{__('New Testimonial Item')}}</h5>
-                                <button type="button" class="close" data-dismiss="modal"><span>×</span></button>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
                             <form action="{{route('admin.testimonial')}}" method="post" enctype="multipart/form-data">
                                 <div class="modal-body">
@@ -148,8 +148,8 @@
                                             <input type="hidden" name="image" value="">
                                             <button type="button" class="btn btn-info media_upload_form_btn"
                                                     data-btntitle="{{__('Select Image')}}"
-                                                    data-modaltitle="{{__('Upload Image')}}" data-toggle="modal"
-                                                    data-target="#media_upload_modal">
+                                                    data-modaltitle="{{__('Upload Image')}}" data-bs-toggle="modal"
+                                                    data-bs-target="#media_upload_modal">
                                                 {{__('Upload Image')}}
                                             </button>
                                         </div>
@@ -158,7 +158,7 @@
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary"
-                                            data-dismiss="modal">{{__('Close')}}</button>
+                                            data-bs-dismiss="modal">{{__('Close')}}</button>
                                     <button type="submit" class="btn btn-primary">{{__('Save Changes')}}</button>
                                 </div>
                             </form>
@@ -172,7 +172,7 @@
                         <div class="modal-content">
                             <div class="modal-header">
                                 <h5 class="modal-title">{{__('Edit Testimonial Item')}}</h5>
-                                <button type="button" class="close" data-dismiss="modal"><span>×</span></button>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
                             <form action="#" id="testimonial_edit_modal_form" method="post"
                                   enctype="multipart/form-data">
@@ -208,8 +208,8 @@
                                             <input type="hidden" id="edit_image" name="image" value="">
                                             <button type="button" class="btn btn-info media_upload_form_btn"
                                                     data-btntitle="{{__('Select Image')}}"
-                                                    data-modaltitle="{{__('Upload Image')}}" data-toggle="modal"
-                                                    data-target="#media_upload_modal">
+                                                    data-modaltitle="{{__('Upload Image')}}" data-bs-toggle="modal"
+                                                    data-bs-target="#media_upload_modal">
                                                 {{__('Upload Image')}}
                                             </button>
                                         </div>
@@ -218,7 +218,7 @@
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary"
-                                            data-dismiss="modal">{{__('Close')}}</button>
+                                            data-bs-dismiss="modal">{{__('Close')}}</button>
                                     <button type="submit" class="btn btn-primary">{{__('Save Changes')}}</button>
                                 </div>
                             </form>
@@ -226,48 +226,46 @@
                     </div>
                 </div>
             @endcan
-            <x-media.markup/>
-            @endsection
-            @section('script')
+           @include('backend.partials.media-upload.media-upload-markup')
+@endsection
+@section('script')
+    <script src="{{asset('assets/backend/js/dropzone.js')}}"></script>
+    <script>
+        <x-btn.submit/>
+        <x-btn.update/>
+        (function ($) {
+            "use strict";
 
-        <script>
-            (function ($) {
-                "use strict";
+            $(document).ready(function () {
+                <x-bulk-action-js :url="route('admin.testimonial.bulk.action')" />
 
-                $(document).ready(function () {
-                    <x-bulk-action-js :url="route('admin.testimonial.bulk.action')" />
-                    <x-btn.submit/>
-                    <x-btn.update/>
+                $(document).on('click', '.testimonial_edit_btn', function () {
+                    var el = $(this);
+                    var id = el.data('id');
+                    var name = el.data('name');
+                    var designation = el.data('designation');
+                    var action = el.data('action');
+                    var description = el.data('description');
+                    var image = el.data('image');
+                    var imageid = el.data('imageid');
 
-                    $(document).on('click', '.testimonial_edit_btn', function () {
-                        var el = $(this);
-                        var id = el.data('id');
-                        var name = el.data('name');
-                        var designation = el.data('designation');
-                        var action = el.data('action');
-                        var description = el.data('description');
-                        var image = el.data('image');
-                        var imageid = el.data('imageid');
-
-                        var form = $('#testimonial_edit_modal_form');
-                        form.attr('action', action);
-                        form.find('#testimonial_id').val(id);
-                        form.find('#edit_name').val(name);
-                        form.find('#edit_description').val(description);
-                        form.find('#edit_designation').val(designation);
-                        form.find('#edit_languages option[value="' + el.data('lang') + '"]').attr('selected', true);
-                        form.find('#edit_status option[value="' + el.data('status') + '"]').attr('selected', true);
-                        if (imageid != '') {
-                            form.find('.media-upload-btn-wrapper .img-wrap').html('<div class="attachment-preview"><div class="thumbnail"><div class="centered"><img class="avatar user-thumb" src="' + image + '" > </div></div></div>');
-                            form.find('.media-upload-btn-wrapper input').val(imageid);
-                            form.find('.media-upload-btn-wrapper .media_upload_form_btn').text('Change Image');
-                        }
-                    });
+                    var form = $('#testimonial_edit_modal_form');
+                    form.attr('action', action);
+                    form.find('#testimonial_id').val(id);
+                    form.find('#edit_name').val(name);
+                    form.find('#edit_description').val(description);
+                    form.find('#edit_designation').val(designation);
+                    form.find('#edit_languages option[value="' + el.data('lang') + '"]').attr('selected', true);
+                    form.find('#edit_status option[value="' + el.data('status') + '"]').attr('selected', true);
+                    if (imageid != '') {
+                        form.find('.media-upload-btn-wrapper .img-wrap').html('<div class="attachment-preview"><div class="thumbnail"><div class="centered"><img class="avatar user-thumb" src="' + image + '" > </div></div></div>');
+                        form.find('.media-upload-btn-wrapper input').val(imageid);
+                        form.find('.media-upload-btn-wrapper .media_upload_form_btn').text('Change Image');
+                    }
                 });
-            })(jQuery)
-        </script>
-
-        <x-datatable.js/>
-        <script src="{{asset('assets/backend/js/dropzone.js')}}"></script>
-        <x-media.js/>
+            });
+        })(jQuery)
+    </script>
+    @include('backend.partials.datatable.script-enqueue')
+    @include('backend.partials.media-upload.media-js')
 @endsection

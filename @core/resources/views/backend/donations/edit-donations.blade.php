@@ -105,7 +105,7 @@
                                                 {!! render_attachment_preview_for_admin($donation->og_meta_image) !!}
                                             </div>
                                             <input type="hidden" name="og_meta_image" value="{{$donation->og_meta_image}}">
-                                            <button type="button" class="btn btn-info media_upload_form_btn" data-btntitle="{{__('Select Donation Image')}}" data-modaltitle="{{__('Upload Donation Image')}}" data-toggle="modal" data-target="#media_upload_modal">
+                                            <button type="button" class="btn btn-info media_upload_form_btn" data-btntitle="{{__('Select Donation Image')}}" data-modaltitle="{{__('Upload Donation Image')}}" data-bs-toggle="modal" data-bs-target="#media_upload_modal">
                                                 {{'Change Image'}}
                                             </button>
                                         </div>
@@ -118,7 +118,7 @@
                                                {!! render_attachment_preview_for_admin($donation->image) !!}
                                            </div>
                                             <input type="hidden" name="image" value="{{$donation->image}}">
-                                            <button type="button" class="btn btn-info media_upload_form_btn" data-btntitle="{{__('Select Donation Image')}}" data-modaltitle="{{__('Upload Donation Image')}}" data-toggle="modal" data-target="#media_upload_modal">
+                                            <button type="button" class="btn btn-info media_upload_form_btn" data-btntitle="{{__('Select Donation Image')}}" data-modaltitle="{{__('Upload Donation Image')}}" data-bs-toggle="modal" data-bs-target="#media_upload_modal">
                                                 {{'Change Image'}}
                                             </button>
                                         </div>
@@ -140,7 +140,7 @@
                                                 {!! render_gallery_image_attachment_preview($donation->image_gallery) !!}
                                             </div>
                                             <input type="hidden" name="image_gallery" value="{{$donation->image_gallery}}">
-                                            <button type="button" class="btn btn-info media_upload_form_btn" data-mulitple="true" data-btntitle="{{__('Select Image')}}" data-modaltitle="{{__('Upload Image')}}" data-toggle="modal" data-target="#media_upload_modal">
+                                            <button type="button" class="btn btn-info media_upload_form_btn" data-mulitple="true" data-btntitle="{{__('Select Image')}}" data-modaltitle="{{__('Upload Image')}}" data-bs-toggle="modal" data-bs-target="#media_upload_modal">
                                                 {{__('Upload Images')}}
                                             </button>
                                         </div>
@@ -153,7 +153,7 @@
                                                 {!! render_gallery_image_attachment_preview($donation->medical_document) !!}
                                             </div>
                                             <input type="hidden" name="medical_document" value="{{$donation->medical_document}}">
-                                            <button type="button" class="btn btn-info media_upload_form_btn" data-mulitple="true" data-btntitle="{{__('Select Document')}}" data-modaltitle="{{__('Upload Document')}}" data-toggle="modal" data-target="#media_upload_modal">
+                                            <button type="button" class="btn btn-info media_upload_form_btn" data-mulitple="true" data-btntitle="{{__('Select Document')}}" data-modaltitle="{{__('Upload Document')}}" data-bs-toggle="modal" data-bs-target="#media_upload_modal">
                                                 {{__('Upload Images')}}
                                             </button>
                                         </div>

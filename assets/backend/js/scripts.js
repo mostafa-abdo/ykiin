@@ -80,7 +80,14 @@
     /*================================
     form bootstrap validation
     ==================================*/
-    $('[data-toggle="popover"]').popover()
+
+
+    document.addEventListener("DOMContentLoaded", function () {
+        const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]')
+        const popoverList = [...popoverTriggerList].map(el => new bootstrap.Popover(el))
+    })
+
+
 
     /*------------- Start form Validation -------------*/
     window.addEventListener('load', function() {

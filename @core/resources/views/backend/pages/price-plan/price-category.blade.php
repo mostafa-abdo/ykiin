@@ -51,7 +51,7 @@
                             @foreach($all_category as $key => $cate)
 
                                 <li class="nav-item">
-                                    <a class="nav-link @if($a == 0) active @endif"  data-toggle="tab" href="#slider_tab_{{$key}}" role="tab" aria-controls="home" aria-selected="true">{{get_language_by_slug($key)}}</a>
+                                    <a class="nav-link @if($a == 0) active @endif"  data-bs-toggle="tab" href="#slider_tab_{{$key}}" role="tab" aria-controls="home" aria-selected="true">{{get_language_by_slug($key)}}</a>
                                 </li>
                                 @php $a++; @endphp
                             @endforeach
@@ -93,7 +93,7 @@
                                                 <td>
                                                     <a tabindex="0" class="btn btn-lg btn-danger btn-sm mb-3 mr-1"
                                                        role="button"
-                                                       data-toggle="popover"
+                                                       data-bs-toggle="popover"
                                                        data-trigger="focus"
                                                        data-html="true"
                                                        title=""
@@ -108,8 +108,8 @@
                                                         <i class="ti-trash"></i>
                                                     </a>
                                                     <a href="#"
-                                                       data-toggle="modal"
-                                                       data-target="#category_edit_modal"
+                                                       data-bs-toggle="modal"
+                                                       data-bs-target="#category_edit_modal"
                                                        class="btn btn-lg btn-primary btn-sm mb-3 mr-1 category_edit_btn"
                                                        data-id="{{$data->id}}"
                                                        data-name="{{$data->name}}"
@@ -169,7 +169,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title">{{__('Update Category')}}</h5>
-                    <button type="button" class="close" data-dismiss="modal"><span>×</span></button>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <form action="{{route('admin.price.plan.category.update')}}"  method="post">
                     <input type="hidden" name="id" id="category_id">
@@ -196,7 +196,7 @@
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">{{__('Close')}}</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">{{__('Close')}}</button>
                         <button type="submit" class="btn btn-primary">{{__('Save Change')}}</button>
                     </div>
                 </form>

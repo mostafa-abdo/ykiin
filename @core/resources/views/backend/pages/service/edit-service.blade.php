@@ -64,7 +64,7 @@
                                         <i class="{{$service->icon}}"></i>
                                     </button>
                                     <button type="button" class="icp icp-dd btn btn-primary dropdown-toggle"
-                                            data-selected="{{$service->icon}}" data-toggle="dropdown">
+                                            data-selected="{{$service->icon}}" data-bs-toggle="dropdown">
                                         <span class="caret"></span>
                                         <span class="sr-only">Toggle Dropdown</span>
                                     </button>
@@ -94,7 +94,7 @@
                                         @endif
                                     </div>
                                     <input type="hidden" id="img_icon" name="img_icon" value="{{$service->img_icon}}">
-                                    <button type="button" class="btn btn-info media_upload_form_btn" data-btntitle="{{__('Select Image')}}" data-modaltitle="{{__('Upload Image')}}" data-toggle="modal" data-target="#media_upload_modal">
+                                    <button type="button" class="btn btn-info media_upload_form_btn" data-btntitle="{{__('Select Image')}}" data-modaltitle="{{__('Upload Image')}}" data-bs-toggle="modal" data-bs-target="#media_upload_modal">
                                         {{$image_btn_label}}
                                     </button>
                                 </div>
@@ -172,7 +172,7 @@
                                         @endif
                                     </div>
                                     <input type="hidden" name="image" value="{{$service->image}}">
-                                    <button type="button" class="btn btn-info media_upload_form_btn" data-btntitle="{{__('Select Service Image')}}" data-modaltitle="{{__('Upload Service Image')}}" data-toggle="modal" data-target="#media_upload_modal">
+                                    <button type="button" class="btn btn-info media_upload_form_btn" data-btntitle="{{__('Select Service Image')}}" data-modaltitle="{{__('Upload Service Image')}}" data-bs-toggle="modal" data-bs-target="#media_upload_modal">
                                         {{$image_btn_label}}
                                     </button>
                                 </div>

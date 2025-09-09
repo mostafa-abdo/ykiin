@@ -19,6 +19,9 @@ class Cause extends Model
         'deadline' => 'date'
     ];
 
+    protected $appends = ['img_link', 'formatted_amount', 'percentage'];
+
+
     public function user(){
         return $this->belongsTo(User::class,'user_id');
     }
@@ -53,6 +56,26 @@ class Cause extends Model
 
     public function gift(){
         return $this->belongsToMany(Gift::class);
+    }
+
+    public function getImgLinkAttribute(){
+        $img_id = $this->image;
+
+        $img = get_attachment_image_by_id($img_id);
+
+        if (!empty($img)) {
+            return $img['img_url'];
+        }else{
+            return '';
+        }
+    }
+
+    public function getFormattedAmountAttribute(){
+        return amount_with_currency_symbol($this->amount);
+    }
+
+    public function getPercentageAttribute(){
+        return get_percentage($this->amount,$this->raised);
     }
 
 }

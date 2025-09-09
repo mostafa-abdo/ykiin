@@ -111,7 +111,7 @@
                                         @endforeach
                                     </div>
                                     <input type="hidden" name="gallery" value="{{$work_details->gallery}}">
-                                    <button type="button" class="btn btn-info media_upload_form_btn" data-mulitple="true" data-btntitle="{{__('Select Image')}}" data-modaltitle="{{__('Upload Image')}}" data-toggle="modal" data-target="#media_upload_modal">
+                                    <button type="button" class="btn btn-info media_upload_form_btn" data-mulitple="true" data-btntitle="{{__('Select Image')}}" data-modaltitle="{{__('Upload Image')}}" data-bs-toggle="modal" data-bs-target="#media_upload_modal">
                                         {{__('Upload Image')}}
                                     </button>
                                 </div>
@@ -142,7 +142,7 @@
                                         @endif
                                     </div>
                                     <input type="hidden" name="image" value="{{$work_details->image}}">
-                                    <button type="button" class="btn btn-info media_upload_form_btn" data-btntitle="{{__('Select Work Image')}}" data-modaltitle="{{__('Upload Work Image')}}" data-toggle="modal" data-target="#media_upload_modal">
+                                    <button type="button" class="btn btn-info media_upload_form_btn" data-btntitle="{{__('Select Work Image')}}" data-modaltitle="{{__('Upload Work Image')}}" data-bs-toggle="modal" data-bs-target="#media_upload_modal">
                                         {{__('Upload Image')}}
                                     </button>
                                 </div>

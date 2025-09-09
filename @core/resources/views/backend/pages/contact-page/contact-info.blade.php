@@ -64,8 +64,8 @@
                                         <x-delete-popover :url="route('admin.contact.info.delete',$data->id)"/>
 
                                         <a href="#"
-                                           data-toggle="modal"
-                                           data-target="#contact_info_item_edit_modal"
+                                           data-bs-toggle="modal"
+                                           data-bs-target="#contact_info_item_edit_modal"
                                            class="btn btn-lg btn-primary btn-sm mb-3 mr-1 contact_info_edit_btn"
                                            data-id="{{$data->id}}"
                                            data-lang="{{$data->lang}}"
@@ -104,7 +104,7 @@
                                         <i class="fas fa-exclamation-triangle"></i>
                                     </button>
                                     <button type="button" class="icp icp-dd btn btn-primary dropdown-toggle"
-                                            data-selected="fas fa-exclamation-triangle" data-toggle="dropdown">
+                                            data-selected="fas fa-exclamation-triangle" data-bs-toggle="dropdown">
                                         <span class="caret"></span>
                                         <span class="sr-only">Toggle Dropdown</span>
                                     </button>
@@ -132,7 +132,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title">{{__('Edit Key Feature Item')}}</h5>
-                    <button type="button" class="close" data-dismiss="modal"><span>×</span></button>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <form action="{{route('admin.contact.info.update')}}" id="contact_info_edit_modal_form" method="post">
                     <div class="modal-body">
@@ -151,7 +151,7 @@
                                     <i class="fas fa-exclamation-triangle"></i>
                                 </button>
                                 <button type="button" class="icp icp-dd btn btn-primary dropdown-toggle"
-                                        data-selected="fas fa-exclamation-triangle" data-toggle="dropdown">
+                                        data-selected="fas fa-exclamation-triangle" data-bs-toggle="dropdown">
                                     <span class="caret"></span>
                                     <span class="sr-only">Toggle Dropdown</span>
                                 </button>
@@ -168,7 +168,7 @@
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">{{__('Close')}}</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">{{__('Close')}}</button>
                         <button id="update" type="submit" class="btn btn-primary">{{__('Save Changes')}}</button>
                     </div>
                 </form>

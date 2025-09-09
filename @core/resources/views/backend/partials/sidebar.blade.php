@@ -626,6 +626,7 @@
                 ])
                     <li class="main_dropdown
                         @if(request()->is([
+                            'admin-home/home-page-00/*',
                             'admin-home/home-page-01/*',
                             'admin-home/home-page-04/*',
                             'admin-home/home-page-05/*',
@@ -645,13 +646,33 @@
                         <ul class="collapse ">
                             @can('page-settings-home-page-manage')
                                 <li class="main_dropdown
-                                @if(request()->is(['admin-home/home-page-01/*','admin-home/header','admin-home/keyfeatures','admin-home/home-page-04/*','admin-home/home-page-05/*','admin-home/home-page-06/*'])  ) active @endif
-                                        ">
-                                    <a href="javascript:void(0)"
-                                       aria-expanded="true">
+                                @if(request()->is(['admin-home/home-page-00/*','admin-home/home-page-01/*','admin-home/header','admin-home/keyfeatures','admin-home/home-page-04/*','admin-home/home-page-05/*','admin-home/home-page-06/*'])  ) active @endif">
+                                    <a href="javascript:void(0)" aria-expanded="true">
                                         {{__('Home Page Manage')}}
                                     </a>
                                     <ul class="collapse">
+                                        @if(get_static_option('home_page_variant') == '00')
+
+                                            <li class="{{active_menu('admin-home/home-page-00/header-area')}}">
+                                                <a href="{{route('admin.home.zero.header.area')}}">
+                                                    {{__('Header Area')}}
+                                                </a>
+                                            </li>
+
+                                            <li class="{{active_menu('admin-home/home-page-00/projects-area')}}">
+                                                <a href="{{route('admin.home.zero.projects.area')}}">
+                                                    {{__('Projects Area')}}
+                                                </a>
+                                            </li>
+
+
+
+
+                                            <li class="{{active_menu('admin-home/home-page-00/section-manage')}}">
+                                                <a href="{{route('admin.home.zero.section.manage')}}">{{__('Section Manage')}}</a>
+                                            </li>
+
+                                        @endif
                                         @if(in_array(get_static_option('home_page_variant'),['01','02','03']))
                                             <li class="{{active_menu('admin-home/home-page-01/header')}}">
                                                 <a href="{{route('admin.header')}}">
@@ -703,163 +724,165 @@
                                             </li>
                                         @endif
 
-                                            @if(get_static_option('home_page_variant') == '04')
-
-                                                <li class="{{active_menu('admin-home/home-page-04/header-area')}}">
-                                                    <a href="{{route('admin.home.four.header.area')}}">
-                                                        {{__('Header Area')}}
-                                                    </a>
-                                                </li>
-
-                                                <li class="{{active_menu('admin-home/home-page-04/feature-area')}}">
-                                                    <a href="{{route('admin.home.four.feature.area')}}">
-                                                        {{__('Feature Area')}}
-                                                    </a>
-                                                </li>
-
-                                                <li class="{{active_menu('admin-home/home-page-04/success-story-area')}}">
-                                                    <a href="{{route('admin.home.four.success.story.area')}}">
-                                                        {{__('Success Story Area')}}
-                                                    </a>
-                                                </li>
-
-                                                <li class="{{active_menu('admin-home/home-page-04/about-us-area')}}">
-                                                    <a href="{{route('admin.home.four.about.us.area')}}">
-                                                        {{__('About Us Area')}}
-                                                    </a>
-                                                </li>
-
-                                                <li class="{{active_menu('admin-home/home-page-04/events-area')}}">
-                                                    <a href="{{route('admin.home.four.events.area')}}">
-                                                        {{__('Events Area')}}
-                                                    </a>
-                                                </li>
-
-                                                <li class="{{active_menu('admin-home/home-page-04/recent-causes-area')}}">
-                                                    <a href="{{route('admin.home.four.recent.causes.area')}}">
-                                                        {{__('Recent Causes Area')}}
-                                                    </a>
-                                                </li>
-
-                                                <li class="{{active_menu('admin-home/home-page-04/recent-blog-area')}}">
-                                                    <a href="{{route('admin.home.four.recent.blog.area')}}">
-                                                        {{__('Recent Blog Area')}}
-                                                    </a>
-                                                </li>
-
-                                                <li class="{{active_menu('admin-home/home-page-04-05-06/section-manage')}}">
-                                                    <a href="{{route('admin.home.four.five.six.section.manage')}}">{{__('Section Manage')}}</a>
-                                                </li>
-                                            @endif
-
-                                            @if(get_static_option('home_page_variant') == '05')
-
-                                                <li class="{{active_menu('admin-home/home-page-01/header')}}">
-                                                    <a href="{{route('admin.header')}}">
-                                                        {{__('Header Area')}}
-                                                    </a>
-                                                </li>
-
-                                                <li class="{{active_menu('admin-home/home-page-05/rise-area')}}">
-                                                    <a href="{{route('admin.home.five.rise.area')}}">
-                                                        {{__('Rise Area')}}
-                                                    </a>
-                                                </li>
-
-                                                <li class="{{active_menu('admin-home/home-page-05/feature-area')}}">
-                                                    <a href="{{route('admin.home.five.feature.area')}}">
-                                                        {{__('Feature Area')}}
-                                                    </a>
-                                                </li>
-
-                                                <li class="{{active_menu('admin-home/home-page-05/category-area')}}">
-                                                    <a href="{{route('admin.home.five.category.area')}}">
-                                                        {{__('Category Area')}}
-                                                    </a>
-                                                </li>
-
-                                                <li class="{{active_menu('admin-home/home-page-05/success-story-area')}}">
-                                                    <a href="{{route('admin.home.five.success.story.area')}}">
-                                                        {{__('Success Story Area')}}
-                                                    </a>
-                                                </li>
-
-                                                <li class="{{active_menu('admin-home/home-page-05/recent-causes-area')}}">
-                                                    <a href="{{route('admin.home.five.recent.causes.area')}}">
-                                                        {{__('Recent Causes Area')}}
-                                                    </a>
-                                                </li>
-
-                                                <li class="{{active_menu('admin-home/home-page-05/events-area')}}">
-                                                    <a href="{{route('admin.home.five.events.area')}}">
-                                                        {{__('Events Area')}}
-                                                    </a>
-                                                </li>
-
-                                                <li class="{{active_menu('admin-home/home-page-05/recent-blog-area')}}">
-                                                    <a href="{{route('admin.home.five.recent.blog.area')}}">
-                                                        {{__('Recent Blog Area')}}
-                                                    </a>
-                                                </li>
-                                                <li class="{{active_menu('admin-home/home-page-04-05-06/section-manage')}}">
-                                                    <a href="{{route('admin.home.four.five.six.section.manage')}}">{{__('Section Manage')}}</a>
-                                                </li>
-                                            @endif
 
 
-                                            @if(get_static_option('home_page_variant') == '06')
+                                        @if(get_static_option('home_page_variant') == '04')
 
-                                                <li class="{{active_menu('admin-home/home-page-06/header')}}">
-                                                    <a href="{{route('admin.home.six.header.area')}}">
-                                                        {{__('Header Area')}}
-                                                    </a>
-                                                </li>
+                                            <li class="{{active_menu('admin-home/home-page-04/header-area')}}">
+                                                <a href="{{route('admin.home.four.header.area')}}">
+                                                    {{__('Header Area')}}
+                                                </a>
+                                            </li>
 
-                                                <li class="{{active_menu('admin-home/home-page-06/rise-area')}}">
-                                                    <a href="{{route('admin.home.six.rise.area')}}">
-                                                        {{__('Rise Area')}}
-                                                    </a>
-                                                </li>
+                                            <li class="{{active_menu('admin-home/home-page-04/feature-area')}}">
+                                                <a href="{{route('admin.home.four.feature.area')}}">
+                                                    {{__('Feature Area')}}
+                                                </a>
+                                            </li>
 
-                                                <li class="{{active_menu('admin-home/home-page-06/feature-area')}}">
-                                                    <a href="{{route('admin.home.six.feature.area')}}">
-                                                        {{__('Feature Area')}}
-                                                    </a>
-                                                </li>
+                                            <li class="{{active_menu('admin-home/home-page-04/success-story-area')}}">
+                                                <a href="{{route('admin.home.four.success.story.area')}}">
+                                                    {{__('Success Story Area')}}
+                                                </a>
+                                            </li>
 
-                                                <li class="{{active_menu('admin-home/home-page-06/category-area')}}">
-                                                    <a href="{{route('admin.home.six.category.area')}}">
-                                                        {{__('Category Area')}}
-                                                    </a>
-                                                </li>
+                                            <li class="{{active_menu('admin-home/home-page-04/about-us-area')}}">
+                                                <a href="{{route('admin.home.four.about.us.area')}}">
+                                                    {{__('About Us Area')}}
+                                                </a>
+                                            </li>
 
-                                                <li class="{{active_menu('admin-home/home-page-06/recent-causes-area')}}">
-                                                    <a href="{{route('admin.home.six.recent.causes.area')}}">
-                                                        {{__('Recent Causes Area')}}
-                                                    </a>
-                                                </li>
+                                            <li class="{{active_menu('admin-home/home-page-04/events-area')}}">
+                                                <a href="{{route('admin.home.four.events.area')}}">
+                                                    {{__('Events Area')}}
+                                                </a>
+                                            </li>
 
-                                                <li class="{{active_menu('admin-home/home-page-06/success-story-area')}}">
-                                                    <a href="{{route('admin.home.six.success.story.area')}}">
-                                                        {{__('Success Story Area')}}
-                                                    </a>
-                                                </li>
+                                            <li class="{{active_menu('admin-home/home-page-04/recent-causes-area')}}">
+                                                <a href="{{route('admin.home.four.recent.causes.area')}}">
+                                                    {{__('Recent Causes Area')}}
+                                                </a>
+                                            </li>
 
-                                                <li class="{{active_menu('admin-home/home-page-06/about-us-area')}}">
-                                                    <a href="{{route('admin.home.six.about.us.area')}}">
-                                                        {{__('About Us Area')}}
-                                                    </a>
-                                                </li>
+                                            <li class="{{active_menu('admin-home/home-page-04/recent-blog-area')}}">
+                                                <a href="{{route('admin.home.four.recent.blog.area')}}">
+                                                    {{__('Recent Blog Area')}}
+                                                </a>
+                                            </li>
 
-                                                <li class="{{active_menu('admin-home/home-page-06/events-area')}}">
-                                                    <a href="{{route('admin.home.six.events.area')}}">
-                                                        {{__('Events Area')}}
-                                                    </a>
-                                                </li>
-                                                <li class="{{active_menu('admin-home/home-page-04-05-06/section-manage')}}">
-                                                    <a href="{{route('admin.home.four.five.six.section.manage')}}">{{__('Section Manage')}}</a>
-                                                </li>
-                                            @endif
+                                            <li class="{{active_menu('admin-home/home-page-04-05-06/section-manage')}}">
+                                                <a href="{{route('admin.home.four.five.six.section.manage')}}">{{__('Section Manage')}}</a>
+                                            </li>
+                                        @endif
+
+                                        @if(get_static_option('home_page_variant') == '05')
+
+                                            <li class="{{active_menu('admin-home/home-page-01/header')}}">
+                                                <a href="{{route('admin.header')}}">
+                                                    {{__('Header Area')}}
+                                                </a>
+                                            </li>
+
+                                            <li class="{{active_menu('admin-home/home-page-05/rise-area')}}">
+                                                <a href="{{route('admin.home.five.rise.area')}}">
+                                                    {{__('Rise Area')}}
+                                                </a>
+                                            </li>
+
+                                            <li class="{{active_menu('admin-home/home-page-05/feature-area')}}">
+                                                <a href="{{route('admin.home.five.feature.area')}}">
+                                                    {{__('Feature Area')}}
+                                                </a>
+                                            </li>
+
+                                            <li class="{{active_menu('admin-home/home-page-05/category-area')}}">
+                                                <a href="{{route('admin.home.five.category.area')}}">
+                                                    {{__('Category Area')}}
+                                                </a>
+                                            </li>
+
+                                            <li class="{{active_menu('admin-home/home-page-05/success-story-area')}}">
+                                                <a href="{{route('admin.home.five.success.story.area')}}">
+                                                    {{__('Success Story Area')}}
+                                                </a>
+                                            </li>
+
+                                            <li class="{{active_menu('admin-home/home-page-05/recent-causes-area')}}">
+                                                <a href="{{route('admin.home.five.recent.causes.area')}}">
+                                                    {{__('Recent Causes Area')}}
+                                                </a>
+                                            </li>
+
+                                            <li class="{{active_menu('admin-home/home-page-05/events-area')}}">
+                                                <a href="{{route('admin.home.five.events.area')}}">
+                                                    {{__('Events Area')}}
+                                                </a>
+                                            </li>
+
+                                            <li class="{{active_menu('admin-home/home-page-05/recent-blog-area')}}">
+                                                <a href="{{route('admin.home.five.recent.blog.area')}}">
+                                                    {{__('Recent Blog Area')}}
+                                                </a>
+                                            </li>
+                                            <li class="{{active_menu('admin-home/home-page-04-05-06/section-manage')}}">
+                                                <a href="{{route('admin.home.four.five.six.section.manage')}}">{{__('Section Manage')}}</a>
+                                            </li>
+                                        @endif
+
+
+                                        @if(get_static_option('home_page_variant') == '06')
+
+                                            <li class="{{active_menu('admin-home/home-page-06/header')}}">
+                                                <a href="{{route('admin.home.six.header.area')}}">
+                                                    {{__('Header Area')}}
+                                                </a>
+                                            </li>
+
+                                            <li class="{{active_menu('admin-home/home-page-06/rise-area')}}">
+                                                <a href="{{route('admin.home.six.rise.area')}}">
+                                                    {{__('Rise Area')}}
+                                                </a>
+                                            </li>
+
+                                            <li class="{{active_menu('admin-home/home-page-06/feature-area')}}">
+                                                <a href="{{route('admin.home.six.feature.area')}}">
+                                                    {{__('Feature Area')}}
+                                                </a>
+                                            </li>
+
+                                            <li class="{{active_menu('admin-home/home-page-06/category-area')}}">
+                                                <a href="{{route('admin.home.six.category.area')}}">
+                                                    {{__('Category Area')}}
+                                                </a>
+                                            </li>
+
+                                            <li class="{{active_menu('admin-home/home-page-06/recent-causes-area')}}">
+                                                <a href="{{route('admin.home.six.recent.causes.area')}}">
+                                                    {{__('Recent Causes Area')}}
+                                                </a>
+                                            </li>
+
+                                            <li class="{{active_menu('admin-home/home-page-06/success-story-area')}}">
+                                                <a href="{{route('admin.home.six.success.story.area')}}">
+                                                    {{__('Success Story Area')}}
+                                                </a>
+                                            </li>
+
+                                            <li class="{{active_menu('admin-home/home-page-06/about-us-area')}}">
+                                                <a href="{{route('admin.home.six.about.us.area')}}">
+                                                    {{__('About Us Area')}}
+                                                </a>
+                                            </li>
+
+                                            <li class="{{active_menu('admin-home/home-page-06/events-area')}}">
+                                                <a href="{{route('admin.home.six.events.area')}}">
+                                                    {{__('Events Area')}}
+                                                </a>
+                                            </li>
+                                            <li class="{{active_menu('admin-home/home-page-04-05-06/section-manage')}}">
+                                                <a href="{{route('admin.home.four.five.six.section.manage')}}">{{__('Section Manage')}}</a>
+                                            </li>
+                                        @endif
                                     </ul>
                                 </li>
                             @endcan
@@ -874,23 +897,38 @@
                                         <li class="{{active_menu('admin-home/about-page/about-us')}}"><a
                                                     href="{{route('admin.about.page.about')}}">{{__('About Us Section')}}</a>
                                         </li>
-                                        <li class="{{active_menu('admin-home/about-page/our-mission')}}"><a
-                                                    href="{{route('admin.about.our.mission')}}">{{__('Our Mission Section')}}</a>
-                                        </li>
-                                        <li class="{{active_menu('admin-home/about-page/counterup')}}"><a
-                                                    href="{{route('admin.about.counterup')}}">{{__('Counterup Section')}}</a>
-                                        </li>
-                                        <li class="{{active_menu('admin-home/about-page/what-we-do')}}"><a
-                                                    href="{{route('admin.about.what.we.do')}}">{{__('What We Do Section')}}</a>
-                                        </li>
-                                        <li class="{{active_menu('admin-home/about-page/testimonial')}}"><a
-                                                    href="{{route('admin.about.testimonial')}}">{{__('Testimonial Section')}}</a>
-                                        </li>
-                                        <li class="{{active_menu('admin-home/about-page/team-member')}}"><a
-                                                    href="{{route('admin.about.team.member')}}">{{__('Team Member Section')}}</a>
-                                        </li>
-                                        <li class="{{active_menu('admin-home/about-page/section-manage')}}"><a
-                                                    href="{{route('admin.about.page.section.manage')}}">{{__('Section Manage')}}</a>
+                                       
+                                        @if(get_static_option('home_page_variant') != '00')
+                                            <li class="{{active_menu('admin-home/about-page/our-mission')}}"><a
+                                                        href="{{route('admin.about.our.mission')}}">{{__('Our Mission Section')}}</a>
+                                            </li>
+                                            <li class="{{active_menu('admin-home/about-page/counterup')}}"><a
+                                                        href="{{route('admin.about.counterup')}}">{{__('Counterup Section')}}</a>
+                                            </li>
+                                            <li class="{{active_menu('admin-home/about-page/what-we-do')}}"><a
+                                                        href="{{route('admin.about.what.we.do')}}">{{__('What We Do Section')}}</a>
+                                            </li>
+                                            <li class="{{active_menu('admin-home/about-page/testimonial')}}"><a
+                                                        href="{{route('admin.about.testimonial')}}">{{__('Testimonial Section')}}</a>
+                                            </li>
+                                            <li class="{{active_menu('admin-home/about-page/team-member')}}"><a
+                                                        href="{{route('admin.about.team.member')}}">{{__('Team Member Section')}}</a>
+                                            </li>
+                                            
+                                        @else
+                                            <li class="{{active_menu('admin-home/about-page/our-vision')}}"><a
+                                                        href="{{route('admin.about.our.vision')}}">{{__('Our Vision Section')}}</a>
+                                            </li>
+                                            <li class="{{active_menu('admin-home/about-page/our-values')}}">
+                                                <a href="{{route('admin.about.our.values')}}">{{__('Our Values Section')}}</a>
+                                            </li>
+                                            <li class="{{active_menu('admin-home/about-page/testimonial')}}"><a
+                                                        href="{{route('admin.about.testimonial')}}">{{__('Testimonial Section')}}</a>
+                                            </li>
+                                             
+                                        @endif
+                                        <li class="{{active_menu('admin-home/about-page/section-manage')}}">
+                                            <a href="{{route('admin.about.page.section.manage')}}">{{__('Section Manage')}}</a>
                                         </li>
                                     </ul>
                                 </li>

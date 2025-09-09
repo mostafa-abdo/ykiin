@@ -1259,6 +1259,17 @@
       "1,700"
     ]
   },
+  "IBM Plex Sans Arabic": {
+    "variants": [
+      "0,100",
+      "0,200",
+      "0,300",
+      "0,400",
+      "0,500",
+      "0,600",
+      "0,700"
+    ]
+  },
   "IBM Plex Sans Condensed": {
     "variants": [
       "0,100",
@@ -1276,6 +1287,8 @@
       "1,700"
     ]
   },
+   
+
   "IBM Plex Serif": {
     "variants": [
       "0,100",

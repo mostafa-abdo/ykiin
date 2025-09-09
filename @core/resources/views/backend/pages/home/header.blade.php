@@ -49,8 +49,8 @@
                                                <td>
                                                    <x-delete-popover :url="route('admin.header.delete',$data->id)"/>
                                                    <a href="#"
-                                                      data-toggle="modal"
-                                                      data-target="#header_slider_item_edit_modal"
+                                                      data-bs-toggle="modal"
+                                                      data-bs-target="#header_slider_item_edit_modal"
                                                       class="btn btn-lg btn-primary btn-sm mb-3 mr-1 header_slider_edit_btn"
                                                       data-id="{{$data->id}}"
                                                       data-title="{{$data->title}}"
@@ -112,7 +112,7 @@
                                 <div class="media-upload-btn-wrapper">
                                     <div class="img-wrap"></div>
                                     <input type="hidden" name="image">
-                                    <button type="button" class="btn btn-info media_upload_form_btn" data-btntitle="Select Slider Background" data-modaltitle="Upload Slider Background" data-toggle="modal" data-target="#media_upload_modal">
+                                    <button type="button" class="btn btn-info media_upload_form_btn" data-btntitle="Select Slider Background" data-modaltitle="Upload Slider Background" data-bs-toggle="modal" data-bs-target="#media_upload_modal">
                                         {{__('Upload Image')}}
                                     </button>
                                 </div>
@@ -131,7 +131,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title">{{__('Edit Header Slider Item')}}</h5>
-                    <button type="button" class="close" data-dismiss="modal"><span>×</span></button>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <form action="{{route('admin.header.update')}}" id="header_slider_edit_modal_form"  method="post" enctype="multipart/form-data">
                     <div class="modal-body">
@@ -168,7 +168,7 @@
                             <div class="media-upload-btn-wrapper">
                                 <div class="img-wrap"></div>
                                 <input type="hidden" id="edit_image" name="image" value="">
-                                <button type="button" class="btn btn-info media_upload_form_btn" data-btntitle="Select Slider Background" data-modaltitle="Upload Slider Background" data-imgid="{{auth()->user()->image}}" data-toggle="modal" data-target="#media_upload_modal">
+                                <button type="button" class="btn btn-info media_upload_form_btn" data-btntitle="Select Slider Background" data-modaltitle="Upload Slider Background" data-imgid="{{auth()->user()->image}}" data-bs-toggle="modal" data-bs-target="#media_upload_modal">
                                     {{__('Upload Image')}}
                                 </button>
                             </div>
@@ -176,7 +176,7 @@
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">{{__('Close')}}</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">{{__('Close')}}</button>
                         <button id="update" type="submit" class="btn btn-primary">{{__('Save Changes')}}</button>
                     </div>
                 </form>

@@ -42,7 +42,7 @@
                                         @endif
                                     </div>
                                     <input type="hidden" name="about_page_counterup_background_image" value="{{$bg_image}}">
-                                    <button type="button" class="btn btn-info media_upload_form_btn" data-btntitle="{{__('Select Image')}}" data-modaltitle="{{__('Upload Image')}}" data-imgid="{{$bg_image}}" data-toggle="modal" data-target="#media_upload_modal">
+                                    <button type="button" class="btn btn-info media_upload_form_btn" data-btntitle="{{__('Select Image')}}" data-modaltitle="{{__('Upload Image')}}" data-imgid="{{$bg_image}}" data-bs-toggle="modal" data-bs-target="#media_upload_modal">
                                         {{__($signature_image_upload_btn_label)}}
                                     </button>
                                 </div>
